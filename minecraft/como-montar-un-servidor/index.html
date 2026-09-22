@@ -1,0 +1,403 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<script>try{if(localStorage.getItem("tema")==="claro")document.documentElement.dataset.theme="claro"}catch(e){}</script>
+<link rel="alternate" hreflang="es" href="https://montatuserver.com/minecraft/como-montar-un-servidor/">
+<link rel="alternate" hreflang="en" href="https://montatuserver.com/en/minecraft/how-to-set-up-a-server/">
+<link rel="alternate" hreflang="x-default" href="https://montatuserver.com/minecraft/como-montar-un-servidor/">
+
+<title>Cómo montar un servidor de Minecraft en 2026 (guía paso a paso)</title>
+<meta name="description" content="Guía real para montar un servidor de Minecraft: cuánta RAM necesitas, qué software elegir, cómo meter a los de consola con crossplay y los errores que arruinan un servidor.">
+<link rel="canonical" href="https://montatuserver.com/minecraft/como-montar-un-servidor/">
+
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="MontaTuServer">
+<meta property="og:url" content="https://montatuserver.com/minecraft/como-montar-un-servidor/">
+<meta property="og:title" content="Cómo montar un servidor de Minecraft en 2026 (guía paso a paso)">
+<meta property="og:description" content="Guía real para montar un servidor de Minecraft: cuánta RAM necesitas, qué software elegir, cómo meter a los de consola con crossplay y los errores que arruinan un servidor.">
+<meta property="og:image" content="https://montatuserver.com/og-image.jpg">
+<meta property="og:locale" content="es_ES">
+<meta name="twitter:card" content="summary_large_image">
+
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>&#129518;</text></svg>">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@700&family=Inter:wght@400..800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/styles.css?v=07db9240">
+</head>
+<body>
+
+<header class="site-head">
+  <div class="wrap">
+    <a class="brand" href="/"><svg class="logo-mark" viewBox="0 0 32 32" aria-hidden="true"><defs><linearGradient id="lm" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#6FFFE9"/><stop offset="1" stop-color="#5BC0BE"/></linearGradient></defs><path d="M16 2.5 28.5 9.3v13.4L16 29.5 3.5 22.7V9.3z" fill="url(#lm)"/><path d="M16 2.5 28.5 9.3 16 16.1 3.5 9.3z" fill="#fff" fill-opacity=".38"/><path d="M16 16.1v13.4L3.5 22.7V9.3z" fill="#0B132B" fill-opacity=".22"/><path d="M9.8 12.7 16 16.1l6.2-3.4" fill="none" stroke="#0B132B" stroke-opacity=".35" stroke-width="1.1"/></svg><span>Monta<b>TuServer</b></span></a>
+    <div class="menu" id="menu">
+      <nav class="nav" aria-label="Menú">
+        <a href="/hosting/">Hostings</a>
+        <a href="/versus/">Versus</a>
+        <a href="/ofertas/">Ofertas</a>
+        <a href="/plantillas/smp-amigos/">Plantillas</a>
+        <a href="/mi-server/">Mi server</a>
+      </nav>
+      <div class="buscador" id="buscador"><input type="search" placeholder="Buscar hosting o guía…" aria-label="Buscar en la web" autocomplete="off"><kbd>/</kbd><div class="bs-panel" role="listbox" hidden></div></div>
+    </div>
+    <div class="head-tools">
+      <a class="lang-btn" href="/en/minecraft/how-to-set-up-a-server/" hreflang="en" lang="en" aria-label="Read this page in English">EN</a>
+      <button class="tema-btn" type="button" data-claro="Cambiar a modo claro" data-noche="Cambiar a modo noche" aria-label="Cambiar a modo claro"><svg class="i-sol" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4.2"/><path d="M12 2.5v2.2M12 19.3v2.2M4.6 4.6l1.6 1.6M17.8 17.8l1.6 1.6M2.5 12h2.2M19.3 12h2.2M4.6 19.4l1.6-1.6M17.8 6.2l1.6-1.6"/></svg><svg class="i-luna" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 14.2A8 8 0 0 1 9.8 4 8.2 8.2 0 1 0 20 14.2z"/></svg></button>
+      <button class="menu-btn" type="button" aria-expanded="false" aria-controls="menu" data-abrir="Abrir el menú" data-cerrar="Cerrar el menú" aria-label="Abrir el menú"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</header>
+
+<main>
+  <article class="wrap articulo">
+
+    <nav class="miga" aria-label="Dónde estás">
+      <a href="/">Inicio</a> › Guía
+    </nav>
+
+    <h1>Cómo montar un servidor de Minecraft</h1>
+    <p class="sub art-sub">Sin rodeos y sin vender humo. Esto es lo que hago yo cuando monto uno.</p>
+    <p class="art-meta">Lectura de 9 minutos · Actualizada en septiembre de 2026</p>
+
+
+    <nav class="indice" aria-label="Contenido">
+      <div class="indice-tit">Lo que vas a leer</div>
+      <ol>
+        <li><a href="#s0">Primero lo importante: ¿tu PC o alquilado?</a></li>
+        <li><a href="#s1">Paso 1 — Averigua cuánta RAM necesitas</a></li>
+        <li><a href="#s2">Paso 2 — Elige el software (y no, no es vanilla)</a></li>
+        <li><a href="#s3">Paso 3 — Que entren los de consola y móvil (crossplay)</a></li>
+        <li><a href="#s4">Paso 4 — Los ajustes que sí hay que tocar</a></li>
+        <li><a href="#s5">Paso 5 — Plugins: los cuatro que valen la pena</a></li>
+        <li><a href="#s6">Paso 6 — Copias de seguridad y reinicios</a></li>
+        <li><a href="#s7">Los errores que más veo</a></li>
+      </ol>
+    </nav>
+
+      <h2 id="s0">Primero lo importante: ¿tu PC o alquilado?</h2>
+
+        <p>
+          Puedes montarlo en tu propio ordenador y no pagar nada. Funciona, y para
+          jugar una tarde suelta con dos amigos está bien. Pero tiene tres pegas que
+          nadie te cuenta hasta que las sufres:
+        </p>
+        <ul>
+          <li><strong>Tu PC tiene que estar encendido siempre.</strong> Si lo apagas
+              para dormir, tus amigos no juegan. Y si juegas tú en el mismo equipo,
+              el servidor y el juego se pelean por el procesador.</li>
+          <li><strong>Hay que abrir puertos en el router.</strong> Con suerte es un
+              rato; con CG-NAT de tu operadora, directamente no puedes.</li>
+          <li><strong>Tu subida de internet es la que es.</strong> Bajas 600 megas
+              pero subes 40, y lo que importa para un servidor es la subida. Por eso
+              tus amigos van a tirones aunque a ti te vaya perfecto.</li>
+        </ul>
+        <p>
+          Resumen honesto: para probar, tu PC. Para una partida que dure meses y con
+          gente que no vive en tu casa, alquilado. Y si alguien de tu grupo va en
+          consola, alquilar es <em>la única</em> opción.
+        </p>
+      <h2 id="s1">Paso 1 — Averigua cuánta RAM necesitas</h2>
+
+        <p>
+          Es el paso que casi todo el mundo se salta, y luego paga de más o se queda
+          corto. La regla que te van a repetir por ahí —"1 GB por cada 10 jugadores"—
+          <strong>es falsa en cuanto instalas algo</strong>.
+        </p>
+        <p>
+          Lo que de verdad manda: un modpack de 200 mods con 5 amigos pide más RAM
+          que un servidor vanilla con 40 personas. Los mods se cargan en memoria estén
+          jugando dos o veinte.
+        </p>
+        <p class="cta-inline">
+          <a href="/#calculadora">Calcula tus GB exactos aquí</a> — tarda 20 segundos y
+          te dice también lo que cuesta en cada hosting.
+        </p>
+      <h2 id="s2">Paso 2 — Elige el software (y no, no es vanilla)</h2>
+
+        <p>Cuando crees el servidor te van a pedir elegir tipo. Traducido:</p>
+        <ul>
+          <li><strong>Paper</strong> — es lo que quieres el 90 % de las veces. Es
+              Minecraft normal pero <em>mucho</em> más optimizado, admite plugins y
+              arregla fallos que el servidor oficial arrastra. Los jugadores no
+              necesitan instalar nada.</li>
+          <li><strong>Vanilla</strong> — el oficial de Mojang. Va peor con la misma
+              RAM y no admite plugins. No hay razón para elegirlo.</li>
+          <li><strong>Fabric o NeoForge</strong> — solo si vas a jugar con
+              <em>mods</em> de verdad. Ojo: aquí <strong>todos</strong> tenéis que
+              instalar exactamente los mismos mods para poder entrar.</li>
+        </ul>
+        <p>
+          La diferencia clave: <strong>plugins</strong> (Paper) los instalas solo tú
+          en el servidor y nadie más toca nada. <strong>Mods</strong> (Fabric/Forge)
+          los tenéis que instalar todos. Si tu grupo es de los que se quejan de
+          instalar cosas, Paper y a correr.
+        </p>
+      <h2 id="s3">Paso 3 — Que entren los de consola y móvil (crossplay)</h2>
+
+        <p>
+          Aquí está el lío que más preguntas genera. Minecraft son en realidad dos
+          juegos: <strong>Java</strong> (PC) y <strong>Bedrock</strong> (consolas,
+          móvil y Windows 10/11 de la Store). Por defecto no se ven entre ellos.
+        </p>
+        <p>La solución son dos plugins, y funciona de verdad:</p>
+        <ul>
+          <li><strong>Geyser</strong> — hace que un servidor de Java acepte a los de
+              Bedrock traduciendo la conexión al vuelo.</li>
+          <li><strong>Floodgate</strong> — para que además no necesiten cuenta de Java
+              para entrar. Sin esto, tu primo con la Switch tendría que comprarse el
+              juego otra vez.</li>
+        </ul>
+        <p>
+          Los pones en la carpeta <code>plugins</code>, reinicias, y los de consola
+          entran por el <strong>puerto 19132</strong> (el de Bedrock), no por el
+          mismo que los de PC. Ese detalle es el que hace que la gente se rinda
+          pensando que no funciona.
+        </p>
+        <p>
+          Aviso realista: el crossplay va bien pero no es perfecto. Algunas cosas
+          de interfaz y algún plugin muy visual se ven raros en Bedrock. Para jugar
+          juntos, sobra.
+        </p>
+      <h2 id="s4">Paso 4 — Los ajustes que sí hay que tocar</h2>
+
+        <p>
+          El archivo <code>server.properties</code> tiene cincuenta líneas y solo
+          importan cuatro:
+        </p>
+        <ul>
+          <li><strong>view-distance</strong> — la que más RAM come. Viene en 10.
+              Bájala a <strong>8</strong> y ganas rendimiento sin que casi nadie lo
+              note. Subirla a 16 puede dispararte el consumo un 35 %.</li>
+          <li><strong>simulation-distance</strong> — a qué distancia siguen pasando
+              cosas (bichos, cultivos, granjas). Con 6 vas bien.</li>
+          <li><strong>online-mode</strong> — déjalo en <code>true</code>. En
+              <code>false</code> cualquiera puede entrar con el nombre que quiera,
+              incluido el tuyo de administrador.</li>
+          <li><strong>difficulty</strong> — ponlo en <code>normal</code> o
+              <code>hard</code> antes de empezar. Cambiarlo con el mundo ya avanzado
+              descoloca a todo el mundo.</li>
+        </ul>
+      <h2 id="s5">Paso 5 — Plugins: los cuatro que valen la pena</h2>
+
+        <p>
+          La tentación es instalar treinta el primer día. No lo hagas: cada plugin es
+          una cosa más que puede romper el servidor cuando actualices la versión.
+          Con estos cuatro tienes cubierto el 90 %:
+        </p>
+        <ul>
+          <li><strong>EssentialsX</strong> — comandos básicos que deberían venir de
+              serie: <code>/home</code>, <code>/tpa</code>, <code>/spawn</code>,
+              <code>/msg</code>.</li>
+          <li><strong>LuckPerms</strong> — permisos y rangos. En cuanto quieras que
+              alguien sea moderador sin darle acceso a todo, lo necesitas.</li>
+          <li><strong>CoreProtect</strong> — el seguro de vida. Registra quién puso y
+              quitó cada bloque, y deshace destrozos con un comando. El día que
+              alguien queme la base, esto te salva la partida.</li>
+          <li><strong>Chunky</strong> — genera el mapa por adelantado. Sin él, el
+              servidor se atasca cada vez que alguien explora zona nueva.</li>
+        </ul>
+        <p>
+          Y uno que <em>no</em>: cualquier plugin que prometa "optimización mágica" y
+          no esté mantenido. Suelen hacer más daño que bien.
+        </p>
+      <h2 id="s6">Paso 6 — Copias de seguridad y reinicios</h2>
+
+        <p>
+          Esto es lo que separa un servidor que dura un año de uno que muere en tres
+          semanas. Dos cosas, las dos automáticas:
+        </p>
+        <ul>
+          <li><strong>Copia de seguridad diaria.</strong> Cualquier hosting decente lo
+              hace en dos clics. Un mundo corrupto sin copia es la partida entera a la
+              basura, y pasa más de lo que crees.</li>
+          <li><strong>Reinicio automático de madrugada.</strong> Limpia la memoria que
+              se va acumulando y evita que el servidor vaya cada día un poco peor.
+              A las 5 de la mañana no molesta a nadie.</li>
+        </ul>
+      <h2 id="s7">Los errores que más veo</h2>
+
+        <ul>
+          <li><strong>Calcular la RAM por jugadores y olvidar los mods.</strong> El
+              error número uno, con diferencia.</li>
+          <li><strong>Dejar la distancia de renderizado en 16 "para que se vea
+              bien".</strong> El servidor se arrastra y nadie sabe por qué.</li>
+          <li><strong>No poner CoreProtect hasta que pasa algo.</strong> Para entonces
+              ya no sirve: solo registra desde que lo instalas.</li>
+          <li><strong>Empezar con veinte plugins.</strong> Cuando algo falla no tienes
+              ni idea de cuál es.</li>
+          <li><strong>Pagar un plan anual sin haberlo probado.</strong> Coge un mes
+              primero, mete a tu gente y mira cómo va. Luego ya decides.</li>
+        </ul>
+
+    <div class="art-cierre">
+      <h2 id="faq">Dudas frecuentes</h2>
+      <details>
+        <summary>¿Cuánta RAM necesita un servidor de Minecraft para 10 amigos?</summary>
+        <p>En vanilla o con unos pocos plugins, 3 GB van sobrados. Con un modpack grande de 100 a 250 mods, el mismo grupo de 10 se te va a 8 o 12 GB. Los mods pesan más que las personas.</p>
+      </details>
+      <details>
+        <summary>¿Puedo jugar desde PS5 o Switch en un servidor propio?</summary>
+        <p>Sí, si el servidor lleva Geyser y Floodgate. Lo que no puedes es montar el servidor desde la consola: eso tiene que estar en un PC encendido siempre o en un hosting.</p>
+      </details>
+      <details>
+        <summary>¿Es legal montar un servidor de Minecraft?</summary>
+        <p>Sí, siempre que no cobres por el acceso al juego. Mojang permite servidores y hasta vender rangos y cosméticos, pero tiene reglas: no puedes vender ventajas de juego ni cajas de botín con dinero real.</p>
+      </details>
+      <details>
+        <summary>¿Cuánto cuesta tener un servidor de Minecraft al mes?</summary>
+        <p>Depende de los GB. Un servidor pequeño para amigos sale por 3-6 € al mes. Uno con modpack grande o comunidad, entre 7 y 15 €. Por encima de eso te están cobrando de más salvo que sea algo muy gordo.</p>
+      </details>
+    </div>
+
+    <div class="art-cta">
+      <h3>¿Y cuántos GB necesitas tú?</h3>
+      <p>
+        Es lo primero que hay que decidir y lo que marca el precio. La calculadora te
+        lo dice en 20 segundos, sin registro, y te enseña lo que cuesta en cada
+        hosting.
+      </p>
+      <a class="cta" href="/#calculadora">Calcular mi servidor</a>
+    </div>
+
+  </article>
+</main>
+
+<footer class="site-foot">
+  <div class="wrap">
+    <div class="disclosure"><strong>Aviso de afiliación:</strong> gano comisión si contratas Godlike.host por los enlaces de esta web, sin coste extra para ti. Con el resto de hostings no tengo ningún acuerdo. Eso no cambia sus precios ni su posición en las tablas: el más barato sale primero, sea quien sea.</div>
+    <nav class="pie-links" aria-label="Legal">
+      <div>
+        <span>Minecraft</span>
+        <a href="/">Calculadora de RAM</a>
+        <a href="/minecraft/mejor-hosting/">Mejor hosting de Minecraft</a>
+        <a href="/minecraft/como-montar-un-servidor/">Cómo montar un servidor</a>
+      </div>
+      <div>
+        <span>Comparar</span>
+        <a href="/hosting/">Todos los hostings</a>
+        <a href="/versus/">Versus</a>
+        <a href="/ofertas/">Ofertas y cupones</a>
+      </div>
+      <div>
+        <span>Doublelag</span>
+        <a href="https://www.youtube.com/@Doublelag" rel="me noopener">Canal de YouTube</a>
+        <a href="/mi-server/">Jugar en ChorizoSMP</a>
+      </div>
+      <div>
+        <span>Legal</span>
+        <a href="/privacidad/">Privacidad</a>
+        <a href="/cookies/">Cookies</a>
+        <a href="/aviso-legal/">Aviso legal</a>
+        <a href="mailto:doublelag.manager@gmail.com">Escríbeme</a>
+      </div>
+    </nav>
+    <div class="pie-base">
+      <p>Precios comprobados a mano. Última revisión: 20 de septiembre de 2026.</p>
+      <p>&copy; 2026 MontaTuServer · Hecho por <a href="https://www.youtube.com/@Doublelag" rel="me noopener">Doublelag</a></p>
+    </div>
+  </div>
+</footer>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "¿Cuánta RAM necesita un servidor de Minecraft para 10 amigos?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "En vanilla o con unos pocos plugins, 3 GB van sobrados. Con un modpack grande de 100 a 250 mods, el mismo grupo de 10 se te va a 8 o 12 GB. Los mods pesan más que las personas."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Puedo jugar desde PS5 o Switch en un servidor propio?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Sí, si el servidor lleva Geyser y Floodgate. Lo que no puedes es montar el servidor desde la consola: eso tiene que estar en un PC encendido siempre o en un hosting."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Es legal montar un servidor de Minecraft?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Sí, siempre que no cobres por el acceso al juego. Mojang permite servidores y hasta vender rangos y cosméticos, pero tiene reglas: no puedes vender ventajas de juego ni cajas de botín con dinero real."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Cuánto cuesta tener un servidor de Minecraft al mes?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Depende de los GB. Un servidor pequeño para amigos sale por 3-6 € al mes. Uno con modpack grande o comunidad, entre 7 y 15 €. Por encima de eso te están cobrando de más salvo que sea algo muy gordo."
+      }
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "HowTo",
+  "name": "Cómo montar un servidor de Minecraft en 2026 (guía paso a paso)",
+  "description": "Guía real para montar un servidor de Minecraft: cuánta RAM necesitas, qué software elegir, cómo meter a los de consola con crossplay y los errores que arruinan un servidor.",
+  "totalTime": "PT9M",
+  "step": [
+    {
+      "@type": "HowToStep",
+      "name": "Averigua cuánta RAM necesitas"
+    },
+    {
+      "@type": "HowToStep",
+      "name": "Elige el software (y no, no es vanilla)"
+    },
+    {
+      "@type": "HowToStep",
+      "name": "Que entren los de consola y móvil (crossplay)"
+    },
+    {
+      "@type": "HowToStep",
+      "name": "Los ajustes que sí hay que tocar"
+    },
+    {
+      "@type": "HowToStep",
+      "name": "Plugins: los cuatro que valen la pena"
+    },
+    {
+      "@type": "HowToStep",
+      "name": "Copias de seguridad y reinicios"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Inicio",
+      "item": "https://montatuserver.com/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Cómo montar un servidor de Minecraft"
+    }
+  ]
+}
+</script>
+
+<script src="/buscador_ui.js?v=8068ecc9" data-indice="/indice.js?v=aba7d97f" defer></script>
+
+</body>
+</html>

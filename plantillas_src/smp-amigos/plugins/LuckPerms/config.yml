@@ -1,0 +1,4 @@
+# Plantilla SMP de amigos (montatuserver.com)
+# Los permisos se guardan en archivos de texto (yaml-storage/) en vez de en
+# una base de datos: así la plantilla trae ya hechos los permisos de todos.
+storage-method: yaml

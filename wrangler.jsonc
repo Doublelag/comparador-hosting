@@ -1,0 +1,12 @@
+// Cloudflare (Workers con archivos estáticos). SOLO se sube dist/:
+// nunca cambies "directory" a "." o se publicaría LEEME.md, los .py, etc.
+// Publicar:  python build.py && python publicar.py && wrangler deploy
+{
+  "name": "montatuserver",
+  "compatibility_date": "2026-09-21",
+  "assets": {
+    "directory": "./dist",
+    "not_found_handling": "404-page",
+    "html_handling": "auto-trailing-slash"
+  }
+}

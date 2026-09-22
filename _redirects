@@ -1,0 +1,49 @@
+# Cloudflare Pages (y Netlify). Desde el 17-sep-2026 la web es solo de Minecraft.
+# Las URLs de los otros juegos mandan a la portada con un 301 (permanente),
+# para no perder a quien llegue desde Google, un vídeo o un enlace viejo.
+# La consulta (?p=10&m=plugins…) viaja sola con la redirección.
+
+/minecraft                  /            301
+/minecraft/                 /            301
+/valheim/*                  /            301
+/palworld/*                 /            301
+/rust/*                     /            301
+/ark-survival-ascended/*    /            301
+/project-zomboid/*          /            301
+/7-days-to-die/*            /            301
+/enshrouded/*               /            301
+/satisfactory/*             /            301
+/v-rising/*                 /            301
+/terraria/*                 /            301
+# OJO: en Cloudflare Pages una redirección MANDA sobre una página que exista
+# (en Netlify no). Nunca pongas aquí una URL que tenga página propia: la
+# dejarías inaccesible. Por eso se quitó /hosting/gportal/ al volver GPORTAL.
+
+# La seccion paso a llamarse VERSUS el 23-sep-2026: lo viejo manda a lo nuevo
+/comparar/*                           /versus/:splat                       301
+/en/compare/*                         /en/versus/:splat                    301
+
+# Cara a cara de DatHost retirados el 21-sep-2026: cada uno manda a su
+# equivalente con Godlike, para no perder a quien llegue desde Google.
+/versus/dathost-vs-shockbyte/*      /versus/godlike-vs-shockbyte/       301
+/versus/dathost-vs-bisecthosting/*  /versus/godlike-vs-bisecthosting/  301
+/versus/dathost-vs-apex-hosting/*   /versus/godlike-vs-apex-hosting/   301
+/versus/dathost-vs-pebblehost/*     /versus/godlike-vs-pebblehost/     301
+/versus/realms-vs-dathost/*         /versus/godlike-vs-realms/         301
+/versus/dathost-vs-hostinger/*      /versus/godlike-vs-hostinger/      301
+/versus/dathost-vs-holyhosting/*    /versus/                           301
+/versus/exaroton-vs-dathost/*       /versus/                           301
+/hosting/exaroton/*                   /hosting/                            301
+/hosting/aternos/*                    /hosting/                            301
+/hosting/minehut/*                    /hosting/                            301
+
+# Plantillas: de momento solo hay una, así que la carpeta lleva directa a ella
+/plantillas                /plantillas/smp-amigos/          302
+/plantillas/               /plantillas/smp-amigos/          302
+/en/templates              /en/templates/friends-smp/       302
+/en/templates/             /en/templates/friends-smp/       302
+
+# La pagina del ping se retiro el 23-sep-2026: solo habia 3 hostings medidos
+# de 29, asi que prometia mas de lo que daba.
+/ping-desde-espana/*        /hosting/        301
+/en/ping-from-spain/*       /en/hosting/     301

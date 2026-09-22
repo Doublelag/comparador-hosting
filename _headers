@@ -1,0 +1,50 @@
+# Cabeceras para Cloudflare Pages (también valen en Netlify).
+#
+# Los css y js van con ?v=<huella> en todas las páginas (lo pone build.py), así
+# que se pueden cachear un año: mientras no cambien, la visita repetida no pide
+# nada, y en cuanto cambian, cambia la huella y se pide sola.
+#
+# Van uno a uno y no con /*.css porque Cloudflare no admite comodines a mitad
+# de nombre. Si añades un .js o .css nuevo, añádelo aquí.
+#
+# El HTML no se toca: Cloudflare ya lo sirve sin caché por defecto, que es lo
+# que queremos (ahí viven los precios).
+
+/styles.css
+  Cache-Control: public, max-age=31536000, immutable
+
+/app.js
+  Cache-Control: public, max-age=31536000, immutable
+
+/hosts.js
+  Cache-Control: public, max-age=31536000, immutable
+
+/indice.js
+  Cache-Control: public, max-age=31536000, immutable
+
+/buscador_ui.js
+  Cache-Control: public, max-age=31536000, immutable
+
+/tabla_ui.js
+  Cache-Control: public, max-age=31536000, immutable
+
+/promo_ui.js
+  Cache-Control: public, max-age=31536000, immutable
+
+/filtros_ui.js
+  Cache-Control: public, max-age=31536000, immutable
+
+/plantilla_ui.js
+  Cache-Control: public, max-age=31536000, immutable
+
+/favicon.ico
+  Cache-Control: public, max-age=2592000
+
+/apple-touch-icon.png
+  Cache-Control: public, max-age=2592000
+
+/og-image.jpg
+  Cache-Control: public, max-age=2592000
+
+/chorizosmp.webp
+  Cache-Control: public, max-age=2592000

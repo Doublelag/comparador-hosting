@@ -1,0 +1,8 @@
+# Plantilla SMP de amigos (montatuserver.com)
+# Solo van los ajustes que cambian; lo demás, EssentialsX lo pone por defecto.
+locale: es
+sethome-multiple:
+  default: 3
+# 3 segundos quieto antes de teletransportarte (evita escapar de peleas)
+teleport-delay: 3
+teleport-cooldown: 10

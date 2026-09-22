@@ -1,0 +1,19 @@
+# Generado al construir el sitio
+dist/
+__pycache__/
+*.pyc
+
+# Estado local de Cloudflare / wrangler
+.wrangler/
+.dev.vars
+.dev.vars.*
+
+# Entornos y secretos
+.env
+.env.*
+!.env.example
+node_modules/
+
+# Sistema
+Thumbs.db
+.DS_Store

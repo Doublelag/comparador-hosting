@@ -1,0 +1,524 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<script>try{if(localStorage.getItem("tema")==="claro")document.documentElement.dataset.theme="claro"}catch(e){}</script>
+<link rel="alternate" hreflang="es" href="https://montatuserver.com/">
+<link rel="alternate" hreflang="en" href="https://montatuserver.com/en/">
+<link rel="alternate" hreflang="x-default" href="https://montatuserver.com/">
+
+<title>¿Cuánta RAM necesita tu servidor de Minecraft? Calculadora y hostings</title>
+<meta name="description" content="Calcula los GB que necesita tu servidor de Minecraft según jugadores, plugins y modpack, y compara 23 hostings con precios comprobados a mano. Gratis y sin registro.">
+<link rel="canonical" href="https://montatuserver.com/">
+
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="MontaTuServer">
+<meta property="og:url" content="https://montatuserver.com/">
+<meta property="og:title" content="¿Cuánta RAM necesita tu servidor de Minecraft?">
+<meta property="og:description" content="Calcula los GB que necesitas y compara lo que cuestan en 23 hostings de Minecraft, con precios comprobados a mano.">
+<meta property="og:locale" content="es_ES">
+<meta name="twitter:card" content="summary_large_image">
+<meta property="og:image" content="https://montatuserver.com/og-image.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><path d='M16 2.5 28.5 9.3v13.4L16 29.5 3.5 22.7V9.3z' fill='%235BC0BE'/><path d='M16 2.5 28.5 9.3 16 16.1 3.5 9.3z' fill='%236FFFE9'/><path d='M16 16.1v13.4L3.5 22.7V9.3z' fill='%233A506B'/></svg>">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@700&family=Inter:wght@400..800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/styles.css?v=07db9240">
+</head>
+<body>
+
+<header class="site-head">
+  <div class="wrap">
+    <a class="brand" href="/"><svg class="logo-mark" viewBox="0 0 32 32" aria-hidden="true"><defs><linearGradient id="lm" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#6FFFE9"/><stop offset="1" stop-color="#5BC0BE"/></linearGradient></defs><path d="M16 2.5 28.5 9.3v13.4L16 29.5 3.5 22.7V9.3z" fill="url(#lm)"/><path d="M16 2.5 28.5 9.3 16 16.1 3.5 9.3z" fill="#fff" fill-opacity=".38"/><path d="M16 16.1v13.4L3.5 22.7V9.3z" fill="#0B132B" fill-opacity=".22"/><path d="M9.8 12.7 16 16.1l6.2-3.4" fill="none" stroke="#0B132B" stroke-opacity=".35" stroke-width="1.1"/></svg><span>Monta<b>TuServer</b></span></a>
+    <div class="menu" id="menu">
+      <nav class="nav" aria-label="Menú">
+        <a href="/hosting/">Hostings</a>
+        <a href="/versus/">Versus</a>
+        <a href="/ofertas/">Ofertas</a>
+        <a href="/plantillas/smp-amigos/">Plantillas</a>
+        <a href="/mi-server/">Mi server</a>
+      </nav>
+      <div class="buscador" id="buscador"><input type="search" placeholder="Buscar hosting o guía…" aria-label="Buscar en la web" autocomplete="off"><kbd>/</kbd><div class="bs-panel" role="listbox" hidden></div></div>
+    </div>
+    <div class="head-tools">
+      <a class="lang-btn" href="/en/" hreflang="en" lang="en" aria-label="Read this page in English">EN</a>
+      <button class="tema-btn" type="button" data-claro="Cambiar a modo claro" data-noche="Cambiar a modo noche" aria-label="Cambiar a modo claro"><svg class="i-sol" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4.2"/><path d="M12 2.5v2.2M12 19.3v2.2M4.6 4.6l1.6 1.6M17.8 17.8l1.6 1.6M2.5 12h2.2M19.3 12h2.2M4.6 19.4l1.6-1.6M17.8 6.2l1.6-1.6"/></svg><svg class="i-luna" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 14.2A8 8 0 0 1 9.8 4 8.2 8.2 0 1 0 20 14.2z"/></svg></button>
+      <button class="menu-btn" type="button" aria-expanded="false" aria-controls="menu" data-abrir="Abrir el menú" data-cerrar="Cerrar el menú" aria-label="Abrir el menú"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</header>
+
+<main>
+
+<!-- ================= HERO + CALCULADORA =================
+     A dos columnas: el mensaje a la izquierda y un resultado REAL a la derecha.
+     El objetivo es que se vea un precio antes de tocar nada — quien entra quiere
+     saber cuánto cuesta, no leer una promesa. La tarjeta la rellena app.js con
+     el mismo motor que la calculadora, así nunca dice un precio distinto. -->
+<div class="wrap">
+  <div class="hero">
+    <div class="hero-txt">
+      <a class="anuncio" href="/hosting/godlike/">
+        <span class="anuncio-tag">−75 %</span>
+        <span>Godlike.host: el mayor descuento de la comparativa</span>
+        <span class="anuncio-flecha" aria-hidden="true">→</span>
+      </a>
+      <h1>¿Cuánta <em>RAM</em> necesita tu servidor de Minecraft?</h1>
+      <p class="sub">
+        Dime cuántos sois y qué lleváis instalado. Te digo los GB exactos que
+        necesitas y lo que te va a costar en cada hosting. Sin comerte la cabeza.
+      </p>
+      <div class="hero-cta">
+        <a class="cta" href="#calculadora">Calcular mi servidor →</a>
+        <a class="cta-ghost" href="/hosting/">Ver los hostings</a>
+      </div>
+    </div>
+
+    <aside class="hero-demo" id="heroDemo" aria-label="Ejemplo de resultado">
+      <div class="hd-top">
+        <span class="hd-tag">Ejemplo real</span>
+        <span class="hd-caso">30 jugadores · modpack grande</span>
+      </div>
+      <div class="hd-ram"><span id="hdRam">—</span><small>GB de RAM</small></div>
+      <ul class="hd-lista" id="hdLista"></ul>
+      <p class="hd-pie" id="hdPie"></p>
+    </aside>
+  </div>
+</div>
+
+<div class="wrap">
+  <ul class="datos-bar" aria-label="La web en cifras">
+    <li><b data-n-hosts>23</b><span>hostings comparados</span></li>
+    <li><b>100 %</b><span>precios comprobados a mano</span></li>
+    <li><b>0</b><span>cookies y 0 registros</span></li>
+    <li><b>ES · EN</b><span>en tu idioma</span></li>
+  </ul>
+</div>
+
+<div class="wrap" id="calculadora">
+  <div class="calc">
+
+    <div class="step">
+      <div class="step-label"><span class="step-num">1</span> ¿Cuántos vais a ser?</div>
+      <div class="slider-row">
+        <input type="range" id="players" min="1" max="10" value="6"
+               aria-label="Número de jugadores">
+        <div class="pcount"><span id="pnum">6</span><small>jugadores</small></div>
+      </div>
+    </div>
+
+    <div class="step">
+      <div class="step-label"><span class="step-num">2</span> <span id="modLabel">¿Mods o plugins?</span></div>
+      <div class="seg" id="mods"></div>
+    </div>
+
+    <div class="step" id="extraStep" hidden>
+      <div class="step-label"><span class="step-num">3</span> <span id="extraLabel"></span></div>
+      <div class="seg" id="extra"></div>
+    </div>
+
+    <div class="step">
+      <div class="step-label">
+        <span class="step-num">4</span> ¿Cuánto tiempo lo vais a tener?
+      </div>
+      <div class="seg" id="tiempo"></div>
+    </div>
+
+    <!-- El presupuesto no cambia los GB que necesitas, pero sí cuál de las
+         opciones te sirve. Es lo primero que mira la gente y no lo preguntaba
+         nadie de la competencia salvo HostMyGame. -->
+    <div class="step">
+      <div class="step-label">
+        <span class="step-num">5</span> ¿Cuánto quieres gastar al mes?
+      </div>
+      <div class="seg" id="presupuesto"></div>
+    </div>
+
+  </div>
+
+  <!-- ================= RESULTADO ================= -->
+  <div class="result" aria-live="polite">
+    <div class="res-top">
+      <div class="res-ram" id="resRam">8<span>GB de RAM</span></div>
+      <div class="res-for" id="resFor"></div>
+    </div>
+
+    <div class="chips" id="resChips"></div>
+
+    <button class="copiar" id="copiar" type="button">
+      🔗 Copiar este resultado para mandarlo al grupo
+    </button>
+
+    <div class="verdict" id="verdict"></div>
+
+    <p class="res-note" id="resCpu"></p>
+
+    <h3 class="barras-tit">Lo que te cobra cada hosting por esos GB</h3>
+    <div class="barras" id="barras"></div>
+    <p class="tbl-note" id="barrasNota"></p>
+
+    <!-- «Vale, ¿pero cuál pillo?»: la respuesta, con el coste real del tiempo
+         que haya elegido. La rellena app.js (renderReco). -->
+    <div class="reco" id="reco" hidden></div>
+
+    <details class="detalle-tabla">
+      <summary>Ver el detalle y la letra pequeña de cada uno</summary>
+      <div class="table-wrap">
+        <table>
+          <caption class="sr-only">Comparativa de precios de hosting de Minecraft</caption>
+          <thead>
+            <tr><th>Hosting</th><th>Lo que te dan</th><th>Precio</th><th>12 meses</th><th>Letra pequeña</th></tr>
+          </thead>
+          <tbody id="cmpBody"></tbody>
+        </table>
+      </div>
+      <p class="tbl-note" id="cmpNote"></p>
+    </details>
+
+    <div class="precio-final" id="precioFinal" hidden></div>
+
+    <!-- Botón del partner. Oculto de salida: app.js solo lo enseña si hay un
+         acuerdo activo en hosts.js. El rel=sponsored
+         lo pone app.js junto con el enlace, nunca antes. -->
+    <div class="cta-row" id="ctaWrap" hidden>
+      <a class="cta" id="ctaMain" href="#" target="_blank">Montar mi servidor</a>
+      <p class="cta-fine"><!--partner:boton-->Enlace de afiliado: si contratas, me llevo una comisión y a ti no te cuesta ni un céntimo más.<!--/partner:boton--></p>
+    </div>
+  </div>
+</div>
+
+<!-- ================= POR QUÉ LA RAM ================= -->
+<section id="ram">
+  <div class="wrap">
+    <span class="sec-eyebrow">Lo básico</span>
+    <h2>Por qué la RAM es lo único que te van a vender</h2>
+    <p class="sec-sub">
+      Lo que de verdad decide los gigas en Minecraft, y no son los jugadores.
+    </p>
+
+    <div class="cards">
+      <div class="card">
+        <h3>El modpack pesa más que la gente</h3>
+        <p>
+          Casi todo el mundo calcula por jugadores y se olvida del resto. Pero
+          <strong>un modpack de 200 mods con 5 amigos pide más RAM que un vanilla con
+          40 personas</strong>. Cada mod carga sus bloques, sus entidades y sus recetas
+          en memoria, estéis dos o veinte.
+        </p>
+      </div>
+      <div class="card">
+        <h3>La distancia de renderizado</h3>
+        <p>
+          Cada punto de <code>view-distance</code> carga un anillo más de chunks
+          <em>por cada jugador</em>. Pasar de 10 a 16 puede subirte el consumo un 35 %
+          sin tocar nada más. Si vas justo, bájala a 8: se nota más en el rendimiento
+          que en lo que ves.
+        </p>
+      </div>
+      <div class="card">
+        <h3>El procesador importa igual</h3>
+        <p>
+          Minecraft tira casi todo de <strong>un solo núcleo</strong>, así que uno rápido
+          vale más que ocho flojos. De poco sirve mucha RAM con un procesador lento.
+          Mira qué CPU te ponen, no solo los gigas.
+        </p>
+      </div>
+      <div class="card">
+        <h3>Java o Bedrock</h3>
+        <p>
+          Bedrock (consolas y móvil) es bastante más ligero. Si tu grupo mezcla PC y
+          consolas, lo normal es montar Java con <strong>Geyser y Floodgate</strong> para
+          que entréis todos: añade algo de consumo, pero es la forma de estar en el mismo mundo.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- La explicación de los modelos de precio y de las trampas vivía aquí
+     duplicada. Ahora vive donde toca: en /hosting/ y en /ofertas/. Aquí solo
+     quedan los enlaces, que es lo que hace falta. -->
+
+<!-- ================= PASOS =================
+     HostMyGame tiene un "crea tu servidor en 5 minutos" numerado y funciona:
+     baja el miedo de quien nunca ha montado uno. Aquí además cada paso enlaza
+     a donde resolvemos ese paso concreto. -->
+<section id="pasos" class="sec-alt">
+  <div class="wrap">
+    <span class="sec-eyebrow">Paso a paso</span>
+    <h2>Cómo montar tu servidor, de principio a fin</h2>
+    <p class="sec-sub">
+      Cinco pasos. El primero es el que casi todo el mundo se salta, y es el que
+      decide lo que vas a pagar el resto del año.
+    </p>
+
+    <ol class="pasos">
+      <li>
+        <h3>Calcula cuánta RAM necesitas</h3>
+        <p>
+          Antes de mirar precios. Contratar a ojo es cómo se paga de más o cómo
+          se acaba con un servidor que va a tirones.
+        </p>
+        <a href="#calculadora">Ir a la calculadora →</a>
+      </li>
+      <li>
+        <h3>Compara lo que cuesta esa RAM</h3>
+        <p>
+          El mismo servidor puede costar seis veces más en un hosting que en
+          otro. Y el más caro no es el mejor.
+        </p>
+        <a href="/minecraft/mejor-hosting/">Ver la comparativa →</a>
+      </li>
+      <li>
+        <h3>Mira la letra pequeña antes de pagar</h3>
+        <p>
+          Descuentos que solo valen el primer mes, precios que exigen pagar dos
+          años, planes que se apagan solos. Están todos fichados.
+        </p>
+        <a href="/ofertas/">Ver las ofertas y sus trampas →</a>
+      </li>
+      <li>
+        <h3>Móntalo y configúralo</h3>
+        <p>
+          Qué software elegir, cómo meter a los de consola con crossplay y los
+          cuatro ajustes que de verdad importan.
+        </p>
+        <a href="/minecraft/como-montar-un-servidor/">Guía paso a paso →</a>
+      </li>
+      <li>
+        <h3>Copias de seguridad y reinicios</h3>
+        <p>
+          Lo que separa un servidor que dura un año de uno que muere en tres
+          semanas. Los dos automáticos, y se activan en dos clics.
+        </p>
+        <a href="/minecraft/como-montar-un-servidor/#s6">Cómo dejarlo hecho →</a>
+      </li>
+    </ol>
+  </div>
+</section>
+
+<!-- ================= POR QUÉ FIARTE =================
+     Señales de que detrás hay alguien real. Google castiga las webs de
+     afiliados anónimas y es donde ganamos a las granjas de contenido. -->
+<section id="quien" class="sec-alt">
+  <div class="wrap">
+    <span class="sec-eyebrow">Sobre la web</span>
+    <h2>Quién hay detrás</h2>
+
+    <div class="cards">
+      <div class="card">
+        <h3>Quién escribe esto</h3>
+        <p>
+          Soy <a href="https://www.youtube.com/@Doublelag">Doublelag</a>, llevo un canal de
+          Minecraft con más de 200.000 suscriptores y <strong>administro mi propio servidor
+          en producción</strong>, con crossplay, plugins y gente dentro. Los números de esta
+          web no los he copiado de otra: son los que uso yo.
+        </p>
+      </div>
+      <div class="card">
+        <h3>Qué gano yo</h3>
+        <p>
+          <!--partner:quegano-->Comisión si contratas Godlike.host por mis enlaces, sin coste extra para ti. Por eso la calculadora <strong>te dice primero el más barato aunque no sea él</strong>, y en las tablas sale en el puesto que le toca por precio.<!--/partner:quegano-->
+        </p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ================= CHORIZOSMP =================
+     El servidor de Doublelag. La IP sale de sitio.py (la rellena build.py). -->
+<section id="mi-server">
+  <div class="wrap">
+    <div class="server-teaser">
+      <img src="/chorizosmp.webp" width="96" height="96" alt="Logo de ChorizoSMP" loading="lazy">
+      <div>
+        <span class="sec-eyebrow">Mi servidor</span>
+        <h2>¿Quieres jugar en mi server?</h2>
+        <p>ChorizoSMP: semi-anarquía en español, con economía, robos, raideos y crossplay
+        entre Java y Bedrock. Entra, empieza con 8 filetes y búscate la vida.</p>
+        <div class="acciones">
+          <code class="ip-val"><!--server:ip-->chorizosmp.datho.st<!--/server:ip--></code>
+          <button class="cta-ghost" type="button" data-copiar-ip data-ok="¡Copiada!">Copiar IP</button>
+          <a class="cta" href="/mi-server/">Cómo entrar →</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= FAQ ================= -->
+<section id="faq">
+  <div class="wrap">
+    <span class="sec-eyebrow">Preguntas</span>
+    <h2>Dudas que le entran a todo el mundo</h2>
+    <p class="sec-sub">Las que más me preguntan por comentarios y por Discord.</p>
+
+    <details>
+      <summary>¿Puedo montar el servidor en mi propio PC y ahorrarme esto?</summary>
+      <p>
+        Puedes, pero tiene tres pegas: tu PC tiene que estar encendido siempre (si lo apagas,
+        tus amigos no juegan), tienes que abrir puertos en el router, y tu subida de internet
+        suele ser mucho peor que la de un centro de datos, así que los demás van a ir a tirones.
+        Para jugar una tarde suelta vale; para una partida seria, no.
+      </p>
+    </details>
+
+    <details>
+      <summary>Estoy en PS5, Xbox o Switch. ¿Puedo montar servidor?</summary>
+      <p>
+        Tú solo, no: las consolas no permiten hacer de servidor dedicado ni abrir puertos.
+        Si tu grupo está mezclado entre PC y consolas y queréis jugar juntos en el mismo
+        mundo con crossplay, alquilar un servidor es literalmente la única opción.
+        En Minecraft se hace montando Java con Geyser y Floodgate, y así entran también los de Bedrock.
+      </p>
+    </details>
+
+    <details>
+      <summary>¿Y si me quedo corto de RAM?</summary>
+      <p>
+        Lo notas enseguida: tirones al moverte, bloques que tardan en romperse, bichos que
+        se teletransportan y, en el peor caso, el servidor se reinicia solo. En un hosting
+        se arregla subiendo de plan en dos clics, pero es mejor calcularlo antes y dejarse
+        algo de margen: la RAM que necesitas sube con el tiempo, no baja.
+      </p>
+    </details>
+
+    <details>
+      <summary>¿Me sirve de algo pagar más RAM de la que necesito?</summary>
+      <p>
+        Poco. Pasado el punto en que el juego va fino, más RAM no da más rendimiento — ahí
+        lo que manda es el procesador. Lo útil de que te sobre RAM es el margen: poder meter
+        más mods, más gente o dejar que la partida crezca sin tener que cambiar de plan.
+      </p>
+    </details>
+  </div>
+</section>
+
+</main>
+
+<footer class="site-foot">
+  <div class="wrap">
+    <div class="disclosure"><strong>Aviso de afiliación:</strong> gano comisión si contratas Godlike.host por los enlaces de esta web, sin coste extra para ti. Con el resto de hostings no tengo ningún acuerdo. Eso no cambia sus precios ni su posición en las tablas: el más barato sale primero, sea quien sea.</div>
+    <nav class="pie-links" aria-label="Legal">
+      <div>
+        <span>Minecraft</span>
+        <a href="/">Calculadora de RAM</a>
+        <a href="/minecraft/mejor-hosting/">Mejor hosting de Minecraft</a>
+        <a href="/minecraft/como-montar-un-servidor/">Cómo montar un servidor</a>
+      </div>
+      <div>
+        <span>Comparar</span>
+        <a href="/hosting/">Todos los hostings</a>
+        <a href="/versus/">Versus</a>
+        <a href="/ofertas/">Ofertas y cupones</a>
+      </div>
+      <div>
+        <span>Doublelag</span>
+        <a href="https://www.youtube.com/@Doublelag" rel="me noopener">Canal de YouTube</a>
+        <a href="/mi-server/">Jugar en ChorizoSMP</a>
+      </div>
+      <div>
+        <span>Legal</span>
+        <a href="/privacidad/">Privacidad</a>
+        <a href="/cookies/">Cookies</a>
+        <a href="/aviso-legal/">Aviso legal</a>
+        <a href="mailto:doublelag.manager@gmail.com">Escríbeme</a>
+      </div>
+    </nav>
+    <div class="pie-base">
+      <p>Precios comprobados a mano. Última revisión: 20 de septiembre de 2026.</p>
+      <p>&copy; 2026 MontaTuServer · Hecho por <a href="https://www.youtube.com/@Doublelag" rel="me noopener">Doublelag</a></p>
+    </div>
+  </div>
+</footer>
+
+<script src="/hosts.js?v=272615e5"></script>
+<script src="/app.js?v=d3b2011e"></script>
+
+<!-- ANALÍTICA — descomenta cuando tengas el token.
+     Cloudflare Web Analytics: gratis, sin cookies y por tanto SIN banner de
+     cookies (Google Analytics te obligaría a ponerlo). Como ya despliegas en
+     Cloudflare Pages, lo tienes en el mismo panel:
+       Analytics & Logs → Web Analytics → Add a site → copia el token
+     Pégalo abajo, quita los comentarios y vuelve a ejecutar `python build.py`
+     para que entre en todas las páginas.
+
+     Lo necesitas para saber qué busca la gente: eso te dice qué vídeo
+     grabar y qué guía escribir, que es medio negocio.
+<script defer src="https://static.cloudflareinsights.com/beacon.min.js"
+        data-cf-beacon='{"token": "TU_TOKEN_AQUI"}'></script>
+-->
+
+<!-- Quién firma la web. Ayuda a que Google no la meta en el saco de las
+     webs de afiliados anónimas, que es donde está castigando más. -->
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"WebSite",
+  "name":"MontaTuServer",
+  "url":"https://montatuserver.com/",
+  "inLanguage":"es-ES",
+  "description":"Calculadora de RAM para servidores de Minecraft y comparativa de precios de hosting.",
+  "author":{
+    "@type":"Person",
+    "name":"Doublelag",
+    "url":"https://www.youtube.com/@Doublelag",
+    "description":"Creador de contenido de Minecraft y administrador de servidores de Minecraft."
+  }
+}
+</script>
+
+<!-- Rich results de Google para las preguntas frecuentes -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "¿Puedo montar el servidor en mi propio PC y ahorrarme esto?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Puedes, pero tiene tres pegas: tu PC tiene que estar encendido siempre (si lo apagas, tus amigos no juegan), tienes que abrir puertos en el router, y tu subida de internet suele ser mucho peor que la de un centro de datos, así que los demás van a ir a tirones. Para jugar una tarde suelta vale; para una partida seria, no."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Estoy en PS5, Xbox o Switch. ¿Puedo montar servidor?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Tú solo, no: las consolas no permiten hacer de servidor dedicado ni abrir puertos. Si tu grupo está mezclado entre PC y consolas y queréis jugar juntos en el mismo mundo con crossplay, alquilar un servidor es literalmente la única opción. En Minecraft se hace montando Java con Geyser y Floodgate, y así entran también los de Bedrock."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Y si me quedo corto de RAM?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Lo notas enseguida: tirones al moverte, bloques que tardan en romperse, bichos que se teletransportan y, en el peor caso, el servidor se reinicia solo. En un hosting se arregla subiendo de plan en dos clics, pero es mejor calcularlo antes y dejarse algo de margen: la RAM que necesitas sube con el tiempo, no baja."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Me sirve de algo pagar más RAM de la que necesito?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Poco. Pasado el punto en que el juego va fino, más RAM no da más rendimiento — ahí lo que manda es el procesador. Lo útil de que te sobre RAM es el margen: poder meter más mods, más gente o dejar que la partida crezca sin tener que cambiar de plan."
+      }
+    }
+  ]
+}
+</script>
+
+<script src="/buscador_ui.js?v=8068ecc9" data-indice="/indice.js?v=aba7d97f" defer></script>
+<!--partner:promoscript--><!--/partner:promoscript-->
+
+</body>
+</html>

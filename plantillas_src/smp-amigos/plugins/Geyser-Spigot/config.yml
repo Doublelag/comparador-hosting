@@ -1,0 +1,12 @@
+# Plantilla SMP de amigos (montatuserver.com)
+# Solo van los ajustes que cambian; Geyser rellena el resto solo.
+bedrock:
+  # Los de Bedrock entran por el MISMO puerto que los de Java.
+  # Es lo que piden casi todos los hostings, que solo te dan un puerto.
+  clone-remote-port: true
+java:
+  # Los de Bedrock entran sin tener cuenta de Java (gracias a Floodgate)
+  auth-type: floodgate
+motd:
+  passthrough-motd: true
+default-locale: es_es

@@ -1,0 +1,400 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+
+<title>How much RAM does your Minecraft server need? Calculator and hosts</title>
+<meta name="description" content="Work out how many GB your Minecraft server needs based on players, plugins and modpack, and compare 23 hosts with prices checked by hand. Free, no sign-up.">
+<link rel="canonical" href="https://montatuserver.com/en/">
+
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="MontaTuServer">
+<meta property="og:url" content="https://montatuserver.com/en/">
+<meta property="og:title" content="How much RAM does your Minecraft server need?">
+<meta property="og:description" content="Work out the GB you need and compare what they cost on 24 Minecraft hosts, with prices checked by hand.">
+<meta property="og:locale" content="en_GB">
+<meta name="twitter:card" content="summary_large_image">
+<meta property="og:image" content="https://montatuserver.com/og-image.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><path d='M16 2.5 28.5 9.3v13.4L16 29.5 3.5 22.7V9.3z' fill='%235BC0BE'/><path d='M16 2.5 28.5 9.3 16 16.1 3.5 9.3z' fill='%236FFFE9'/><path d='M16 16.1v13.4L3.5 22.7V9.3z' fill='%233A506B'/></svg>">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@700&family=Inter:wght@400..800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+
+<header class="site-head"></header>
+
+<main>
+
+<!-- English home. Same layout as index.html: keep them in step. -->
+<div class="wrap">
+  <div class="hero">
+    <div class="hero-txt">
+      <a class="anuncio" href="/en/hosting/godlike/">
+        <span class="anuncio-tag">−75%</span>
+        <span>Godlike.host: the biggest discount in the comparison</span>
+        <span class="anuncio-flecha" aria-hidden="true">→</span>
+      </a>
+      <h1>How much <em>RAM</em> does your Minecraft server need?</h1>
+      <p class="sub">
+        Tell me how many of you there are and what you've got installed. I'll tell you
+        the exact GB you need and what it'll cost on each host. No headaches.
+      </p>
+      <div class="hero-cta">
+        <a class="cta" href="#calculadora">Size my server →</a>
+        <a class="cta-ghost" href="/en/hosting/">See the hosts</a>
+      </div>
+    </div>
+
+    <aside class="hero-demo" id="heroDemo" aria-label="Example result">
+      <div class="hd-top">
+        <span class="hd-tag">Real example</span>
+        <span class="hd-caso">30 players · big modpack</span>
+      </div>
+      <div class="hd-ram"><span id="hdRam">—</span><small>GB of RAM</small></div>
+      <ul class="hd-lista" id="hdLista"></ul>
+      <p class="hd-pie" id="hdPie"></p>
+    </aside>
+  </div>
+</div>
+
+<div class="wrap">
+  <ul class="datos-bar" aria-label="The site in numbers">
+    <li><b data-n-hosts>23</b><span>hosts compared</span></li>
+    <li><b>100%</b><span>prices checked by hand</span></li>
+    <li><b>0</b><span>cookies and 0 sign-ups</span></li>
+    <li><b>ES · EN</b><span>in your language</span></li>
+  </ul>
+</div>
+
+<div class="wrap" id="calculadora">
+  <div class="calc">
+
+    <div class="step">
+      <div class="step-label"><span class="step-num">1</span> How many of you will there be?</div>
+      <div class="slider-row">
+        <input type="range" id="players" min="1" max="10" value="6"
+               aria-label="Number of players">
+        <div class="pcount"><span id="pnum">6</span><small>players</small></div>
+      </div>
+    </div>
+
+    <div class="step">
+      <div class="step-label"><span class="step-num">2</span> <span id="modLabel">Mods or plugins?</span></div>
+      <div class="seg" id="mods"></div>
+    </div>
+
+    <div class="step" id="extraStep" hidden>
+      <div class="step-label"><span class="step-num">3</span> <span id="extraLabel"></span></div>
+      <div class="seg" id="extra"></div>
+    </div>
+
+    <div class="step">
+      <div class="step-label">
+        <span class="step-num">4</span> How long will you keep it?
+      </div>
+      <div class="seg" id="tiempo"></div>
+    </div>
+
+    <div class="step">
+      <div class="step-label">
+        <span class="step-num">5</span> How much do you want to spend a month?
+      </div>
+      <div class="seg" id="presupuesto"></div>
+    </div>
+
+  </div>
+
+  <div class="result" aria-live="polite">
+    <div class="res-top">
+      <div class="res-ram" id="resRam">8<span>GB of RAM</span></div>
+      <div class="res-for" id="resFor"></div>
+    </div>
+
+    <div class="chips" id="resChips"></div>
+
+    <button class="copiar" id="copiar" type="button">
+      🔗 Copy this result to send to your group
+    </button>
+
+    <div class="verdict" id="verdict"></div>
+
+    <p class="res-note" id="resCpu"></p>
+
+    <h3 class="barras-tit">What each host charges for those GB</h3>
+    <div class="barras" id="barras"></div>
+    <p class="tbl-note" id="barrasNota"></p>
+
+    <div class="reco" id="reco" hidden></div>
+
+    <details class="detalle-tabla">
+      <summary>See the details and each host's fine print</summary>
+      <div class="table-wrap">
+        <table>
+          <caption class="sr-only">Minecraft hosting price comparison</caption>
+          <thead>
+            <tr><th>Host</th><th>What you get</th><th>Price</th><th>12 months</th><th>Fine print</th></tr>
+          </thead>
+          <tbody id="cmpBody"></tbody>
+        </table>
+      </div>
+      <p class="tbl-note" id="cmpNote"></p>
+    </details>
+
+    <div class="precio-final" id="precioFinal" hidden></div>
+
+    <div class="cta-row" id="ctaWrap" hidden>
+      <a class="cta" id="ctaMain" href="#" target="_blank">Set up my server</a>
+      <p class="cta-fine"><!--partner:boton-->Affiliate link: if you buy, I earn a commission and it costs you nothing extra.<!--/partner:boton--></p>
+    </div>
+  </div>
+</div>
+
+<section id="ram">
+  <div class="wrap">
+    <span class="sec-eyebrow">The basics</span>
+    <h2>Why RAM is the only thing they'll try to sell you</h2>
+    <p class="sec-sub">
+      What really decides the GB in Minecraft — and it isn't the players.
+    </p>
+
+    <div class="cards">
+      <div class="card">
+        <h3>The modpack weighs more than the people</h3>
+        <p>
+          Almost everyone sizes by player count and forgets the rest. But
+          <strong>a 200-mod pack with 5 friends needs more RAM than vanilla with
+          40 people</strong>. Every mod loads its blocks, entities and recipes into
+          memory, whether there are two of you or twenty.
+        </p>
+      </div>
+      <div class="card">
+        <h3>View distance</h3>
+        <p>
+          Every point of <code>view-distance</code> loads another ring of chunks
+          <em>for every player</em>. Going from 10 to 16 can push usage up 35%
+          without touching anything else. If you're tight, drop it to 8: you'll
+          notice it more in performance than in what you see.
+        </p>
+      </div>
+      <div class="card">
+        <h3>The CPU matters just as much</h3>
+        <p>
+          Minecraft leans almost entirely on <strong>a single core</strong>, so one
+          fast core beats eight slow ones. Lots of RAM won't help a slow CPU.
+          Check which processor you get, not just the gigabytes.
+        </p>
+      </div>
+      <div class="card">
+        <h3>Java or Bedrock</h3>
+        <p>
+          Bedrock (consoles and mobile) is a lot lighter. If your group mixes PC and
+          consoles, the usual move is Java with <strong>Geyser and Floodgate</strong> so
+          everyone can join: it adds a bit of load, but it's how you share one world.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="pasos" class="sec-alt">
+  <div class="wrap">
+    <span class="sec-eyebrow">Step by step</span>
+    <h2>How to set up your server, start to finish</h2>
+    <p class="sec-sub">
+      Five steps. The first is the one almost everyone skips, and it decides what
+      you'll pay for the rest of the year.
+    </p>
+
+    <ol class="pasos">
+      <li>
+        <h3>Work out how much RAM you need</h3>
+        <p>
+          Before looking at prices. Buying by eye is how you overpay, or end up with
+          a server that stutters.
+        </p>
+        <a href="#calculadora">Go to the calculator →</a>
+      </li>
+      <li>
+        <h3>Compare what that RAM costs</h3>
+        <p>
+          The same server can cost six times more at one host than another. And the
+          most expensive isn't the best.
+        </p>
+        <a href="/en/minecraft/best-hosting/">See the comparison →</a>
+      </li>
+      <li>
+        <h3>Read the fine print before paying</h3>
+        <p>
+          Discounts that only last the first month, prices that need two years
+          upfront, plans that switch themselves off. They're all on file.
+        </p>
+        <a href="/en/deals/">See the deals and their catches →</a>
+      </li>
+      <li>
+        <h3>Set it up and configure it</h3>
+        <p>
+          Which software to pick, how to get console players in with crossplay, and
+          the four settings that really matter.
+        </p>
+        <a href="/en/minecraft/how-to-set-up-a-server/">Step-by-step guide →</a>
+      </li>
+      <li>
+        <h3>Backups and restarts</h3>
+        <p>
+          What separates a server that lasts a year from one that dies in three
+          weeks. Both automatic, and two clicks to switch on.
+        </p>
+        <a href="/en/minecraft/how-to-set-up-a-server/#s6">How to get it done →</a>
+      </li>
+    </ol>
+  </div>
+</section>
+
+<section id="quien" class="sec-alt">
+  <div class="wrap">
+    <span class="sec-eyebrow">About the site</span>
+    <h2>Who's behind it</h2>
+
+    <div class="cards">
+      <div class="card">
+        <h3>Who writes this</h3>
+        <p>
+          I'm <a href="https://www.youtube.com/@Doublelag">Doublelag</a>. I run a Spanish
+          Minecraft channel with over 200,000 subscribers and <strong>I run my own
+          production server</strong>, with crossplay, plugins and real players. The numbers
+          on this site aren't copied from anywhere: they're the ones I use.
+        </p>
+      </div>
+      <div class="card">
+        <h3>What I get out of it</h3>
+        <p>
+          <!--partner:quegano-->A commission if you buy Godlike.host through my links, at no extra cost to you. That's why the calculator <strong>tells you the cheapest first even when it isn't them</strong>, and in the tables they sit where their price puts them.<!--/partner:quegano-->
+        </p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<section id="mi-server">
+  <div class="wrap">
+    <div class="server-teaser">
+      <img src="/chorizosmp.webp" width="96" height="96" alt="ChorizoSMP logo" loading="lazy">
+      <div>
+        <span class="sec-eyebrow">My server</span>
+        <h2>Want to play on my server?</h2>
+        <p>ChorizoSMP: a Spanish-speaking semi-anarchy server with an economy, stealing,
+        raiding and crossplay between Java and Bedrock. Join, start with 8 steaks and
+        make your own way.</p>
+        <div class="acciones">
+          <code class="ip-val"><!--server:ip-->chorizosmp.datho.st<!--/server:ip--></code>
+          <button class="cta-ghost" type="button" data-copiar-ip data-ok="Copied!">Copy IP</button>
+          <a class="cta" href="/en/my-server/">How to join →</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="faq">
+  <div class="wrap">
+    <span class="sec-eyebrow">Questions</span>
+    <h2>Things everyone ends up asking</h2>
+    <p class="sec-sub">The ones I get asked most in comments and on Discord.</p>
+
+    <details>
+      <summary>Can I run the server on my own PC and skip all this?</summary>
+      <p>
+        You can, but there are three catches: your PC has to stay on all the time (turn it
+        off and your friends can't play), you have to open ports on your router, and your
+        home upload speed is usually far worse than a data centre's, so everyone else will
+        lag. Fine for a one-off evening; not for a serious world.
+      </p>
+    </details>
+
+    <details>
+      <summary>I'm on PS5, Xbox or Switch. Can I host a server?</summary>
+      <p>
+        Not on your own: consoles don't let you run a dedicated server or open ports. If
+        your group is split between PC and consoles and you want to play together in the
+        same world with crossplay, renting a server is literally the only option. In
+        Minecraft you do it by running Java with Geyser and Floodgate, so Bedrock players
+        can join too.
+      </p>
+    </details>
+
+    <details>
+      <summary>What if I run out of RAM?</summary>
+      <p>
+        You'll notice right away: stutter when moving, blocks slow to break, mobs
+        teleporting and, at worst, the server restarting by itself. At a host you fix it
+        by upgrading in two clicks, but it's better to size it first and leave some
+        headroom: the RAM you need goes up over time, not down.
+      </p>
+    </details>
+
+    <details>
+      <summary>Is paying for more RAM than I need worth it?</summary>
+      <p>
+        Not much. Past the point where the game runs smoothly, more RAM doesn't add
+        performance — the CPU calls the shots there. What spare RAM gives you is headroom:
+        room for more mods, more people, or letting the world grow without changing plan.
+      </p>
+    </details>
+  </div>
+</section>
+
+</main>
+
+<footer></footer>
+
+<script src="/hosts.js"></script>
+<script src="/app.js"></script>
+
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"WebSite",
+  "name":"MontaTuServer",
+  "url":"https://montatuserver.com/en/",
+  "inLanguage":"en",
+  "description":"RAM calculator for Minecraft servers and hosting price comparison.",
+  "author":{
+    "@type":"Person",
+    "name":"Doublelag",
+    "url":"https://www.youtube.com/@Doublelag",
+    "description":"Minecraft content creator and server admin."
+  }
+}
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {"@type": "Question", "name": "Can I run the server on my own PC and skip all this?",
+     "acceptedAnswer": {"@type": "Answer", "text": "You can, but there are three catches: your PC has to stay on all the time, you have to open ports on your router, and your home upload speed is usually far worse than a data centre's, so everyone else will lag. Fine for a one-off evening; not for a serious world."}},
+    {"@type": "Question", "name": "I'm on PS5, Xbox or Switch. Can I host a server?",
+     "acceptedAnswer": {"@type": "Answer", "text": "Not on your own: consoles don't let you run a dedicated server or open ports. If your group is split between PC and consoles, renting a server is the only option. In Minecraft you run Java with Geyser and Floodgate so Bedrock players can join too."}},
+    {"@type": "Question", "name": "What if I run out of RAM?",
+     "acceptedAnswer": {"@type": "Answer", "text": "You'll notice right away: stutter, blocks slow to break, mobs teleporting and, at worst, the server restarting by itself. At a host you fix it by upgrading in two clicks, but it's better to size it first and leave some headroom."}},
+    {"@type": "Question", "name": "Is paying for more RAM than I need worth it?",
+     "acceptedAnswer": {"@type": "Answer", "text": "Not much. Past the point where the game runs smoothly, more RAM doesn't add performance — the CPU calls the shots there. Spare RAM gives you headroom for more mods, more people or a growing world."}}
+  ]
+}
+</script>
+
+<script src="/buscador_ui.js" defer></script>
+<!--partner:promoscript--><!--/partner:promoscript-->
+
+</body>
+</html>
