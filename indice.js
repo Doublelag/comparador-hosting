@@ -1,10 +1,10 @@
 /* GENERADO POR build.py - no lo edites a mano, se sobreescribe. */
 window.INDICE = [
  {
-  "t": "¿Cuánta RAM necesita tu servidor de Minecraft? Calculadora y hostings",
+  "t": "Comparador de hosting de Minecraft y calculadora de RAM",
   "u": "/",
   "c": "calculadora",
-  "k": "Calcula los GB que necesita tu servidor de Minecraft según jugadores, plugins y modpack, y compara 23 hostings con precios comprobados a mano. Gratis y sin regi ."
+  "k": "Comparador independiente de hosting de Minecraft: precios comprobados a mano, lo que cuesta el giga en cada uno y la letra pequeña. Y una calculadora que te dic ."
  },
  {
   "t": "Akliz for Minecraft: real prices and whether it's worth it (2026)",
@@ -73,10 +73,22 @@ window.INDICE = [
   "k": "A Spanish-speaking semi-anarchy server with an economy, Chorizium and Java + Bedrock crossplay. IP, how to join and what it&#x27;s like. en my server"
  },
  {
+  "t": "Comparador de hosting de Minecraft: precios reales de 23 comparados (2026)",
+  "u": "/hosting/",
+  "c": "hosting",
+  "k": "Comparador de hosting de Minecraft con precios comprobados a mano: cuánto cuesta el giga en cada uno, la letra pequeña, los peros y los trucos del sector. Sin p hosting"
+ },
+ {
   "t": "Cookie policy · MontaTuServer",
   "u": "/en/cookies/",
   "c": "página",
   "k": "MontaTuServer sets no cookies. It only stores the theme you pick in your browser. en cookies"
+ },
+ {
+  "t": "Cómo compruebo los precios · MontaTuServer",
+  "u": "/como-lo-compruebo/",
+  "c": "página",
+  "k": "El método entero: de dónde sale cada precio, cómo se comparan planes distintos, qué no hago y qué puede fallar. como lo compruebo"
  },
  {
   "t": "Cómo montar un servidor de Minecraft en 2026 (guía paso a paso)",
@@ -101,6 +113,12 @@ window.INDICE = [
   "u": "/minecraft/mejor-hosting/",
   "c": "comparativa",
   "k": "Comparativa real de 23 hostings de Minecraft con precios comprobados a mano: Godlike.host, PebbleHost, Kinetic, Shockbyte, BisectHosting, Apex y más. Con la let minecraft mejor hosting"
+ },
+ {
+  "t": "Free Minecraft server templates, already configured",
+  "u": "/en/templates/",
+  "c": "página",
+  "k": "A Minecraft server already set up: a friends SMP template ready to upload and the most played modpacks with the RAM they need. en templates"
  },
  {
   "t": "Free template: a Minecraft server for friends ready in 5 minutes",
@@ -253,6 +271,12 @@ window.INDICE = [
   "k": "Head-to-head comparison of Godlike.host and Shockbyte with real prices checked by hand. When each one wins and why. en versus godlike vs shockbyte"
  },
  {
+  "t": "Historial de precios de los hostings de Minecraft",
+  "u": "/precios/",
+  "c": "página",
+  "k": "Cada vez que un hosting de Minecraft sube o baja sus precios, queda apuntado con la fecha. El histórico que no enseña nadie en el sector. precios"
+ },
+ {
   "t": "HolyHosting for Minecraft: real prices and whether it's worth it (2026)",
   "u": "/en/hosting/holyhosting/",
   "c": "página",
@@ -289,16 +313,10 @@ window.INDICE = [
   "k": "Gigante del hosting web que también vende servidores de juego, en formato VPS. Precios comprobados a mano, lo bueno, lo malo y en qué casos compensa. hosting hostinger"
  },
  {
-  "t": "Hostings de Minecraft analizados uno a uno (2026)",
-  "u": "/hosting/",
-  "c": "hosting",
-  "k": "Análisis de los principales hostings de Minecraft: precios reales comprobados a mano, lo bueno, los peros y cuándo compensa cada uno. hosting"
- },
- {
-  "t": "How much RAM does your Minecraft server need? Calculator and hosts",
-  "u": "/en/",
+  "t": "How I check the prices · MontaTuServer",
+  "u": "/en/how-i-check/",
   "c": "página",
-  "k": "Work out how many GB your Minecraft server needs based on players, plugins and modpack, and compare 23 hosts with prices checked by hand. Free, no sign-up. en"
+  "k": "The whole method: where each price comes from, how different plans are compared, what I don&#x27;t do and what can go wrong. en how i check"
  },
  {
   "t": "How to set up a Minecraft server in 2026 (step-by-step guide)",
@@ -325,6 +343,12 @@ window.INDICE = [
   "k": "Who runs MontaTuServer and the terms for using the site. en legal notice"
  },
  {
+  "t": "Los mejores modpacks de Minecraft y cuánta RAM necesita cada uno (2026)",
+  "u": "/plantillas/modpacks/",
+  "c": "página",
+  "k": "COBBLEVERSE, Better MC, Prominence II, Pixelmon… los modpacks más jugados con su versión, su cargador, cuántos mods llevan y los GB de RAM que piden según cuánt plantillas modpacks"
+ },
+ {
   "t": "Minecraft Realms for Minecraft: real prices and whether it's worth it (2026)",
   "u": "/en/hosting/realms/",
   "c": "página",
@@ -337,16 +361,28 @@ window.INDICE = [
   "k": "El oficial de Mojang. Sencillísimo, pero sin mods y con tope de jugadores. Precios comprobados a mano, lo bueno, lo malo y en qué casos compensa. hosting realms"
  },
  {
+  "t": "Minecraft hosting comparison and RAM calculator",
+  "u": "/en/",
+  "c": "página",
+  "k": "Independent Minecraft hosting comparison: prices checked by hand, what a gigabyte costs on each host and the fine print. Plus a calculator that tells you the GB en"
+ },
+ {
+  "t": "Minecraft hosting comparison: real prices from 23 hosts (2026)",
+  "u": "/en/hosting/",
+  "c": "página",
+  "k": "Reviews of the main Minecraft hosts: real prices checked by hand, the good, the catches and when each one is worth it. en hosting"
+ },
+ {
   "t": "Minecraft hosting deals and coupons (20 September 2026)",
   "u": "/en/deals/",
   "c": "página",
   "k": "The real Minecraft hosting deals, with their fine print and an honest verdict. Which are worth it and which are first-month discounts in disguise. en deals"
  },
  {
-  "t": "Minecraft hosts reviewed one by one (2026)",
-  "u": "/en/hosting/",
+  "t": "Minecraft hosting price history",
+  "u": "/en/price-history/",
   "c": "página",
-  "k": "Reviews of the main Minecraft hosts: real prices checked by hand, the good, the catches and when each one is worth it. en hosting"
+  "k": "Every time a Minecraft host raises or lowers its prices, it gets logged with the date. The price history nobody in this industry shows. en price history"
  },
  {
   "t": "NexoHost for Minecraft: real prices and whether it's worth it (2026)",
@@ -395,6 +431,12 @@ window.INDICE = [
   "u": "/plantillas/smp-amigos/",
   "c": "página",
   "k": "Descarga un servidor de Minecraft ya configurado: crossplay Java y Bedrock, casas, /tpa, anti-destrozos y permisos hechos. Eliges cuatro cosas y lo subes a tu h plantillas smp amigos"
+ },
+ {
+  "t": "Plantillas de servidor de Minecraft, gratis y ya configuradas",
+  "u": "/plantillas/",
+  "c": "página",
+  "k": "Un servidor de Minecraft ya montado: plantilla de SMP con amigos lista para subir y los modpacks más jugados con la RAM que piden. plantillas"
  },
  {
   "t": "Política de cookies · MontaTuServer",
@@ -491,6 +533,12 @@ window.INDICE = [
   "u": "/en/minecraft/best-hosting/",
   "c": "página",
   "k": "A real comparison of 23 Minecraft hosts with prices checked by hand: Godlike.host, PebbleHost, Kinetic, Shockbyte, BisectHosting, Apex and more. With the fine p en minecraft best hosting"
+ },
+ {
+  "t": "The best Minecraft modpacks and how much RAM each one needs (2026)",
+  "u": "/en/templates/modpacks/",
+  "c": "página",
+  "k": "COBBLEVERSE, Better MC, Prominence II, Pixelmon… the most played modpacks with their version, loader, mod count and the GB of RAM they need depending on your gr en templates modpacks"
  },
  {
   "t": "Versus: Minecraft hosts head to head (2026)",

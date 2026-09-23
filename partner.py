@@ -168,6 +168,46 @@ def caja_independencia():
             % nombre())
 
 
+def linea_bienvenida():
+    """La línea de la bienvenida de la portada. Decirlo arriba y no escondido
+    en el pie es la diferencia entre avisar y cumplir el expediente."""
+    if not activo():
+        return ("Ahora mismo no tengo acuerdo de afiliación con ningún hosting de "
+                "esta web.")
+    p = config()
+    cupon = (" con el código <strong>%s</strong>" % p["codigo"]) if p.get("codigo") else ""
+    return ("Con <strong>%s</strong> sí tengo acuerdo, y es por esto: he usado el alcance "
+            "de mis redes para conseguiros un trato de verdad bueno, el mayor descuento de "
+            "toda la comparativa, un <strong>−75 %% el primer mes</strong>%s. Sí, me llevo una comisión si contratas por mi enlace, y a ti "
+            "no te cuesta ni un céntimo más. Aun así sale en las tablas en el puesto que "
+            "le toca por precio, y la calculadora te dice el más barato aunque no sea él."
+            % (nombre(), cupon))
+
+
+def linea_bienvenida_en():
+    if not activo():
+        return "I currently have no affiliate deal with any host on this site."
+    p = config()
+    cupon = (" with the code <strong>%s</strong>" % p["codigo"]) if p.get("codigo") else ""
+    return ("With <strong>%s</strong> I do have a deal, and this is why: I used the reach "
+            "of my channels to get you a genuinely good one, the biggest discount in the "
+            "whole comparison, <strong>−75%% off the first month</strong>%s. Yes, I earn a commission if you buy through my link, and it "
+            "costs you nothing extra. It still sits in the tables where its price puts it, "
+            "and the calculator tells you the cheapest even when that isn't them."
+            % (nombre(), cupon))
+
+
+def caja_independencia_en():
+    """La misma caja del indice de hostings, en ingles."""
+    if not activo():
+        return ("<strong>I have no affiliate deal with any of these.</strong> They're here "
+                "with their real prices and their downsides, and none of them paid to be "
+                "listed. Prices are checked by hand on each host's site, with the date shown.")
+    return ("<strong>I only have an affiliate deal with one of these: %s.</strong> I earn "
+            "nothing from the rest, and they're still here with their real prices and their "
+            "good points. In the table it sits where its price puts it." % nombre())
+
+
 def que_gano_yo():
     """El párrafo de la tarjeta «Qué gano yo» de la portada."""
     if not activo():

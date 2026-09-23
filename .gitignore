@@ -17,3 +17,10 @@ node_modules/
 # Sistema
 Thumbs.db
 .DS_Store
+
+# Documentos de trabajo: estrategia, competencia y notas. Se quedan en local.
+LEEME.md
+COMPETENCIA.md
+PLAN-50-ARTICULOS.md
+CLOUDFLARE.md
+historico.json

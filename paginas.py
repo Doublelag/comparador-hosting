@@ -207,6 +207,10 @@ def privacidad(lang):
       <li><strong>Estado del servidor.</strong> En la página de ChorizoSMP, tu navegador
       consulta si el servidor está abierto a api.mcsrvstat.us, que recibe tu IP para
       responder. Solo en esa página.</li>
+      <li><strong>Medición de visitas.</strong> Uso la analítica de Cloudflare, que
+      <strong>no instala cookies ni te identifica</strong>: cuenta páginas vistas y cuánto
+      tarda en cargar, en conjunto. No sé quién eres ni puedo seguirte por otras webs, y
+      no hay Google Analytics ni nada parecido.</li>
       <li><strong>Plantillas de servidor.</strong> Al darle a descargar una plantilla, tu
       navegador baja los plugins de su web oficial (api.modrinth.com, cdn.modrinth.com y
       download.geysermc.org), que reciben tu IP para enviártelos. Solo en ese momento.</li>
@@ -256,6 +260,10 @@ def privacidad(lang):
       <li><strong>Server status.</strong> On the ChorizoSMP page, your browser asks
       api.mcsrvstat.us whether the server is online, which receives your IP to answer.
       Only on that page.</li>
+      <li><strong>Visit measurement.</strong> I use Cloudflare's analytics, which
+      <strong>sets no cookies and doesn't identify you</strong>: it counts page views and
+      load times in aggregate. I don't know who you are and can't follow you around other
+      sites, and there's no Google Analytics or anything like it.</li>
       <li><strong>Server templates.</strong> When you download a template, your browser
       fetches the plugins from their official site (api.modrinth.com, cdn.modrinth.com and
       download.geysermc.org), which receive your IP to send them. Only at that moment.</li>
@@ -598,7 +606,170 @@ NO_ENCONTRADA_EN = """<!doctype html>
 """ % dict(fuentes=FUENTES)
 
 
+# =============================================================================
+# CÓMO LO COMPRUEBO  (/como-lo-compruebo/)
+# =============================================================================
+# Todos los comparadores serios tienen su "how we test". El nuestro es corto
+# porque el método es corto: mirarlo a mano y apuntar la fecha.
+def metodologia(lang):
+    if lang == "es":
+        cuerpo = """  <article class="wrap articulo" style="max-width:820px">
+    <nav class="miga"><a href="/">Inicio</a> &rsaquo; Cómo lo compruebo</nav>
+
+    <span class="sec-eyebrow">Metodología</span>
+    <h1>Cómo compruebo <em>cada precio</em></h1>
+    <p class="sub art-sub">
+      Sin esto, una comparativa es una lista de números que alguien se ha inventado.
+      Así que aquí está el método entero, con sus límites incluidos.
+    </p>
+
+    <h2>De dónde sale cada precio</h2>
+    <p>
+      De la web del hosting, abierta a mano, sin plugins ni programas que rastreen.
+      Apunto el precio <strong>recurrente</strong>: lo que vas a pagar el segundo mes y
+      el tercero, no el del escaparate. Si tienen un descuento de entrada, va aparte y
+      con su nombre, porque media comparativa del sector cuela el precio rebajado como
+      si fuera la tarifa.
+    </p>
+
+    <h2>Cómo comparo peras con peras</h2>
+    <ul>
+      <li><strong>Precio por giga.</strong> Es el «precio por kilo» de esto: divide lo
+        que cuesta el plan entre los gigas que te dan. Es la única forma de comparar a
+        quien vende planes cerrados con quien te cobra los gigas sueltos.</li>
+      <li><strong>Si el plan te da de más, cuenta lo que te dan.</strong> Si pides 8 GB y
+        su plan más pequeño son 16, el cálculo usa 16: castigarle por darte de más sería
+        mentir al revés.</li>
+      <li><strong>Los dólares se pasan a euros</strong> con el cambio del día en que
+        compruebo, y el cambio usado está puesto en las tablas.</li>
+      <li><strong>Quien vende plazas y no publica la RAM</strong> (Realms) no tiene precio
+        por giga: sale aparte y se dice.</li>
+    </ul>
+
+    <h2>Qué miro además del precio</h2>
+    <p>
+      El procesador que publican, si el disco es NVMe, cuántas copias de seguridad trae,
+      si hay permanencia, si el panel deja instalar modpacks de un clic, y dónde tienen
+      las máquinas. Todo eso está en la ficha de cada uno, con sus peros.
+    </p>
+
+    <h2>Lo que NO hago</h2>
+    <ul>
+      <li><strong>No invento datos.</strong> Si un hosting no publica su procesador, la
+        ficha dice que no lo publica. No relleno huecos a ojo.</li>
+      <li><strong>No cobro por aparecer</strong>, ni por salir más arriba. Las tablas se
+        ordenan por precio, y el orden no se toca.</li>
+      <li><strong>No copio los rankings de nadie</strong>, y menos los que escriben los
+        propios hostings.</li>
+    </ul>
+
+    <h2>Lo que puede fallar</h2>
+    <p>
+      Los hostings cambian precios sin avisar, así que lo que manda siempre es su web en
+      el momento de contratar. Por eso cada tabla lleva la fecha de la última revisión.
+      Si ves un precio que no cuadra, escríbeme y lo corrijo el mismo día: con los años
+      de vídeos que llevo, prefiero equivocarme y arreglarlo a defender un número malo.
+    </p>
+
+    %(afil)s
+
+    <div class="art-cta" style="margin-top:34px">
+      <h3>Y ahora, a lo tuyo</h3>
+      <p>Dime cuántos sois y qué lleváis instalado, y te digo los gigas y lo que cuesta
+        en cada uno.</p>
+      <div class="hero-cta">
+        <a class="cta" href="/#calculadora">Calcular mi servidor</a>
+        <a class="cta-ghost" href="/hosting/">Ver el comparador</a>
+      </div>
+    </div>
+  </article>""" % dict(afil=(
+        '<div class="indep" style="margin:26px 0"><span class="indep-ico" aria-hidden="true">&#9878;</span>'
+        '<p>%s</p></div>' % partner.caja_independencia()))
+        return pagina("es", "/como-lo-compruebo/",
+                      "Cómo compruebo los precios · MontaTuServer",
+                      "El método entero: de dónde sale cada precio, cómo se comparan planes "
+                      "distintos, qué no hago y qué puede fallar.", cuerpo)
+
+    cuerpo = """  <article class="wrap articulo" style="max-width:820px">
+    <nav class="miga"><a href="/en/">Home</a> &rsaquo; How I check</nav>
+
+    <span class="sec-eyebrow">Methodology</span>
+    <h1>How I check <em>every price</em></h1>
+    <p class="sub art-sub">
+      Without this, a comparison is just a list of numbers someone made up. So here's the
+      whole method, limits included.
+    </p>
+
+    <h2>Where each price comes from</h2>
+    <p>
+      From the host's own site, opened by hand, no scrapers. I record the
+      <strong>recurring</strong> price: what you'll pay in month two and three, not the
+      window display. If they have an entry discount, it's listed separately and named,
+      because half the industry passes the discounted price off as the rate.
+    </p>
+
+    <h2>How I compare like with like</h2>
+    <ul>
+      <li><strong>Price per gigabyte.</strong> The "price per kilo" of hosting: the plan's
+        price divided by the gigabytes you get. It's the only way to compare fixed plans
+        with per-gigabyte pricing.</li>
+      <li><strong>If the plan gives you more, it counts what you get.</strong> Ask for 8 GB
+        and their smallest plan is 16? The maths uses 16: punishing them for giving you
+        more would be lying the other way.</li>
+      <li><strong>Dollars are converted to euros</strong> at the rate on the day I check,
+        and that rate is printed in the tables.</li>
+      <li><strong>Hosts that sell slots without publishing RAM</strong> (Realms) have no
+        price per gigabyte: they're listed separately and it's said.</li>
+    </ul>
+
+    <h2>What I look at besides price</h2>
+    <p>
+      The CPU they publish, whether the disk is NVMe, how many backups are included,
+      whether there's a contract, whether the panel installs modpacks in one click, and
+      where their machines are. All of it is in each review, downsides included.
+    </p>
+
+    <h2>What I don't do</h2>
+    <ul>
+      <li><strong>I don't invent data.</strong> If a host doesn't publish its CPU, the
+        review says so. I don't fill gaps by eye.</li>
+      <li><strong>I don't charge for being listed</strong>, or for a higher spot. Tables are
+        sorted by price, and that order isn't touched.</li>
+      <li><strong>I don't copy anyone's rankings</strong>, least of all the ones written by
+        the hosts themselves.</li>
+    </ul>
+
+    <h2>What can go wrong</h2>
+    <p>
+      Hosts change prices without warning, so what counts is always their site at the moment
+      you buy. That's why every table carries the date of the last check. If you see a price
+      that doesn't add up, email me and I'll fix it the same day.
+    </p>
+
+    %(afil)s
+
+    <div class="art-cta" style="margin-top:34px">
+      <h3>Now, back to you</h3>
+      <p>Tell me how many of you there are and what you've got installed, and I'll tell you
+        the gigabytes and what it costs on each host.</p>
+      <div class="hero-cta">
+        <a class="cta" href="/en/#calculadora">Size my server</a>
+        <a class="cta-ghost" href="/en/hosting/">See the comparison</a>
+      </div>
+    </div>
+  </article>""" % dict(afil=(
+        '<div class="indep" style="margin:26px 0"><span class="indep-ico" aria-hidden="true">&#9878;</span>'
+        '<p>%s</p></div>' % partner.caja_independencia_en()
+        if hasattr(partner, "caja_independencia_en") else ""))
+    return pagina("en", "/en/how-i-check/",
+                  "How I check the prices · MontaTuServer",
+                  "The whole method: where each price comes from, how different plans are "
+                  "compared, what I don't do and what can go wrong.", cuerpo)
+
+
 TODAS = [
+    ("/como-lo-compruebo/", lambda: metodologia("es")),
+    ("/en/how-i-check/", lambda: metodologia("en")),
     ("/aviso-legal/", lambda: aviso_legal("es")), ("/en/legal-notice/", lambda: aviso_legal("en")),
     ("/privacidad/", lambda: privacidad("es")), ("/en/privacy/", lambda: privacidad("en")),
     ("/cookies/", lambda: cookies("es")), ("/en/cookies/", lambda: cookies("en")),

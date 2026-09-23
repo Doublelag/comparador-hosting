@@ -182,6 +182,7 @@ def html(host_id, d):
     </div>
     <div class="ficha-rasgos">%(rasgos)s</div>
     <p class="art-meta">Prices checked on %(comprobado)s</p>
+    %(opiniones)s
 
     %(aviso)s
 
@@ -239,7 +240,7 @@ def html(host_id, d):
         dom=DOMINIO, ruta=ruta, fuentes=FUENTES, precio_final=precio_final,
         desde_ano=f.get("desde_ano", "—"), ubicaciones=f.get("ubicaciones", "—"),
         modelo=modelo_texto(h["precios"]["minecraft"], h, cambio),
-        rasgos="".join('<span class="rasgo">%s</span>' % r for r in t.get("rasgos", [])),
+        opiniones=hostings.opiniones(h, "en"), rasgos="".join('<span class="rasgo">%s</span>' % r for r in t.get("rasgos", [])),
         comprobado=d.get("comprobado_en", d["comprobado"]), aviso=aviso,
         tabla=tabla_precios(host_id, d),
         bueno=lista(t["bueno"], "si"), malo=lista(t["malo"], "no"),
@@ -267,6 +268,27 @@ def indice(d):
         filas.append((hid, f, h, porgb, pares))
     filas.sort(key=lambda x: (x[3] is None, x[3] or 0))
 
+    _con_gb = [x for x in filas if x[4] is not None]
+    _barato = _con_gb[0][0] if _con_gb else None
+    _ent = max(filas, key=lambda x: (x[2]["precios"]["minecraft"].get("entrada") or {}).get("pct", 0))
+    _ent = _ent[0] if (_ent[2]["precios"]["minecraft"].get("entrada") or {}).get("pct") else None
+
+    def _techo(h):
+        pr = h["precios"]["minecraft"]
+        if pr["modelo"] == "tabla":
+            return max(t[0] for t in pr["tiers"])
+        if pr["modelo"] == "porGB":
+            return 64
+        return pr.get("ram") or 0
+    _grande = max(filas, key=lambda x: _techo(x[2]))[0]
+    DISTINTIVOS = {}
+    if _barato:
+        DISTINTIVOS[_barato] = "Cheapest per GB"
+    if _ent and _ent not in DISTINTIVOS:
+        DISTINTIVOS[_ent] = "Cheapest to start"
+    if _grande not in DISTINTIVOS:
+        DISTINTIVOS[_grande] = "Most RAM available"
+
     tabla = []
     for hid, f, h, porgb, pares in filas:
         pr = h["precios"]["minecraft"]
@@ -280,12 +302,13 @@ def indice(d):
                    else '<td class="nd">—</td>')
         tabla.append(
             '      <tr%s data-modelo="%s" data-porgb="%s" data-entrada="%s">\n'
-            '        <td><a href="/en/hosting/%s/">%s</a><small>%s</small></td>\n'
+            '        <td><a href="/en/hosting/%s/">%s</a>%s<small>%s</small></td>\n'
             '        <td>%s</td>\n        %s\n'
             '        <td><a class="cta-mini" href="/en/hosting/%s/">Review</a></td>\n'
             '      </tr>'
             % (destacado, pr["modelo"], ("%.2f" % porgb) if porgb else "",
                "si" if pr.get("entrada") else "no", f["url"], f["nombre"],
+               ('<span class="badge-cat">%s</span>' % DISTINTIVOS[hid]) if hid in DISTINTIVOS else "",
                FICHAS_EN[hid]["pais"], modelo_texto(pr, h, cambio), celdas, f["url"]))
 
     indep = ""
@@ -302,12 +325,12 @@ def indice(d):
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Minecraft hosts reviewed one by one (2026)</title>
+<title>Minecraft hosting comparison: real prices from %(cuantos)d hosts (2026)</title>
 <meta name="description" content="Reviews of the main Minecraft hosts: real prices checked by hand, the good, the catches and when each one is worth it.">
 <link rel="canonical" href="%(dom)s/en/hosting/">
 <meta property="og:type" content="website">
 <meta property="og:url" content="%(dom)s/en/hosting/">
-<meta property="og:title" content="Minecraft hosts reviewed one by one">
+<meta property="og:title" content="Minecraft hosting comparison">
 <meta property="og:image" content="%(dom)s/og-image.jpg">
 <meta property="og:locale" content="en_GB">
 <link rel="icon" href="/favicon.ico" sizes="any">
@@ -321,8 +344,8 @@ def indice(d):
 
 <main>
   <div class="wrap articulo">
-    <nav class="miga"><a href="/en/">Home</a> › Hosts</nav>
-<h1>Minecraft hosts, one by one</h1>
+    <nav class="miga"><a href="/en/">Home</a> › Compare</nav>
+<h1>Minecraft <em>hosting comparison</em></h1>
     <p class="sub art-sub">
       What each one charges for 4, 8 and 16 GB, and its review with the good and the catches.
     </p>
@@ -348,14 +371,44 @@ def indice(d):
       asked for. Click any column to sort by it.
     </p>
 
-    <div class="art-cta" style="margin-top:30px">
-      <h3>What about ping from Spain?</h3>
-      <p>
-        Price isn't the only thing that changes between them: where their machines are
-        changes too. None of them are in Spain, and picking the right location or not
-        is a 100-millisecond difference.
-      </p>
-    </div>
+    <h2 id="tricks">The tricks you're going to run into</h2>
+    <p>
+      This site exists because this stuff made me angry. Not every host plays dirty,
+      but the tricks that do get played are always the same ones, and almost none of
+      them are illegal: it's fine print placed where you won't look.
+    </p>
+    <ol class="trucos">
+      <li>
+        <strong>The headline price is only the first month.</strong> The most common
+        one. You see "8 GB for &euro;6.50", you pay, and next month it's &euro;25.99.
+        That's why on this site the price that counts is <strong>the normal rate</strong>,
+        with the entry discount shown separately and named.
+      </li>
+      <li>
+        <strong>The good price means paying two years upfront.</strong> Advertised
+        huge, with a tiny "/mo". Cancel early and you get nothing back, and it renews
+        at nearly double.
+      </li>
+      <li>
+        <strong>"Unlimited slots" or "unlimited RAM".</strong> Unlimited doesn't
+        exist. Behind it there's a CPU shared with twenty other servers, and you
+        notice exactly when everyone logs in at once.
+      </li>
+      <li>
+        <strong>The cheap range comes with no backups.</strong> You find out the day
+        someone wrecks the world. It's in every review here.
+      </li>
+      <li>
+        <strong>"Best hosting" rankings are written by the hosts themselves.</strong>
+        They put themselves first, give themselves a 4.9 and save the real downsides
+        for the competition. If a list doesn't say who pays for it, don't trust it.
+      </li>
+    </ol>
+    <p>
+      Here prices are checked <strong>by hand on each host's own site</strong>, with the
+      date shown, the table is sorted by what a gigabyte actually costs, and every
+      review lists the downsides. %(afil)s
+    </p>
 
     <p class="art-meta">Prices checked on %(comprobado)s.</p>
   </div>
@@ -369,5 +422,8 @@ def indice(d):
 
 </body>
 </html>
-""" % dict(dom=DOMINIO, fuentes=FUENTES, indep=indep, tabla="\n".join(tabla),
+""" % dict(
+           cuantos=len({(f.get("url") or hid) for hid, f in hostings.FICHAS.items()}),
+           afil=("I have an affiliate deal with one of them, and I say so in every page's footer: it still sits in the table where its price puts it."
+                 if partner.activo() else "I have no deal with any of them."),dom=DOMINIO, fuentes=FUENTES, indep=indep, tabla="\n".join(tabla),
            comprobado=d.get("comprobado_en", d["comprobado"]))

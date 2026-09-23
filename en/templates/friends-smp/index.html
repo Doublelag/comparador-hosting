@@ -22,7 +22,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@700&family=Inter:wght@400..800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="/styles.css?v=07db9240">
+<link rel="stylesheet" href="/styles.css?v=7657ac22">
 </head>
 <body>
 
@@ -31,10 +31,10 @@
     <a class="brand" href="/en/"><svg class="logo-mark" viewBox="0 0 32 32" aria-hidden="true"><defs><linearGradient id="lm" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#6FFFE9"/><stop offset="1" stop-color="#5BC0BE"/></linearGradient></defs><path d="M16 2.5 28.5 9.3v13.4L16 29.5 3.5 22.7V9.3z" fill="url(#lm)"/><path d="M16 2.5 28.5 9.3 16 16.1 3.5 9.3z" fill="#fff" fill-opacity=".38"/><path d="M16 16.1v13.4L3.5 22.7V9.3z" fill="#0B132B" fill-opacity=".22"/><path d="M9.8 12.7 16 16.1l6.2-3.4" fill="none" stroke="#0B132B" stroke-opacity=".35" stroke-width="1.1"/></svg><span>Monta<b>TuServer</b></span></a>
     <div class="menu" id="menu">
       <nav class="nav" aria-label="Menu">
-        <a href="/en/hosting/">Hosts</a>
+        <a href="/en/hosting/">Compare</a>
         <a href="/en/versus/">Versus</a>
         <a href="/en/deals/">Deals</a>
-        <a href="/en/templates/friends-smp/">Templates</a>
+        <a href="/en/templates/" aria-current="page">Templates</a>
         <a href="/en/my-server/">My server</a>
       </nav>
       <div class="buscador" id="buscador"><input type="search" placeholder="Search a host or guide…" aria-label="Search the site" autocomplete="off"><kbd>/</kbd><div class="bs-panel" role="listbox" hidden></div></div>
@@ -169,8 +169,10 @@
       </div>
       <div>
         <span>Compare</span>
-        <a href="/en/hosting/">All hosts</a>
+        <a href="/en/hosting/">Hosting comparison</a>
         <a href="/en/versus/">Versus</a>
+        <a href="/en/how-i-check/">How I check the prices</a>
+        <a href="/en/price-history/">Price history</a>
         <a href="/en/deals/">Deals and coupons</a>
       </div>
       <div>
@@ -193,8 +195,9 @@
   </div>
 </footer>
 
-<script src="/buscador_ui.js?v=8068ecc9" data-indice="/indice.js?v=aba7d97f" defer></script>
+<script src="/buscador_ui.js?v=8068ecc9" data-indice="/indice.js?v=7516b8f8" defer></script>
 <script>window.PLANTILLA = {"nombre": "SMP de amigos", "nombre_en": "Friends SMP", "zip": "smp-amigos", "mc": "26.1.2", "probada": "21 de septiembre de 2026, Paper build 74", "probada_en": "21 September 2026, Paper build 74", "plugins": [{"titulo": "Geyser", "geyser": "geyser", "archivo": "Geyser-Spigot.jar", "bedrock": true}, {"titulo": "Floodgate", "geyser": "floodgate", "archivo": "floodgate-spigot.jar", "bedrock": true}, {"titulo": "ViaVersion", "modrinth": "viaversion"}, {"titulo": "LuckPerms", "modrinth": "luckperms"}, {"titulo": "EssentialsX", "modrinth": "essentialsx"}, {"titulo": "CoreProtect", "modrinth": "coreprotect"}], "archivos": {"plugins/Geyser-Spigot/config.yml": "# Plantilla SMP de amigos (montatuserver.com)\n# Solo van los ajustes que cambian; Geyser rellena el resto solo.\nbedrock:\n  # Los de Bedrock entran por el MISMO puerto que los de Java.\n  # Es lo que piden casi todos los hostings, que solo te dan un puerto.\n  clone-remote-port: true\njava:\n  # Los de Bedrock entran sin tener cuenta de Java (gracias a Floodgate)\n  auth-type: floodgate\nmotd:\n  passthrough-motd: true\ndefault-locale: es_es\n", "plugins/LuckPerms/config.yml": "# Plantilla SMP de amigos (montatuserver.com)\n# Los permisos se guardan en archivos de texto (yaml-storage/) en vez de en\n# una base de datos: así la plantilla trae ya hechos los permisos de todos.\nstorage-method: yaml\n", "plugins/LuckPerms/yaml-storage/groups/default.yml": "name: default\npermissions:\n- essentials.home\n- essentials.home.bed\n- essentials.sethome\n- essentials.sethome.bed\n- essentials.sethome.multiple\n- essentials.delhome\n- essentials.tpa\n- essentials.tpahere\n- essentials.tpaccept\n- essentials.tpdeny\n- essentials.tpacancel\n- essentials.back\n- essentials.back.ondeath\n- essentials.msg\n- essentials.r\n- essentials.ignore\n- essentials.mail\n- essentials.mail.send\n- essentials.afk\n- essentials.list\n- essentials.seen\n- essentials.warp\n- essentials.warp.list\n- essentials.rules\n- essentials.help\n- essentials.motd\n", "plugins/Essentials/config.yml": "# Plantilla SMP de amigos (montatuserver.com)\n# Solo van los ajustes que cambian; lo demás, EssentialsX lo pone por defecto.\nlocale: es\nsethome-multiple:\n  default: 3\n# 3 segundos quieto antes de teletransportarte (evita escapar de peleas)\nteleport-delay: 3\nteleport-cooldown: 10\n"}};</script>
-<script src="/plantilla_ui.js?v=cff49998" defer></script>
+<script src="/zip_ui.js?v=98232142" defer></script>
+<script src="/plantilla_ui.js?v=01cbe101" defer></script>
 </body>
 </html>

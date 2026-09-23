@@ -1,0 +1,164 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<script>try{if(localStorage.getItem("tema")==="claro")document.documentElement.dataset.theme="claro"}catch(e){}</script>
+<link rel="alternate" hreflang="es" href="https://montatuserver.com/como-lo-compruebo/">
+<link rel="alternate" hreflang="en" href="https://montatuserver.com/en/how-i-check/">
+<link rel="alternate" hreflang="x-default" href="https://montatuserver.com/como-lo-compruebo/">
+<title>Cómo compruebo los precios · MontaTuServer</title>
+<meta name="description" content="El método entero: de dónde sale cada precio, cómo se comparan planes distintos, qué no hago y qué puede fallar.">
+<link rel="canonical" href="https://montatuserver.com/como-lo-compruebo/">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="MontaTuServer">
+<meta property="og:url" content="https://montatuserver.com/como-lo-compruebo/">
+<meta property="og:title" content="Cómo compruebo los precios · MontaTuServer">
+<meta property="og:description" content="El método entero: de dónde sale cada precio, cómo se comparan planes distintos, qué no hago y qué puede fallar.">
+<meta property="og:image" content="https://montatuserver.com/og-image.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@700&family=Inter:wght@400..800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/styles.css?v=7657ac22">
+</head>
+<body>
+
+<header class="site-head">
+  <div class="wrap">
+    <a class="brand" href="/"><svg class="logo-mark" viewBox="0 0 32 32" aria-hidden="true"><defs><linearGradient id="lm" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#6FFFE9"/><stop offset="1" stop-color="#5BC0BE"/></linearGradient></defs><path d="M16 2.5 28.5 9.3v13.4L16 29.5 3.5 22.7V9.3z" fill="url(#lm)"/><path d="M16 2.5 28.5 9.3 16 16.1 3.5 9.3z" fill="#fff" fill-opacity=".38"/><path d="M16 16.1v13.4L3.5 22.7V9.3z" fill="#0B132B" fill-opacity=".22"/><path d="M9.8 12.7 16 16.1l6.2-3.4" fill="none" stroke="#0B132B" stroke-opacity=".35" stroke-width="1.1"/></svg><span>Monta<b>TuServer</b></span></a>
+    <div class="menu" id="menu">
+      <nav class="nav" aria-label="Menú">
+        <a href="/hosting/">Comparador</a>
+        <a href="/versus/">Versus</a>
+        <a href="/ofertas/">Ofertas</a>
+        <a href="/plantillas/">Plantillas</a>
+        <a href="/mi-server/">Mi server</a>
+      </nav>
+      <div class="buscador" id="buscador"><input type="search" placeholder="Buscar hosting o guía…" aria-label="Buscar en la web" autocomplete="off"><kbd>/</kbd><div class="bs-panel" role="listbox" hidden></div></div>
+    </div>
+    <div class="head-tools">
+      <a class="lang-btn" href="/en/how-i-check/" hreflang="en" lang="en" aria-label="Read this page in English">EN</a>
+      <button class="tema-btn" type="button" data-claro="Cambiar a modo claro" data-noche="Cambiar a modo noche" aria-label="Cambiar a modo claro"><svg class="i-sol" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4.2"/><path d="M12 2.5v2.2M12 19.3v2.2M4.6 4.6l1.6 1.6M17.8 17.8l1.6 1.6M2.5 12h2.2M19.3 12h2.2M4.6 19.4l1.6-1.6M17.8 6.2l1.6-1.6"/></svg><svg class="i-luna" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 14.2A8 8 0 0 1 9.8 4 8.2 8.2 0 1 0 20 14.2z"/></svg></button>
+      <button class="menu-btn" type="button" aria-expanded="false" aria-controls="menu" data-abrir="Abrir el menú" data-cerrar="Cerrar el menú" aria-label="Abrir el menú"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</header>
+
+<main>
+  <article class="wrap articulo" style="max-width:820px">
+    <nav class="miga"><a href="/">Inicio</a> &rsaquo; Cómo lo compruebo</nav>
+
+    <span class="sec-eyebrow">Metodología</span>
+    <h1>Cómo compruebo <em>cada precio</em></h1>
+    <p class="sub art-sub">
+      Sin esto, una comparativa es una lista de números que alguien se ha inventado.
+      Así que aquí está el método entero, con sus límites incluidos.
+    </p>
+
+    <h2>De dónde sale cada precio</h2>
+    <p>
+      De la web del hosting, abierta a mano, sin plugins ni programas que rastreen.
+      Apunto el precio <strong>recurrente</strong>: lo que vas a pagar el segundo mes y
+      el tercero, no el del escaparate. Si tienen un descuento de entrada, va aparte y
+      con su nombre, porque media comparativa del sector cuela el precio rebajado como
+      si fuera la tarifa.
+    </p>
+
+    <h2>Cómo comparo peras con peras</h2>
+    <ul>
+      <li><strong>Precio por giga.</strong> Es el «precio por kilo» de esto: divide lo
+        que cuesta el plan entre los gigas que te dan. Es la única forma de comparar a
+        quien vende planes cerrados con quien te cobra los gigas sueltos.</li>
+      <li><strong>Si el plan te da de más, cuenta lo que te dan.</strong> Si pides 8 GB y
+        su plan más pequeño son 16, el cálculo usa 16: castigarle por darte de más sería
+        mentir al revés.</li>
+      <li><strong>Los dólares se pasan a euros</strong> con el cambio del día en que
+        compruebo, y el cambio usado está puesto en las tablas.</li>
+      <li><strong>Quien vende plazas y no publica la RAM</strong> (Realms) no tiene precio
+        por giga: sale aparte y se dice.</li>
+    </ul>
+
+    <h2>Qué miro además del precio</h2>
+    <p>
+      El procesador que publican, si el disco es NVMe, cuántas copias de seguridad trae,
+      si hay permanencia, si el panel deja instalar modpacks de un clic, y dónde tienen
+      las máquinas. Todo eso está en la ficha de cada uno, con sus peros.
+    </p>
+
+    <h2>Lo que NO hago</h2>
+    <ul>
+      <li><strong>No invento datos.</strong> Si un hosting no publica su procesador, la
+        ficha dice que no lo publica. No relleno huecos a ojo.</li>
+      <li><strong>No cobro por aparecer</strong>, ni por salir más arriba. Las tablas se
+        ordenan por precio, y el orden no se toca.</li>
+      <li><strong>No copio los rankings de nadie</strong>, y menos los que escriben los
+        propios hostings.</li>
+    </ul>
+
+    <h2>Lo que puede fallar</h2>
+    <p>
+      Los hostings cambian precios sin avisar, así que lo que manda siempre es su web en
+      el momento de contratar. Por eso cada tabla lleva la fecha de la última revisión.
+      Si ves un precio que no cuadra, escríbeme y lo corrijo el mismo día: con los años
+      de vídeos que llevo, prefiero equivocarme y arreglarlo a defender un número malo.
+    </p>
+
+    <div class="indep" style="margin:26px 0"><span class="indep-ico" aria-hidden="true">&#9878;</span><p><strong>Solo tengo acuerdo de afiliado con uno de estos: Godlike.host.</strong> Del resto no gano nada, y aun así están aquí con sus precios reales y sus cosas buenas. En la tabla sale en el puesto que le toca por precio.</p></div>
+
+    <div class="art-cta" style="margin-top:34px">
+      <h3>Y ahora, a lo tuyo</h3>
+      <p>Dime cuántos sois y qué lleváis instalado, y te digo los gigas y lo que cuesta
+        en cada uno.</p>
+      <div class="hero-cta">
+        <a class="cta" href="/#calculadora">Calcular mi servidor</a>
+        <a class="cta-ghost" href="/hosting/">Ver el comparador</a>
+      </div>
+    </div>
+  </article>
+</main>
+
+<footer class="site-foot">
+  <div class="wrap">
+    <div class="disclosure"><strong>Aviso de afiliación:</strong> gano comisión si contratas Godlike.host por los enlaces de esta web, sin coste extra para ti. Con el resto de hostings no tengo ningún acuerdo. Eso no cambia sus precios ni su posición en las tablas: el más barato sale primero, sea quien sea.</div>
+    <nav class="pie-links" aria-label="Legal">
+      <div>
+        <span>Minecraft</span>
+        <a href="/">Calculadora de RAM</a>
+        <a href="/minecraft/mejor-hosting/">Mejor hosting de Minecraft</a>
+        <a href="/minecraft/como-montar-un-servidor/">Cómo montar un servidor</a>
+      </div>
+      <div>
+        <span>Comparar</span>
+        <a href="/hosting/">Comparador de hosting</a>
+        <a href="/versus/">Versus</a>
+        <a href="/como-lo-compruebo/">Cómo compruebo los precios</a>
+        <a href="/precios/">Historial de precios</a>
+        <a href="/ofertas/">Ofertas y cupones</a>
+      </div>
+      <div>
+        <span>Doublelag</span>
+        <a href="https://www.youtube.com/@Doublelag" rel="me noopener">Canal de YouTube</a>
+        <a href="/mi-server/">Jugar en ChorizoSMP</a>
+      </div>
+      <div>
+        <span>Legal</span>
+        <a href="/privacidad/">Privacidad</a>
+        <a href="/cookies/">Cookies</a>
+        <a href="/aviso-legal/">Aviso legal</a>
+        <a href="mailto:doublelag.manager@gmail.com">Escríbeme</a>
+      </div>
+    </nav>
+    <div class="pie-base">
+      <p>Precios comprobados a mano. Última revisión: 20 de septiembre de 2026.</p>
+      <p>&copy; 2026 MontaTuServer · Hecho por <a href="https://www.youtube.com/@Doublelag" rel="me noopener">Doublelag</a></p>
+    </div>
+  </div>
+</footer>
+
+<script src="/buscador_ui.js?v=8068ecc9" data-indice="/indice.js?v=7516b8f8" defer></script>
+
+</body>
+</html>

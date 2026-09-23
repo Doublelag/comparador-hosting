@@ -37,11 +37,6 @@
 /hosting/aternos/*                    /hosting/                            301
 /hosting/minehut/*                    /hosting/                            301
 
-# Plantillas: de momento solo hay una, así que la carpeta lleva directa a ella
-/plantillas                /plantillas/smp-amigos/          302
-/plantillas/               /plantillas/smp-amigos/          302
-/en/templates              /en/templates/friends-smp/       302
-/en/templates/             /en/templates/friends-smp/       302
 
 # La pagina del ping se retiro el 23-sep-2026: solo habia 3 hostings medidos
 # de 29, asi que prometia mas de lo que daba.

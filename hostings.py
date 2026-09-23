@@ -367,6 +367,7 @@ def html(host_id, f, d):
     </div>
     <div class="ficha-rasgos">%(rasgos)s</div>
     <p class="art-meta">Precios comprobados el %(comprobado)s</p>
+    %(opiniones)s
 
     %(aviso)s
 
@@ -433,7 +434,7 @@ def html(host_id, f, d):
         desde_ano=f.get("desde_ano", "—"),
         ubicaciones=f.get("ubicaciones", "—"),
         modelo=_modelo_texto(h["precios"]["minecraft"], h, cambio),
-        rasgos="".join('<span class="rasgo">%s</span>' % r for r in f.get("rasgos", [])),
+        opiniones=opiniones(h), rasgos="".join('<span class="rasgo">%s</span>' % r for r in f.get("rasgos", [])),
         comprobado=d["comprobado"], aviso=aviso, divulgacion=partner.divulgacion(),
         tabla=tabla_precios(host_id, d),
         bueno=lista(f["bueno"], "si"), malo=lista(f["malo"], "no"),
@@ -441,6 +442,32 @@ def html(host_id, f, d):
         migas=migas.schema([("Inicio", "/"), ("Hostings", "/hosting/"),
                             (f["nombre"], None)]),
     )
+
+
+
+def dominio_de(h):
+    """El dominio del hosting, sacado de la URL de su web (campo `fuente`)."""
+    import re
+    m = re.search(r"https?://(?:www\.)?([^/]+)", h.get("fuente") or "")
+    return m.group(1) if m else None
+
+
+def opiniones(h, lang="es"):
+    """Enlace a sus opiniones. Sin nota: esa la lee cada uno, que además cambia."""
+    dom = dominio_de(h)
+    if not dom:
+        return ""
+    if lang == "es":
+        return ('<p class="opiniones">Lo que dicen sus clientes: '
+                '<a href="https://www.trustpilot.com/review/%s" rel="nofollow noopener" '
+                'target="_blank">opiniones de %s en Trustpilot</a>. '
+                'Mira el número de reseñas, no solo la nota: un 4,9 con 200 opiniones '
+                'dice menos que un 4,5 con 20.000.</p>' % (dom, h["nombre"]))
+    return ('<p class="opiniones">What their customers say: '
+            '<a href="https://www.trustpilot.com/review/%s" rel="nofollow noopener" '
+            'target="_blank">%s reviews on Trustpilot</a>. '
+            'Look at the number of reviews, not just the score: a 4.9 from 200 reviews '
+            'says less than a 4.5 from 20,000.</p>' % (dom, h["nombre"]))
 
 
 def indice(d):
@@ -483,6 +510,30 @@ def indice(d):
     # por giga. Quien no publica RAM (Realms) no tiene ese numero y va al final.
     filas.sort(key=lambda x: (x[4] is None, x[4] or 0))
 
+    # Distintivos: se calculan una vez, de los datos, y solo uno por hosting.
+    # Nada de "mejor soporte" ni notas inventadas: solo lo que se puede medir.
+    _con_gb = [x for x in filas if x[4] is not None]
+    _barato = _con_gb[0][0] if _con_gb else None
+    _entrada = max(filas, key=lambda x: (x[2]["precios"]["minecraft"].get("entrada") or {}).get("pct", 0))
+    _entrada = _entrada[0] if (_entrada[2]["precios"]["minecraft"].get("entrada") or {}).get("pct") else None
+
+    def _techo(h):
+        pr = h["precios"]["minecraft"]
+        if pr["modelo"] == "tabla":
+            return max(t[0] for t in pr["tiers"])
+        if pr["modelo"] == "porGB":
+            return 64
+        return pr.get("ram") or 0
+    _grande = max(filas, key=lambda x: _techo(x[2]))[0]
+
+    DISTINTIVOS = {}
+    if _barato:
+        DISTINTIVOS[_barato] = "El giga más barato"
+    if _entrada and _entrada not in DISTINTIVOS:
+        DISTINTIVOS[_entrada] = "Lo más barato para empezar"
+    if _grande not in DISTINTIVOS:
+        DISTINTIVOS[_grande] = "El que más RAM da"
+
     tabla = []
     for hid, f, h, precios, porgb, pares in filas:
         destacado = ' class="hl"' if partner.es_partner(hid) else ""
@@ -498,14 +549,16 @@ def indice(d):
         pr = h["precios"]["minecraft"]
         tabla.append(
             '      <tr%s data-modelo="%s" data-porgb="%s" data-entrada="%s">\n'
-            '        <td><a href="/hosting/%s/">%s</a><small>%s</small></td>\n'
+            '        <td><a href="/hosting/%s/">%s</a>%s<small>%s</small></td>\n'
             '        <td>%s</td>\n'
             '        %s\n'
             '        <td><a class="cta-mini" href="/hosting/%s/">Ver ficha</a></td>\n'
             '      </tr>'
             % (destacado, pr["modelo"], ("%.2f" % porgb) if porgb else "",
                "si" if pr.get("entrada") else "no",
-               f["url"], f["nombre"], f["pais"],
+               f["url"], f["nombre"],
+               ('<span class="badge-cat">%s</span>' % DISTINTIVOS[hid]) if hid in DISTINTIVOS else "",
+               f["pais"],
                _modelo_texto(pr, h, cambio), celdas, f["url"]))
 
     tarjetas = ['''    <div class="filtros" id="filtros" role="group"
@@ -534,12 +587,12 @@ def indice(d):
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Hostings de Minecraft analizados uno a uno (2026)</title>
-<meta name="description" content="Análisis de los principales hostings de Minecraft: precios reales comprobados a mano, lo bueno, los peros y cuándo compensa cada uno.">
+<title>Comparador de hosting de Minecraft: precios reales de %(cuantos)d comparados (2026)</title>
+<meta name="description" content="Comparador de hosting de Minecraft con precios comprobados a mano: cuánto cuesta el giga en cada uno, la letra pequeña, los peros y los trucos del sector. Sin precios inventados.">
 <link rel="canonical" href="%(dom)s/hosting/">
 <meta property="og:type" content="website">
 <meta property="og:url" content="%(dom)s/hosting/">
-<meta property="og:title" content="Hostings de Minecraft analizados uno a uno">
+<meta property="og:title" content="Comparador de hosting de Minecraft">
 <meta property="og:image" content="%(dom)s/og-image.jpg">
 <meta property="og:locale" content="es_ES">
 <link rel="icon" href="/favicon.ico" sizes="any">
@@ -566,24 +619,55 @@ def indice(d):
 
 <main>
   <div class="wrap articulo">
-    <nav class="miga"><a href="/">Inicio</a> › Hostings</nav>
-<h1>Los hostings de Minecraft, uno a uno</h1>
+    <nav class="miga"><a href="/">Inicio</a> › Comparador</nav>
+<h1>Comparador de <em>hosting de Minecraft</em></h1>
     <p class="sub art-sub">
-      Lo que cobra cada uno por 4, 8 y 16 GB, y su ficha con lo bueno y los peros.
+      Lo que cobra de verdad cada uno por 4, 8 y 16 GB, cuánto le sale el giga y la
+      letra pequeña que no está en su portada. Precios comprobados a mano, uno a uno.
     </p>
 
 %(indep)s
 %(tarjetas)s
 
 
-    <div class="art-cta" style="margin-top:30px">
-      <h3>¿Y el ping desde España?</h3>
-      <p>
-        El precio no es lo único que cambia entre unos y otros: también cambia
-        dónde tienen las máquinas. Ninguno las tiene en España, y la diferencia
-        entre acertar y no acertar con la ubicación son 100 milisegundos.
-      </p>
-    </div>
+    <h2 id="trucos">Los trucos que te vas a encontrar</h2>
+    <p>
+      Esta web nació de cabrearme con esto. No todos los hostings hacen trampas,
+      pero las que se hacen se repiten siempre, y casi ninguna es ilegal: es letra
+      pequeña puesta donde no miras.
+    </p>
+    <ol class="trucos">
+      <li>
+        <strong>El precio de la portada es solo el primer mes.</strong> Es el más
+        común. Ves «8 GB por 6,50 €», pagas, y al mes siguiente te cobran 25,99 €.
+        Por eso en esta web el precio que manda es <strong>la tarifa normal</strong>,
+        y el descuento de entrada va aparte y con su nombre.
+      </li>
+      <li>
+        <strong>El precio bueno es pagando dos años por adelantado.</strong> Lo
+        anuncian a lo grande y el «/mes» diminuto. Si cancelas antes, no recuperas
+        nada, y al renovar te suben casi al doble.
+      </li>
+      <li>
+        <strong>«Slots ilimitados» o «RAM ilimitada».</strong> Ilimitado no existe.
+        Lo que hay detrás es CPU compartida con otros veinte servidores, y se nota
+        justo cuando entráis todos a la vez.
+      </li>
+      <li>
+        <strong>La gama barata viene sin copias de seguridad.</strong> Te enteras el
+        día que alguien revienta el mundo. Está en la comparativa de cada uno.
+      </li>
+      <li>
+        <strong>Los rankings de «mejor hosting» los escriben los propios hostings.</strong>
+        Se ponen primeros, se dan un 4,9 y a la competencia le sacan los peros. Si
+        una lista no dice quién la paga, desconfía.
+      </li>
+    </ol>
+    <p>
+      Aquí los precios se comprueban <strong>a mano en la web de cada uno</strong>, con
+      la fecha puesta, la tabla se ordena por lo que cuesta el giga y cada ficha lleva
+      sus peros. %(afil)s
+    </p>
 
     <p class="art-meta">Precios comprobados el %(comprobado)s.</p>
   </div>
@@ -601,7 +685,9 @@ def indice(d):
 
 </body>
 </html>
-""" % dict(dom=DOMINIO, tarjetas="\n".join(tarjetas), comprobado=d["comprobado"],
+""" % dict(cuantos=len({(f.get("url") or hid) for hid, f in FICHAS.items()}),
+           afil=partner.caja_afiliado_corta() if hasattr(partner, "caja_afiliado_corta") else "",
+           dom=DOMINIO, tarjetas="\n".join(tarjetas), comprobado=d["comprobado"],
            # La caja solo sale si hay partner: entonces sí hay algo que avisar.
            indep=('    <div class="indep" style="margin:22px 0">\n'
                   '      <span class="indep-ico" aria-hidden="true">⚖️</span>\n'

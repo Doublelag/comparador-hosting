@@ -30,6 +30,8 @@ PREFIJOS = [
     ("/aviso-legal/", "/en/legal-notice/"),
     ("/privacidad/", "/en/privacy/"),
     ("/mi-server/", "/en/my-server/"),
+    ("/como-lo-compruebo/", "/en/how-i-check/"),
+    ("/precios/", "/en/price-history/"),
     ("/plantillas/smp-amigos/", "/en/templates/friends-smp/"),
     ("/plantillas/", "/en/templates/"),
     ("/versus/", "/en/versus/"),
@@ -64,7 +66,7 @@ def idioma_de(url):
 T = {
     "es": dict(
         menu="Menú", abrir="Abrir el menú", cerrar="Cerrar el menú",
-        hostings="Hostings", duelos="Versus", ofertas="Ofertas", plantillas="Plantillas", server="Mi server",
+        hostings="Comparador", duelos="Versus", ofertas="Ofertas", plantillas="Plantillas", server="Mi server",
         buscar="Buscar hosting o guía…", buscar_aria="Buscar en la web",
         tema_claro="Cambiar a modo claro", tema_noche="Cambiar a modo noche",
         otro_idioma="English", otro_idioma_corto="EN", otro_idioma_aria="Read this page in English",
@@ -72,7 +74,7 @@ T = {
         pie_legal="Legal",
         calculadora="Calculadora de RAM", mejor="Mejor hosting de Minecraft",
         guia="Cómo montar un servidor", ping="Ping desde España",
-        todos="Todos los hostings", cara="Versus", cupones="Ofertas y cupones",
+        todos="Comparador de hosting", metodo="Cómo compruebo los precios", historial="Historial de precios", cara="Versus", cupones="Ofertas y cupones",
         canal="Canal de YouTube", chorizo="Jugar en ChorizoSMP",
         privacidad="Privacidad", cookies="Cookies", aviso="Aviso legal",
         contacto="Escríbeme",
@@ -81,7 +83,7 @@ T = {
     ),
     "en": dict(
         menu="Menu", abrir="Open the menu", cerrar="Close the menu",
-        hostings="Hosts", duelos="Versus", ofertas="Deals", plantillas="Templates", server="My server",
+        hostings="Compare", duelos="Versus", ofertas="Deals", plantillas="Templates", server="My server",
         buscar="Search a host or guide…", buscar_aria="Search the site",
         tema_claro="Switch to light mode", tema_noche="Switch to night mode",
         otro_idioma="Español", otro_idioma_corto="ES", otro_idioma_aria="Leer esta página en español",
@@ -89,7 +91,7 @@ T = {
         pie_legal="Legal",
         calculadora="RAM calculator", mejor="Best Minecraft hosting",
         guia="How to set up a server", ping="Ping from Spain",
-        todos="All hosts", cara="Versus", cupones="Deals and coupons",
+        todos="Hosting comparison", metodo="How I check the prices", historial="Price history", cara="Versus", cupones="Deals and coupons",
         canal="YouTube channel", chorizo="Play on ChorizoSMP",
         privacidad="Privacy", cookies="Cookies", aviso="Legal notice",
         contacto="Email me",
@@ -136,7 +138,7 @@ def cabecera(url):
         enlace("/hosting/", t["hostings"]),
         enlace("/versus/", t["duelos"]),
         enlace("/ofertas/", t["ofertas"]),
-        enlace("/plantillas/smp-amigos/", t["plantillas"]),
+        enlace("/plantillas/", t["plantillas"]),
         enlace("/mi-server/", t["server"]),
     ])
     return '''<header class="site-head">
@@ -184,6 +186,8 @@ def pie(url, comprobado):
         <span>%(pie_comparar)s</span>
         <a href="%(hosting_u)s">%(todos)s</a>
         <a href="%(comparar_u)s">%(cara)s</a>
+        <a href="%(metodo_u)s">%(metodo)s</a>
+        <a href="%(hist_u)s">%(historial)s</a>
         <a href="%(ofertas_u)s">%(cupones)s</a>
       </div>
       <div>
@@ -210,6 +214,8 @@ def pie(url, comprobado):
                     guia_u=u("/minecraft/como-montar-un-servidor/"), guia=t["guia"],
                     pie_comparar=t["pie_comparar"], hosting_u=u("/hosting/"), todos=t["todos"],
                     comparar_u=u("/versus/"), cara=t["cara"],
+                    metodo_u=u("/como-lo-compruebo/"), metodo=t["metodo"],
+                    hist_u=u("/precios/"), historial=t["historial"],
                     ofertas_u=u("/ofertas/"), cupones=t["cupones"],
                     pie_doublelag=t["pie_doublelag"], yt=sitio.YOUTUBE, canal=t["canal"],
                     server_u=u("/mi-server/"), chorizo=t["chorizo"],

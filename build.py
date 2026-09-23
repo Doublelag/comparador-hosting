@@ -23,6 +23,8 @@ import historico
 import marco
 import paginas
 import plantillas
+import modpacks
+import historial
 import hostings_en
 import duelos_en
 import ofertas_en
@@ -48,9 +50,9 @@ def rellenar_partner():
              if partner.activo() and cfg.get("promo") else "")
     for fichero, textos in (
         ("index.html", {"quegano": partner.que_gano_yo(), "boton": partner.aviso_boton(),
-                        "promoscript": promo}),
+                        "quien": partner.linea_bienvenida(), "promoscript": promo}),
         ("index.en.html", {"quegano": partner.que_gano_yo_en(), "boton": partner.aviso_boton_en(),
-                           "promoscript": promo}),
+                           "quien": partner.linea_bienvenida_en(), "promoscript": promo}),
     ):
         ruta = os.path.join(RAIZ, fichero)
         html = io.open(ruta, encoding="utf-8").read()
@@ -69,7 +71,8 @@ def rellenar_partner():
 
 
 ESTATICOS = ["styles.css", "app.js", "hosts.js", "buscador_ui.js", "tabla_ui.js",
-             "filtros_ui.js", "promo_ui.js", "indice.js", "plantilla_ui.js"]
+             "filtros_ui.js", "promo_ui.js", "indice.js", "plantilla_ui.js",
+             "zip_ui.js", "modpack_ui.js"]
 
 
 def versionar():
@@ -301,7 +304,9 @@ def main():
 
 
     # ---- Páginas sueltas: legales y ChorizoSMP (en los dos idiomas) --------
-    for ruta, hacer in paginas.TODAS + plantillas.TODAS:
+    historiales = [("/precios/", lambda: historial.html("es", dh)),
+                   ("/en/price-history/", lambda: historial.html("en", dh))]
+    for ruta, hacer in paginas.TODAS + plantillas.TODAS + modpacks.TODAS + historiales:
         carpeta = os.path.join(RAIZ, *[p for p in ruta.split("/") if p])
         os.makedirs(carpeta, exist_ok=True)
         io.open(os.path.join(carpeta, "index.html"), "w", encoding="utf-8").write(hacer())

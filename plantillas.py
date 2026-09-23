@@ -55,6 +55,7 @@ def _datos_js(p):
     d = {k: v for k, v in p.items() if k != "id"}
     d["archivos"] = _archivos(p["id"])
     return ("<script>window.PLANTILLA = %s;</script>\n"
+            '<script src="/zip_ui.js" defer></script>\n'
             '<script src="/plantilla_ui.js" defer></script>'
             % json.dumps(d, ensure_ascii=False).replace("</", "<\\/"))
 
@@ -308,7 +309,91 @@ def smp(lang):
         _datos_js(p), og_type="website")
 
 
+# ---------------------------------------------------------------------------
+# EL ÍNDICE /plantillas/  (las dos clases de plantilla)
+# ---------------------------------------------------------------------------
+def indice(lang):
+    es = lang == "es"
+    pre = "" if es else "/en"
+    smp = pre + ("/plantillas/smp-amigos/" if es else "/templates/friends-smp/")
+    mods = pre + ("/plantillas/modpacks/" if es else "/templates/modpacks/")
+    if es:
+        cuerpo = """  <div class="wrap articulo plt" style="max-width:900px">
+    <nav class="miga"><a href="/">Inicio</a> &rsaquo; Plantillas</nav>
+
+    <span class="sec-eyebrow">Plantillas</span>
+    <h1>Tu servidor, <em>ya configurado</em></h1>
+    <p class="sub art-sub">
+      Montar un servidor desde cero son horas de plugins, permisos y archivos que nadie
+      te explica. Aquí te lo doy hecho: eliges, descargas y lo subes.
+    </p>
+
+    <div class="cat-grid" style="margin:26px 0 30px">
+      <a class="cat-card" href="%(smp)s">
+        <span class="cat-tit">SMP de amigos</span>
+        <span class="cat-txt">Un .zip con todo puesto: crossplay con móvil y consola, casas,
+          /tpa, anti-destrozos y permisos hechos. Lo subes y en 5 minutos estáis dentro.</span>
+      </a>
+      <a class="cat-card" href="%(mods)s">
+        <span class="cat-tit">Modpacks</span>
+        <span class="cat-txt">Los packs más jugados con sus datos reales, la RAM que piden
+          según cuántos seáis y los ajustes para que no vaya a tirones.</span>
+      </a>
+    </div>
+
+    <div class="art-cta">
+      <h3>¿No sabes cuánta RAM necesitas?</h3>
+      <p>Dime cuántos sois y qué lleváis instalado y te lo digo en 20 segundos, con lo que
+        cuesta en cada hosting.</p>
+      <div class="hero-cta"><a class="cta" href="/#calculadora">Calcular mi servidor</a></div>
+    </div>
+  </div>""" % dict(smp=smp, mods=mods)
+        return paginas.pagina("es", "/plantillas/",
+                              "Plantillas de servidor de Minecraft, gratis y ya configuradas",
+                              "Un servidor de Minecraft ya montado: plantilla de SMP con amigos "
+                              "lista para subir y los modpacks más jugados con la RAM que piden.",
+                              cuerpo, og_type="website")
+
+    cuerpo = """  <div class="wrap articulo plt" style="max-width:900px">
+    <nav class="miga"><a href="/en/">Home</a> &rsaquo; Templates</nav>
+
+    <span class="sec-eyebrow">Templates</span>
+    <h1>Your server, <em>already set up</em></h1>
+    <p class="sub art-sub">
+      Setting up a server from scratch is hours of plugins, permissions and config files
+      nobody explains. Here it's done for you: pick one, download it, upload it.
+    </p>
+
+    <div class="cat-grid" style="margin:26px 0 30px">
+      <a class="cat-card" href="%(smp)s">
+        <span class="cat-tit">Friends SMP</span>
+        <span class="cat-txt">A .zip with everything set: crossplay with mobile and console,
+          homes, /tpa, anti-griefing and permissions done. Upload it and you're in.</span>
+      </a>
+      <a class="cat-card" href="%(mods)s">
+        <span class="cat-tit">Modpacks</span>
+        <span class="cat-txt">The most played packs with their real data, the RAM they need
+          for your group size and the settings that stop the stutter.</span>
+      </a>
+    </div>
+
+    <div class="art-cta">
+      <h3>Not sure how much RAM you need?</h3>
+      <p>Tell me how many of you there are and what you've got installed and I'll tell you
+        in 20 seconds, with what it costs on each host.</p>
+      <div class="hero-cta"><a class="cta" href="/en/#calculadora">Size my server</a></div>
+    </div>
+  </div>""" % dict(smp=smp, mods=mods)
+    return paginas.pagina("en", "/en/templates/",
+                          "Free Minecraft server templates, already configured",
+                          "A Minecraft server already set up: a friends SMP template ready to "
+                          "upload and the most played modpacks with the RAM they need.",
+                          cuerpo, og_type="website")
+
+
 TODAS = [
+    ("/plantillas/", lambda: indice("es")),
+    ("/en/templates/", lambda: indice("en")),
     ("/plantillas/smp-amigos/", lambda: smp("es")),
     ("/en/templates/friends-smp/", lambda: smp("en")),
 ]
