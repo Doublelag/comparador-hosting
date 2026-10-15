@@ -81,8 +81,14 @@ def tabla_precios(host_id, d):
             mes, entrada, ano = coste_primer_ano(h, gb_ref, cambio)
             if mes is not None:
                 break
-        if mes is not None:
-            aviso = ('<p class="tbl-note"><strong>Mind the entry discount.</strong> A %d GB '
+        if mes is not None and pr["entrada"].get("permanente"):
+            # Nothing to warn about: the point is that it does not expire.
+            aviso = ('<p class="tbl-note"><strong>Their discount never expires.</strong> An %d GB '
+                     'server costs %s a month with the code instead of %s, and still does in '
+                     'month twelve: <strong>%s for the first year</strong>.</p>'
+                     % (gb_ref, eur(entrada), eur(mes), eur(ano)))
+        elif mes is not None:
+            aviso = ('<p class="tbl-note"><strong>Mind the entry discount.</strong> An %d GB '
                      'server starts at %s for %s, then it\'s %s a month: '
                      '<strong>%s for the first year</strong>.</p>'
                      % (gb_ref, eur(entrada), pr["entrada"].get("que_en", pr["entrada"]["que"]),
@@ -370,6 +376,7 @@ def indice(d):
       you more than you asked for, the maths counts the GB you get, not the ones you
       asked for. Click any column to sort by it.
     </p>
+%(banner)s
 
     <h2 id="tricks">The tricks you're going to run into</h2>
     <p>
@@ -425,5 +432,5 @@ def indice(d):
 """ % dict(
            cuantos=len({(f.get("url") or hid) for hid, f in hostings.FICHAS.items()}),
            afil=("I have an affiliate deal with one of them, and I say so in every page's footer: it still sits in the table where its price puts it."
-                 if partner.activo() else "I have no deal with any of them."),dom=DOMINIO, fuentes=FUENTES, indep=indep, tabla="\n".join(tabla),
+                 if partner.activo() else "I have no deal with any of them."),dom=DOMINIO, fuentes=FUENTES, indep=indep, banner=partner.banner_en(), tabla="\n".join(tabla),
            comprobado=d.get("comprobado_en", d["comprobado"]))

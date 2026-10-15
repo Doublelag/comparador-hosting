@@ -66,23 +66,24 @@ DUELOS = [
               "que no se quitan pagando: <strong>ni mods ni plugins</strong>, y "
               "<strong>diez jugadores</strong> como mucho. Godlike te da un servidor de "
               "2 GB por 6,29 € al mes, menos que Realms, con Paper, Forge, Fabric y "
-              "todos los plugins que quieras. Y el primer mes, con su −75 %, sale a "
-              "1,57 €. Si algún día queréis meter un modpack o sois más de diez, con "
+              "todos los plugins que quieras. Y con el código DOUBLELAG se queda en "
+              "4,72 € <strong>todos los meses</strong>, no solo el primero. Si algún "
+              "día queréis meter un modpack o sois más de diez, con "
               "Realms tocará mudarse; con Godlike, subir de plan en dos clics.",
   ),
   dict(
     a="godlike", b="gportal",
-    gana_a="Necesitas más de 6 GB, quieres el primer pago más barato, o un "
-           "procesador de última generación.",
+    gana_a="Necesitas más de 6 GB, o un procesador de última generación.",
     gana_b="Tu servidor cabe en 2-4 GB y lo vas a tener todo el año.",
     veredicto="Los dos te montan un modpack en pocos clics y tienen buena red en "
               "Europa. La diferencia está en el techo y en la entrada. GPORTAL "
               "<strong>se queda en 6 GB</strong>: para un modpack grande o una "
-              "comunidad no llega. Godlike sube hasta 33. Para empezar, el −75 % de "
-              "Godlike deja los 4 GB en 3,25 €, cuando GPORTAL, con su −25 %, pide "
-              "8,85 €. A tarifa normal, en los planes pequeños GPORTAL sale algo más "
-              "barato (11,80 € frente a 12,99 € los 4 GB). Así que: servidor pequeño "
-              "para todo el año, GPORTAL; cualquier otra cosa, Godlike.",
+              "comunidad no llega. Godlike sube hasta 33. En precio manda GPORTAL en los "
+              "planes pequeños: 11,80 € los 4 GB frente a los 9,74 € de Godlike con el "
+              "código, que ahí se quedan cerca, pero el −25 % de GPORTAL es solo del "
+              "primer periodo y el de Godlike no caduca. Así que: servidor pequeño y "
+              "sabes apañártelas, GPORTAL; más de 6 GB o quieres que te lo pongan fácil, "
+              "Godlike.",
   ),
   dict(
     a="godlike", b="bisect",
@@ -118,7 +119,8 @@ DUELOS = [
               "que <strong>pagar 24 meses por adelantado</strong>, y después renueva "
               "casi al doble. Además es un VPS: te toca administrar más cosas tú. "
               "Godlike va al revés: <strong>eliges cuántos días pagas</strong>, de 30 "
-              "a 360, y el primer pago sale con un −75 %. Para probar, para una "
+              "a 360, sin ataduras, y con el código te quitas un 25 % todos los meses. "
+              "Para probar, para una "
               "temporada o para no atarte dos años a algo que aún no conoces, Godlike. "
               "Si tienes claro que vas a estar dos años y sabes manejar un servidor, "
               "Hostinger sale más barato a la larga.",
@@ -134,8 +136,9 @@ DUELOS = [
               "monta un Ryzen 7 5700X con DDR4 a 2133 MHz. Godlike está en el otro "
               "lado: Ryzen de última generación hasta el 9950X3D, NVMe, hasta tres "
               "copias al día y la posibilidad de <strong>elegir los días</strong> que "
-              "pagas. Lo que cuesta: 50,99 € los 16 GB de tarifa; su −75 % solo vale "
-              "para el primer mes. Para un servidor de todo el año, Pebble. Para "
+              "pagas. Lo que cuesta: 38,24 € los 16 GB con el código, casi el triple que "
+              "Pebble, eso sí todos los meses y no solo el primero. Para un servidor de "
+              "todo el año y gastar lo mínimo, Pebble. Para "
               "un modpack pesado de unos meses, donde un corte o un procesador lento "
               "te arruinan la partida, Godlike.",
   ),

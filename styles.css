@@ -1661,3 +1661,28 @@ summary:focus-visible,[tabindex]:focus-visible{
 
 /* ---- Enlace a las opiniones de cada hosting ---- */
 .opiniones{margin:6px 0 0;font-size:13px;color:var(--txt-dim);line-height:1.55}
+
+
+/* --- Banner del partner -----------------------------------------------------
+   Va debajo de la tabla y separado de ella a proposito: tiene que leerse como
+   lo que es, un anuncio, y no como un resultado mas del comparador. De ahi el
+   rotulo encima y el tono apagado del marco.
+   En movil la imagen no cabe (1674x160 se queda en una tira ilegible), asi que
+   ahi se esconde y sale un enlace de texto en su lugar. */
+.pub{margin:var(--sec-y) 0 0;padding:18px 0 0;border-top:1px solid var(--line)}
+.pub-et{font-size:11px;letter-spacing:.08em;text-transform:uppercase;
+        color:var(--txt-faint);margin:0 0 8px}
+.pub a{display:block;border-radius:var(--r-m);overflow:hidden;
+       border:1px solid var(--line);background:var(--bg-2)}
+.pub a:hover{border-color:var(--line-2)}
+.pub img{display:block;width:100%;height:auto}
+.pub-cta{display:none}
+.pub-pie{margin:8px 0 0;font-size:12.5px;line-height:1.5;color:var(--txt-faint)}
+.pub-pie strong{color:var(--txt-dim);font-weight:600}
+
+@media(max-width:600px){
+  .pub img{display:none}
+  .pub-cta{display:block;padding:14px 16px;font-size:14px;font-weight:600;
+           color:var(--acc-2);text-align:center}
+  .pub-cta::after{content:" \2192"}
+}

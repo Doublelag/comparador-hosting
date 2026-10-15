@@ -250,10 +250,17 @@ def tabla_precios(host_id, d):
             if mes is not None:
                 break
     if pr.get("entrada") and mes is not None:
-        aviso = ('<p class="tbl-note"><strong>Ojo con su descuento de entrada.</strong> '
-                 'Un servidor de %d GB te entra por %s %s, pero después son %s al mes: '
-                 '<strong>%s el primer año</strong>.</p>'
-                 % (gb_ref, eur(entrada), pr["entrada"]["que"], eur(mes), eur(ano)))
+        if pr["entrada"].get("permanente"):
+            # No hay trampa que avisar: lo que toca decir es que no caduca.
+            aviso = ('<p class="tbl-note"><strong>Su descuento no caduca.</strong> '
+                     'Un servidor de %d GB sale por %s al mes con el c\u00f3digo, en vez de %s, '
+                     'y sigue as\u00ed el mes doce: <strong>%s el primer a\u00f1o</strong>.</p>'
+                     % (gb_ref, eur(entrada), eur(mes), eur(ano)))
+        else:
+            aviso = ('<p class="tbl-note"><strong>Ojo con su descuento de entrada.</strong> '
+                     'Un servidor de %d GB te entra por %s %s, pero despu\u00e9s son %s al mes: '
+                     '<strong>%s el primer a\u00f1o</strong>.</p>'
+                     % (gb_ref, eur(entrada), pr["entrada"]["que"], eur(mes), eur(ano)))
 
     return (aviso + '<div class="table-wrap">\n<table class="tabla-maestra">\n'
             '<thead><tr><th>Plan</th>%s</tr></thead>\n'
@@ -555,7 +562,7 @@ def indice(d):
             '        <td><a class="cta-mini" href="/hosting/%s/">Ver ficha</a></td>\n'
             '      </tr>'
             % (destacado, pr["modelo"], ("%.2f" % porgb) if porgb else "",
-               "si" if pr.get("entrada") else "no",
+               "si" if (pr.get("entrada") and not pr["entrada"].get("permanente")) else "no",
                f["url"], f["nombre"],
                ('<span class="badge-cat">%s</span>' % DISTINTIVOS[hid]) if hid in DISTINTIVOS else "",
                f["pais"],
@@ -580,7 +587,7 @@ def indice(d):
       planes cerrados con quien te cobra los gigas sueltos, igual que el precio por
       kilo en el súper. Si su plan te da de más, el cálculo cuenta los gigas que te
       dan, no los que pediste. Pulsa en cualquier columna para ordenar por ella.
-    </p>''' % "\n".join(tabla)]
+    </p>''' % "\n".join(tabla), partner.banner()]
 
     return """<!doctype html>
 <html lang="es">

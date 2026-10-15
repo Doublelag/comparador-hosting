@@ -177,8 +177,8 @@ def linea_bienvenida():
     p = config()
     cupon = (" con el código <strong>%s</strong>" % p["codigo"]) if p.get("codigo") else ""
     return ("Con <strong>%s</strong> sí tengo acuerdo, y es por esto: he usado el alcance "
-            "de mis redes para conseguiros un trato de verdad bueno, el mayor descuento de "
-            "toda la comparativa, un <strong>−75 %% el primer mes</strong>%s. Sí, me llevo una comisión si contratas por mi enlace, y a ti "
+            "de mis redes para conseguiros un trato de verdad bueno: "
+            "un <strong>−25 %% todos los meses</strong>%s, el único que no caduca: los otros nueve descuentos de esta web valen solo para la primera factura. Sí, me llevo una comisión si contratas por mi enlace, y a ti "
             "no te cuesta ni un céntimo más. Aun así sale en las tablas en el puesto que "
             "le toca por precio, y la calculadora te dice el más barato aunque no sea él."
             % (nombre(), cupon))
@@ -190,8 +190,8 @@ def linea_bienvenida_en():
     p = config()
     cupon = (" with the code <strong>%s</strong>" % p["codigo"]) if p.get("codigo") else ""
     return ("With <strong>%s</strong> I do have a deal, and this is why: I used the reach "
-            "of my channels to get you a genuinely good one, the biggest discount in the "
-            "whole comparison, <strong>−75%% off the first month</strong>%s. Yes, I earn a commission if you buy through my link, and it "
+            "of my channels to get you a genuinely good one: "
+            "<strong>−25%% off every month</strong>%s, the only one that never expires: the other nine discounts on this site are first-invoice only. Yes, I earn a commission if you buy through my link, and it "
             "costs you nothing extra. It still sits in the tables where its price puts it, "
             "and the calculator tells you the cheapest even when that isn't them."
             % (nombre(), cupon))
@@ -218,3 +218,66 @@ def que_gano_yo():
     return ("Comisión si contratas %s por mis enlaces, sin coste extra para ti. Por eso "
             "la calculadora <strong>te dice primero el más barato aunque no sea él</strong>, "
             "y en las tablas sale en el puesto que le toca por precio." % nombre())
+
+
+# El banner oficial que manda el partner. Va DEBAJO de la tabla y etiquetado
+# como publicidad a proposito: un comparador que esconde sus anuncios deja de
+# ser un comparador. El descuento se explica al lado ("el primer mes") porque
+# la imagen la disena el partner y ahi solo pone "Save 75%".
+BANNER = {
+    "archivo": "/godlike-banner.webp",
+    "ancho": 1674,
+    "alto": 160,
+    "alt": u"Godlike.host, hosting para modpacks de Minecraft",
+}
+
+
+def _banner(rotulo, pie, alt, cta):
+    """El bloque del banner, o cadena vacia si no hay partner.
+
+    El cid=BANNER es para poder separar en el panel de afiliado las ventas que
+    vienen de aqui de las que vienen de los botones de las fichas.
+    """
+    if not activo():
+        return ""
+    url = enlace(cid="BANNER")
+    if not url:
+        return ""
+    return (
+        '<figure class="pub">\n'
+        '  <figcaption class="pub-et">%s</figcaption>\n'
+        '  <a href="%s" rel="sponsored nofollow noopener" target="_blank">\n'
+        '    <img src="%s" alt="%s" width="%d" height="%d"\n'
+        '         loading="lazy" decoding="async">\n'
+        '    <span class="pub-cta">%s</span>\n'
+        '  </a>\n'
+        '  <p class="pub-pie">%s</p>\n'
+        '</figure>\n'
+        % (rotulo, url, BANNER["archivo"], alt,
+           BANNER["ancho"], BANNER["alto"], cta, pie))
+
+
+def banner():
+    p = config()
+    cupon = (u" con el c\u00f3digo <strong>%s</strong>" % p["codigo"]) if p.get("codigo") else ""
+    return _banner(
+        u"Publicidad \u00b7 enlace de afiliado",
+        u"<strong>\u221225 %% todos los meses</strong>%s, no solo el primero. El \u221275 %% que "
+        u"anuncia el cartel era su oferta de entrada antigua y ya no est\u00e1. En la tabla de "
+        u"arriba sale en el puesto que le toca por su tarifa normal."
+        % cupon,
+        BANNER["alt"],
+        u"Ver Godlike.host")
+
+
+def banner_en():
+    p = config()
+    cupon = (u" with the code <strong>%s</strong>" % p["codigo"]) if p.get("codigo") else ""
+    return _banner(
+        u"Advertisement \u00b7 affiliate link",
+        u"<strong>\u221225%% every month</strong>%s, not just the first. The \u221275%% on the "
+        u"banner was their old entry offer and it is gone. In the table above it sits where "
+        u"its list price puts it."
+        % cupon,
+        u"Godlike.host, Minecraft modpack hosting",
+        u"Go to Godlike.host")

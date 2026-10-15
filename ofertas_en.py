@@ -24,15 +24,15 @@ VEREDICTOS = {"buena": "A real deal", "truco": "Has a catch", "evitar": "I'd avo
 
 TEXTOS = [
   ("Godlike.host", dict(
-    titulo="−75% off the first month: the biggest discount in the comparison",
-    resumen="No other host on this site cuts the entry price this much. 16 GB comes to "
-            "€12.75 and 2 GB to €1.57: the cheapest first payment in the whole table at those sizes.",
-    letra="It's a <strong>first-purchase</strong> discount: after that you pay the normal "
-          "rate, €25.99 for 8 GB and €50.99 for 16. If you pay 360 days in one go, the "
-          "discount applies to that whole period.",
-    consejo="It shines brightest for a seasonal server: you pick the days you'll play, "
-            "try it free for a day and the first bill is a quarter of the price. For a "
-            "year-round server, look at the second month's rate too.",
+    titulo="−25% every month: the only discount here that never expires",
+    resumen="The other nine discounts on this site are first-invoice only. This one "
+            "is not: the −25% is still there in month twelve. 16 GB comes to €38.24 "
+            "and 8 GB to €19.49, always.",
+    letra="It still is not cheap per GB: €2.44 with the code against €1.00 at the "
+          "cheapest host in the table. You are paying for convenience, not gigabytes.",
+    consejo="It shines brightest on a first server: try it free for a day with no card, "
+            "mods go in from the panel, and their launcher gets the game ready for each "
+            "friend. If you just want to spend the least, look at Kinetic.",
   )),
   ("HolyHosting", dict(
     titulo="25% off with a countdown",

@@ -129,16 +129,24 @@ FICHAS_EXTRA = {
   ),
   "godlike": dict(
     desde_ano="2021", ubicaciones="10",
-    rasgos=['−75 %: el mayor descuento de la comparativa', 'Ryzen hasta 9950X3D',
-            '3 copias al día gratis', 'Prueba gratis de un día', 'Instalador de mods integrado'],
+    rasgos=['−25 % siempre, no solo el primer mes', 'Launcher que prepara el cliente',
+            'Instalador de mods integrado', 'Prueba gratis de un día sin tarjeta',
+            'Eliges gigas, plazas y días'],
     url="godlike", nombre="Godlike.host", pais="Rumanía",
-    resumen=("El mayor descuento de la comparativa, −75 % el primer mes, y el "
-             "hosting más flexible: eliges gigas, plazas y días, con Ryzen de última "
-             "hornada y tres copias al día."),
+    resumen=("El que menos cosas te obliga a saber: un launcher que le deja el "
+             "Minecraft listo a tus amigos, mods en dos clics y un día gratis para "
+             "probarlo sin tarjeta. No es barato por giga, pero es el único cuyo "
+             "descuento no caduca."),
     bueno=[
-      "<strong>El mayor descuento de toda la comparativa: −75 % en la primera "
-      "compra.</strong> Los 16 GB se quedan en 12,75 € y los 2 GB en 1,57 €, el primer "
-      "pago más barato de la tabla en esos tamaños.",
+      "<strong>El único descuento de esta web que no caduca: −25 % todos los meses</strong> "
+      "con el código DOUBLELAG. Los otros nueve descuentos de la tabla valen solo para "
+      "la primera factura; este sigue ahí el mes doce. Los 16 GB quedan en 38,24 € y "
+      "los 8 GB en 19,49 €, siempre.",
+      "<strong>Su launcher te ahorra la peor tarde del año.</strong> Inicias sesión con "
+      "tu cuenta de Godlike y desde ahí gestionas el servidor, pero lo gordo es el botón "
+      "de preparar el cliente: te instala la versión y los mods que lleva el servidor. "
+      "Eso mata el «instalaos todos lo mismo y la misma versión», que es donde se muere "
+      "la mitad de los servidores con mods. No lo tiene ningún otro de esta tabla.",
       "<strong>El plan te lo montas tú</strong>: gigas (de 2 a 33), plazas (de 5 a 200) "
       "y <strong>días</strong> — 30, 90, 180 o 360. Casi nadie deja elegir la duración: "
       "si el modpack os va a durar tres meses, pagas tres meses y cierras.",
@@ -161,21 +169,24 @@ FICHAS_EXTRA = {
       "incluida) y pago con casi cualquier método, cripto incluida.",
     ],
     malo=[
-      "El −75 % es del primer mes y solo pagando mes a mes (al trimestre o al año la rebaja es del 9-21 %): a partir de ahí, tarifa normal (25,99 € los "
-      "8 GB). Cuenta con ella si el servidor va a durar todo el año.",
-      "<strong>A tarifa son 3,19 € el GB</strong>, de los más caros de la tabla. Pagando "
-      "el año baja a 2,54 €, y sigue por encima de la media.",
+      "<strong>No es barato por giga y no lo disimulo</strong>: 3,25 € a tarifa y 2,44 € "
+      "con el código, cuando el más barato de esta tabla está en 1,00 €. Aquí pagas la "
+      "comodidad, no los gigas. Si sabes moverte por un panel y lo que quieres es "
+      "gastar poco, hay opciones a menos de la mitad.",
+      "<strong>El soporte no habla español.</strong> Te atienden en inglés, y ellos "
+      "mismos dicen que tiran de traductor si les escribes en otro idioma. Funciona, "
+      "pero contándolo: si se te cae el servidor un domingo, lo arreglas en inglés.",
       "Empresa joven, de 2021. En 2024 tuvieron una queja de reembolso que acabó en "
       "Reddit; la tienen explicada en su propia web, que ya dice algo.",
       "El servidor gratis es para trastear: una plaza y hay que renovarlo cada tres horas.",
     ],
-    veredicto=("Es el hosting más flexible de toda la comparativa y de los que mejor "
-               "hardware monta. Donde gana sin discusión es en el servidor de temporada: "
-               "un modpack con amigos, un evento, un proyecto de unos meses. Eliges "
-               "los días justos, lo pruebas gratis y tienes copias y un procesador que "
-               "no se ahoga. Para un servidor de todo el año, haz la cuenta con el "
-               "precio de renovación: ahí hay opciones más baratas, aunque con peor "
-               "hardware."),
+    veredicto=("No es el más barato y no vengo a decirte que lo sea. Es el más fácil. "
+               "Pagas más por giga, sí. A cambio te llevas el launcher que le prepara el "
+               "juego a tus amigos, mods en dos clics, copias diarias, elegir los días que "
+               "pagas y un día gratis para probarlo. De los 23 de esta tabla, no hay otro "
+               "que te dé todo eso junto. Si tu tiempo vale algo, la cuenta cambia. "
+               "Y si lo que quieres es gastar lo mínimo y no te asusta un panel a pelo, "
+               "mira Kinetic o NexoHost, que están a menos de la mitad por giga."),
   ),
 
   "gportal": dict(

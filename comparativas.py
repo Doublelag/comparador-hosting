@@ -162,8 +162,8 @@ COMPARATIVAS = [
        "copias."),
       ("Si es un servidor de temporada", "Godlike.host",
        "Un modpack con amigos, un evento, un proyecto de unos meses. Godlike tiene "
-       "<strong>el mayor descuento de la comparativa, −75 % el primer mes</strong>, "
-       "y es el único que te deja <strong>elegir los días</strong> (30, 90, 180 o 360), lo "
+       "<strong>el único descuento de la comparativa que no caduca, −25 % todos los "
+       "meses</strong>, y es el único que te deja <strong>elegir los días</strong> (30, 90, 180 o 360), lo "
        "pruebas gratis un día y monta Ryzen de última generación con hasta tres copias "
        "diarias. Pagas lo que dura el servidor, ni un mes más. Para todo el año sale "
        "más caro que los de arriba."),
@@ -174,10 +174,10 @@ COMPARATIVAS = [
     ],
     faq=[
       ("¿Cuál es el hosting de Minecraft más barato?",
-       "Depende de cuánto tiempo lo vayas a tener. Para empezar, Godlike.host: su −75 % "
-       "el primer mes es el mayor descuento de la comparativa y deja los 16 GB en "
-       "12,75 €. Para todo el año, Kinetic Hosting y PebbleHost Budget, que rondan los "
-       "0,86 € el giga todos los meses; el Budget de PebbleHost no trae copias de seguridad."),
+       "Kinetic Hosting y PebbleHost Budget, que rondan los 0,86 € el giga todos los "
+       "meses; el Budget de PebbleHost no trae copias de seguridad. Godlike, aun con su "
+       "−25 % permanente, se queda en 2,44 € el giga: ahí no pagas gigas, pagas que te "
+       "lo pongan fácil."),
       ("¿Merece la pena pagar el año por adelantado?",
        "Solo si ya has probado el servidor y sabes que os vais a quedar. Coge un mes "
        "primero, mete a tu gente y mira cómo va. Y desconfía de quien solo te da el "
@@ -213,7 +213,9 @@ def coste_primer_ano(h, gb, cambio):
     e = (h.get("precios", {}).get("minecraft") or {}).get("entrada")
     if not e:
         return mes, None, mes * 12
-    meses = e.get("meses", 1)
+    # Recortado a 12: si el descuento no caduca, el primer año entero va
+    # descontado y no hay meses a tarifa que sumar.
+    meses = min(e.get("meses", 1), 12)
     entrada = mes * (1 - e["pct"] / 100.0)
     return mes, entrada, entrada * meses + mes * (12 - meses)
 

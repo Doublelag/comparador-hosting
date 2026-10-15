@@ -151,8 +151,8 @@ def smp(lang):
     <div class="plt-host">
       <div>
         <h3>¿Aún no tienes hosting?</h3>
-        <p>Para empezar, <strong>Godlike.host</strong> tiene el mayor descuento de la comparativa:
-          <strong>−75 %% el primer mes</strong> con el código <strong>DOUBLELAG</strong>. Y antes de pagar nada, te dejan
+        <p>Si es tu primer servidor, <strong>Godlike.host</strong> es el que menos cosas te obliga a saber, y su
+          <strong>−25 %% no caduca</strong> con el código <strong>DOUBLELAG</strong>. Y antes de pagar nada, te dejan
           <strong>un servidor gratis durante un día</strong> para probarlo.</p>
       </div>
       <div class="plt-host-botones">
@@ -262,8 +262,8 @@ def smp(lang):
     <div class="plt-host">
       <div>
         <h3>No host yet?</h3>
-        <p>To start with, <strong>Godlike.host</strong> has the biggest discount in the comparison:
-          <strong>−75%% off the first month</strong> with the code <strong>DOUBLELAG</strong>. And before paying anything, they
+        <p>If this is your first server, <strong>Godlike.host</strong> asks the least of you, and its
+          <strong>−25%% never expires</strong> with the code <strong>DOUBLELAG</strong>. And before paying anything, they
           give you <strong>a free server for a day</strong> to try it out.</p>
       </div>
       <div class="plt-host-botones">

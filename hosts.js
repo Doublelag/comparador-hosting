@@ -566,7 +566,7 @@ window.DATOS = {
       "precios": {
         "minecraft": {
           "modelo": "tabla",
-          "nota": "El mayor descuento de la comparativa: −75 % el primer mes con el código DOUBLELAG. Ryzen hasta 9950X3D con NVMe y hasta 3 copias al día gratis. Eliges gigas, plazas y días. Prueba gratis de un día y buscador de mods integrado en el panel. Después de la primera compra, tarifa normal",
+          "nota": "El único descuento de la comparativa que no caduca: −25 % todos los meses con el código DOUBLELAG. Ryzen hasta 9950X3D con NVMe y hasta 3 copias al día gratis. Eliges gigas, plazas y días. Prueba gratis de un día y buscador de mods integrado en el panel. El descuento se mantiene mientras sigas",
           "tiers": [
             [
               2,
@@ -598,12 +598,13 @@ window.DATOS = {
             ]
           ],
           "entrada": {
-            "pct": 75,
-            "meses": 1,
-            "que": "el primer mes",
-            "que_en": "the first month"
+            "pct": 25,
+            "meses": 9999,
+            "permanente": true,
+            "que": "siempre, no solo el primer mes",
+            "que_en": "every month, not just the first"
           },
-          "nota_en": "The biggest discount in the comparison: −75% off the first month with the code DOUBLELAG. Ryzen up to 9950X3D with NVMe and up to 3 free backups a day. You pick the GB, slots and days. One-day free trial and a mod finder built into the panel. After the first purchase, the normal rate applies"
+          "nota_en": "The only discount in the comparison that never expires: −25% off every month with the code DOUBLELAG. Ryzen up to 9950X3D with NVMe and up to 3 free backups a day. You pick the GB, slots and days. One-day free trial and a mod finder built into the panel. After the first purchase, the normal rate applies"
         }
       },
       "fuente": "https://godlike.host/minecraft-server-hosting/",
@@ -1184,22 +1185,22 @@ window.DATOS = {
     "enlace": "https://affiliate.godlike.host/doublelag",
     "slugs": {},
     "codigo": "DOUBLELAG",
-    "descuento": "−75 % el primer mes pagando mes a mes",
+    "descuento": "−25 % todos los meses con el código",
     "canal": "WEB",
     "promo": null,
     "razones": [
-      "<strong>−75 % el primer mes con el código DOUBLELAG: el mayor descuento de toda la comparativa.</strong>",
+      "<strong>−25 % todos los meses con el código DOUBLELAG: el único descuento de esta web que no caduca.</strong>",
       "Eliges los días: si el modpack os dura tres meses, pagas tres meses.",
       "Ryzen de última generación, hasta el 9950X3D, y hasta 3 copias al día gratis.",
       "Pruebas el panel un día gratis antes de pagar."
     ],
     "razones_en": [
-      "<strong>−75% off the first month with the code DOUBLELAG: the biggest discount in the whole comparison.</strong>",
+      "<strong>−25% off every month with the code DOUBLELAG: the only discount here that never expires.</strong>",
       "You pick the days: if the modpack lasts you three months, you pay for three months.",
       "Latest-gen Ryzen, up to the 9950X3D, and up to 3 free backups a day.",
       "Try the panel free for a day before you pay."
     ],
-    "descuento_en": "−75% off the first month on monthly billing"
+    "descuento_en": "−25% off every month with the code"
   },
   "_nota_entrada": "'entrada' es el descuento que SOLO vale para empezar (primer mes o primera compra). El precio de 'tiers'/'porGB' es siempre el recurrente, el que pagas el mes 2. Con los dos se calcula el coste del primer ano, que es donde se ven las trampas del sector. pct = % de descuento, meses = cuantos meses dura, que = como lo llaman ellos.",
   "_nota_ficha": "'ficha' es la pagina de analisis de ese hosting dentro de esta web. La calculadora enlaza ahi desde el grafico y desde la tabla: quien ve un precio raro quiere leer la letra pequena sin perder el resultado. Las gamas hermanas (Premium/Budget) comparten ficha.",

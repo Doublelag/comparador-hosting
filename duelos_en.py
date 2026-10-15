@@ -31,8 +31,8 @@ TEXTOS = {
            "don't mind paying more.",
     veredicto="Apex is the best-known name in Minecraft hosting, and also one of the most "
               "expensive. Godlike beats it on almost everything you can measure. To start "
-              "with, the <strong>−75% off the first month</strong> brings 16 GB down to "
-              "€12.75, while Apex asks €46.43 with its −25% first-month deal. And at the "
+              "with, the code brings 16 GB down to €38.24 <strong>every month</strong>, while "
+              "Apex asks €46.43 with a −25% deal that only covers the first one. And at the "
               "normal rate it holds its own too: €6.29 for 2 GB against €12.89, and €50.99 "
               "for 16 GB against €61.91. Only at 8 GB does it flip, and by less than two "
               "euros. Add that on Godlike you pick the days, get up to three backups a day "
@@ -56,20 +56,22 @@ TEXTOS = {
               "you can't pay your way past: <strong>no mods or plugins</strong>, and "
               "<strong>ten players</strong> at most. Godlike gives you a 2 GB server for "
               "€6.29 a month, less than Realms, with Paper, Forge, Fabric and all the plugins "
-              "you want. And the first month, with its −75%, comes to €1.57. If you ever want "
+              "you want. And with the code DOUBLELAG it drops to €4.72 <strong>every "
+              "month</strong>, not just the first. If you ever want "
               "a modpack or there are more than ten of you, with Realms you'll have to move; "
               "with Godlike, you upgrade in two clicks.",
   ),
   ("godlike", "gportal"): dict(
-    gana_a="You need more than 6 GB, want the cheapest first payment, or a latest-gen CPU.",
+    gana_a="You need more than 6 GB, or a latest-gen CPU.",
     gana_b="Your server fits in 2-4 GB and you'll run it all year.",
     veredicto="Both set up a modpack in a few clicks and have a good network in Europe. The "
               "difference is the ceiling and the entry price. GPORTAL <strong>stops at "
               "6 GB</strong>: not enough for a big modpack or a community. Godlike goes up to "
-              "33. To start with, Godlike's −75% brings 4 GB down to €3.25, while GPORTAL, "
-              "with its −25%, asks €8.85. At the normal rate, GPORTAL is a bit cheaper on "
-              "small plans (€11.80 against €12.99 for 4 GB). So: a small year-round server, "
-              "GPORTAL; anything else, Godlike.",
+              "33. On price GPORTAL wins the small plans: €11.80 for 4 GB against €9.74 at "
+              "Godlike with the code, which lands close, except GPORTAL's −25% is first "
+              "period only and Godlike's never expires. So: a small server and you can "
+              "find your way around, GPORTAL; more than 6 GB or you want it made easy, "
+              "Godlike.",
   ),
   ("godlike", "bisect"): dict(
     gana_a="The server will run for a few months, or you want daily backups and to pick the days.",
@@ -100,7 +102,8 @@ TEXTOS = {
               "<strong>pay 24 months upfront</strong>, and then it renews at almost double. "
               "It's also a VPS: you manage more things yourself. Godlike works the other way "
               "round: <strong>you choose how many days you pay for</strong>, from 30 to 360, "
-              "and the first payment comes with −75%. To try it out, for a season, or to "
+              "with no lock-in, and the code takes 25% off every month. To try it out, "
+              "for a season, or to "
               "avoid tying yourself for two years to something you don't know yet, Godlike. If "
               "you're sure you'll stay two years and can manage a server, Hostinger is cheaper "
               "in the long run.",
@@ -113,8 +116,9 @@ TEXTOS = {
               "<strong>has no backups</strong> and runs a Ryzen 7 5700X with DDR4 at 2133 MHz. "
               "Godlike is at the other end: latest-gen Ryzen up to the 9950X3D, NVMe, up to "
               "three backups a day and the option to <strong>pick the days</strong> you pay "
-              "for. What it costs: €50.99 for 16 GB at the normal rate; its −75% only applies "
-              "to the first month. For a year-round server, Pebble. For a heavy modpack "
+              "for. What it costs: €38.24 for 16 GB with the code, nearly three times Pebble, "
+              "though every month and not just the first. For a year-round server on the "
+              "smallest budget, Pebble. For a heavy modpack "
               "over a few months, where an outage or a slow CPU ruins the run, Godlike.",
   ),
   ("godlike", "dathost"): dict(

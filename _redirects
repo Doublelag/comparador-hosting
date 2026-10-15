@@ -42,3 +42,16 @@
 # de 29, asi que prometia mas de lo que daba.
 /ping-desde-espana/*        /hosting/        301
 /en/ping-from-spain/*       /en/hosting/     301
+
+# Enlaces cortos para vídeos y redes (23-sep-2026).
+# El ?cid= viaja hasta el panel de Godlike, así se ve qué canal trae cada venta.
+/godlike        https://affiliate.godlike.host/doublelag?cid=YT   302
+/godlike-yt     https://affiliate.godlike.host/doublelag?cid=YT   302
+/godlike-tiktok https://affiliate.godlike.host/doublelag?cid=TIKTOK 302
+/godlike-discord https://affiliate.godlike.host/doublelag?cid=DISCORD 302
+/yt             /?cid=YT                                          302
+/tiktok         /?cid=TIKTOK                                      302
+/discord        /?cid=DISCORD                                     302
+/plantilla      /plantillas/                                      302
+/plantillas-gratis /plantillas/                                   302
+/modpacks       /plantillas/modpacks/                             302

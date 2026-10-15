@@ -24,6 +24,7 @@ DIST = os.path.join(RAIZ, "dist")
 ARCHIVOS = ["index.html", "404.html", "styles.css", "hosts.js", "app.js",
             "indice.js", "buscador_ui.js", "tabla_ui.js", "promo_ui.js", "filtros_ui.js", "plantilla_ui.js", "zip_ui.js", "modpack_ui.js",
             "favicon.ico", "apple-touch-icon.png", "chorizosmp.webp",
+            "godlike-banner.webp",
             "robots.txt", "sitemap.xml", "og-image.jpg", "_redirects", "_headers"]
 
 # Carpetas con páginas (minecraft/ guarda la comparativa y la guía)

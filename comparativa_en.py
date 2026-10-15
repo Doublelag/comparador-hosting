@@ -96,8 +96,8 @@ VEREDICTOS = [
      "five backups and starts at 4 GB; PebbleHost Budget has no backups."),
     ("If it's a seasonal server", "Godlike.host",
      "A modpack with friends, an event, a project of a few months. Godlike has <strong>the "
-     "biggest discount in the comparison, −75% off the first month</strong>, and it's the "
-     "only one that lets you <strong>pick the days</strong> (30, 90, 180 or 360). You can try "
+     "only discount in the comparison that never expires, −25% every month</strong>, and "
+     "it's the only one that lets you <strong>pick the days</strong> (30, 90, 180 or 360). You can try "
      "it free for a day, and it runs latest-gen Ryzen with up to three backups a day. You pay "
      "for as long as the server lasts, not a month more. For a full year it costs more than "
      "the ones above."),
@@ -109,10 +109,10 @@ VEREDICTOS = [
 
 FAQ = [
     ("What's the cheapest Minecraft host?",
-     "It depends on how long you'll keep it. To start, Godlike.host: its −75% on the first "
-     "purchase is the biggest discount in the comparison and brings 16 GB down to €12.75. For "
-     "a full year, Kinetic Hosting and PebbleHost Budget, at around €0.86 per GB every month; "
-     "PebbleHost's Budget range has no backups."),
+     "Kinetic Hosting and PebbleHost Budget, at around €0.86 per GB every month; "
+     "PebbleHost's Budget range has no backups. Godlike, even with its permanent −25%, "
+     "sits at €2.44 per GB: there you are not paying for gigabytes, you are paying to "
+     "have it made easy."),
     ("Is paying a year upfront worth it?",
      "Only if you've already tried the server and know you'll stay. Take one month first, "
      "bring your people in and see how it goes. And be wary of anyone who only gives you the "

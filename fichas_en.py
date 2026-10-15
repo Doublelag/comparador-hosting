@@ -276,15 +276,22 @@ FICHAS_EN = {
 
   "godlike": dict(
     pais="Romania",
-    rasgos=['−75%: the biggest discount in the comparison', 'Ryzen up to 9950X3D',
-            '3 free backups a day', 'One-day free trial', 'Built-in mod installer'],
-    resumen=("The biggest discount in the comparison, −75% off the first month, and the "
-             "most flexible host: you pick the GB, slots and days, on latest-gen Ryzen "
-             "with three backups a day."),
+    rasgos=['−25% every month, not just the first', 'Launcher that sets up the client',
+            'Built-in mod installer', 'One-day free trial, no card',
+            'You pick GB, slots and days'],
+    resumen=("The one that asks least of you: a launcher that sets your friends' "
+             "Minecraft up for them, mods in two clicks and a free day to try it with "
+             "no card. Not cheap per GB, but the only discount here that never expires."),
     bueno=[
-      "<strong>The biggest discount in the whole comparison: −75% on your first "
-      "purchase.</strong> 16 GB comes to €12.75 and 2 GB to €1.57, the cheapest first "
-      "payment in the table at those sizes.",
+      "<strong>The only discount on this site that never expires: −25% every month</strong> "
+      "with the code DOUBLELAG. The other nine discounts in the table are first-invoice "
+      "only; this one is still there in month twelve. 16 GB comes to €38.24 and 8 GB to "
+      "€19.49, always.",
+      "<strong>Their launcher saves you the worst afternoon of the year.</strong> You sign "
+      "in with your Godlike account and manage the server from there, but the real win is "
+      "the set-up-client button: it installs the version and the mods the server runs. That "
+      "kills the “everyone install the same thing, same version” problem that finishes off "
+      "half the modded servers out there. Nobody else in this table has it.",
       "<strong>You build the plan yourself</strong>: gigabytes (2 to 33), slots (5 to 200) "
       "and <strong>days</strong> — 30, 90, 180 or 360. Hardly anyone lets you pick the "
       "duration: if the modpack will last you three months, you pay for three months and "
@@ -307,20 +314,25 @@ FICHAS_EN = {
       "payment with almost any method, crypto included.",
     ],
     malo=[
-      "The −75% is for the first month and only on monthly billing (quarterly or yearly the discount is 9-21%): after that, the normal rate (€25.99 for "
-      "8 GB). Factor it in if the server will run all year.",
-      "<strong>At the normal rate it's €3.19 per GB</strong>, among the most expensive "
-      "in the table. Paying the year brings it to €2.54, still above average.",
+      "<strong>It is not cheap per GB and I won't dress it up</strong>: €3.25 at the normal "
+      "rate and €2.44 with the code, when the cheapest in this table is €1.00. You're "
+      "paying for convenience, not for gigabytes. If you know your way around a panel and "
+      "you want to spend little, there are options at less than half.",
+      "<strong>Support doesn't speak Spanish.</strong> They answer in English, and they say "
+      "themselves they lean on translation tools for other languages. It works, but know it "
+      "going in.",
       "A young company, from 2021. In 2024 they had a refund complaint that ended up on "
       "Reddit; they explain it on their own site, which says something.",
       "The free server is for tinkering: one slot, and you have to renew it every three hours.",
     ],
-    veredicto=("It's the most flexible host in the whole comparison and one of the best on "
-               "hardware. Where it wins hands down is the seasonal server: a modpack with "
-               "friends, an event, a project of a few months. You pick the exact days, try "
-               "it free and get backups and a CPU that doesn't choke. For a year-round "
-               "server, do the maths with the renewal price: there are cheaper options "
-               "there, though with weaker hardware."),
+    veredicto=("It is not the cheapest and I am not going to tell you it is. It is the "
+               "easiest. You pay more per GB, yes. In exchange you get the launcher that "
+               "sets the game up for your friends, mods in two clicks, daily backups, "
+               "picking the days you pay for and a free day to try it. Of the 23 in this "
+               "table, no one else gives you all of that together. If your time is worth "
+               "anything, the maths changes. And if you just want to spend as little as "
+               "possible and a bare panel does not scare you, look at Kinetic or NexoHost, "
+               "at less than half per GB."),
   ),
 
   "gportal": dict(

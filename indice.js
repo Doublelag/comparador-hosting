@@ -154,13 +154,13 @@ window.INDICE = [
   "t": "Godlike.host for Minecraft: real prices and whether it's worth it (2026)",
   "u": "/en/hosting/godlike/",
   "c": "página",
-  "k": "The biggest discount in the comparison, −75% off the first month, and the most flexible host: you pick the GB, slots and days, on latest-gen Ryzen with three ba en hosting godlike"
+  "k": "The one that asks least of you: a launcher that sets your friends' Minecraft up for them, mods in two clicks and a free day to try it with no card. Not cheap pe en hosting godlike"
  },
  {
   "t": "Godlike.host para Minecraft: precios reales y si compensa (2026)",
   "u": "/hosting/godlike/",
   "c": "hosting",
-  "k": "El mayor descuento de la comparativa, −75 % el primer mes, y el hosting más flexible: eliges gigas, plazas y días, con Ryzen de última hornada y tres copias al  hosting godlike"
+  "k": "El que menos cosas te obliga a saber: un launcher que le deja el Minecraft listo a tus amigos, mods en dos clics y un día gratis para probarlo sin tarjeta. No e hosting godlike"
  },
  {
   "t": "Godlike.host vs Apex Hosting: cuál te conviene en 2026",
