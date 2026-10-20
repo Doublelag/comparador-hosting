@@ -604,6 +604,6 @@ window.INDICE = [
   "t": "¿Cuánto cuesta un servidor de Minecraft? Precios reales por tamaño (2026)",
   "u": "/minecraft/cuanto-cuesta-un-servidor/",
   "c": "página",
-  "k": "Lo que cuesta un servidor de Minecraft al mes según cuántos seáis: desde 1,70 € por 2 GB hasta 14,90 € por 16 GB. Precio recurrente de 24 hostings comprobado a  minecraft cuanto cuesta un servidor"
+  "k": "Lo que cuesta un servidor de Minecraft al mes según cuántos seáis: desde 1,70 € por 2 GB hasta 17,20 € por 16 GB. Precio recurrente de 24 hostings comprobado a  minecraft cuanto cuesta un servidor"
  }
 ];

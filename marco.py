@@ -276,8 +276,8 @@ def aplicar(html, url, comprobado, existe, con_og=True):
     html = FUENTES_RE.sub('', html)
     html = re.sub(r'<link rel="preconnect" href="https://fonts\.g[^"]*"[^>]*>\n?', '', html)
     html = ICONOS_RE.sub('', html)
-    html = re.sub(r'(<link rel="stylesheet" href="/styles\.css[^"]*">)', lambda m: ICONOS + '
-' + m.group(1), html, count=1)
+    html = re.sub(r'(<link rel="stylesheet" href="/styles\.css[^"]*">)',
+                  lambda m: ICONOS + "\n" + m.group(1), html, count=1)
     if con_og:
         html = og.poner(html, url, comprobado)
 
