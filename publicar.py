@@ -23,14 +23,14 @@ DIST = os.path.join(RAIZ, "dist")
 # Lo que SÍ se publica
 ARCHIVOS = ["index.html", "404.html", "styles.css", "hosts.js", "app.js",
             "indice.js", "buscador_ui.js", "tabla_ui.js", "promo_ui.js", "filtros_ui.js", "plantilla_ui.js", "zip_ui.js", "modpack_ui.js",
-            "favicon.ico", "apple-touch-icon.png", "chorizosmp.webp",
+            "favicon.ico", "favicon.svg", "icono-512.png", "apple-touch-icon.png", "chorizosmp.webp", "estado_ui.js",
             "godlike-banner.webp", "hero-cielo.webp",
             "robots.txt", "sitemap.xml", "og-image.jpg", "_redirects", "_headers"]
 
 # Carpetas con páginas (minecraft/ guarda la comparativa y la guía)
 CARPETAS = ["hosting", "ofertas", "versus", "minecraft",
             "mi-server", "plantillas", "privacidad", "cookies", "aviso-legal",
-            "como-lo-compruebo", "precios", "en", "logos"]
+            "como-lo-compruebo", "precios", "en", "logos", "fonts", "og"]
 
 # Lo que NUNCA se publica (aunque esté dentro de una carpeta de juego)
 PROHIBIDO = {".py", ".md", ".pyc"}

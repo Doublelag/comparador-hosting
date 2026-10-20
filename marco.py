@@ -13,6 +13,7 @@ También lleva el mapa de URLs entre español e inglés, que es lo que usa el
 selector de idioma para saltar a la misma página en el otro idioma.
 """
 
+import og
 import datetime, re
 
 import partner
@@ -260,14 +261,25 @@ FUENTES_HREF = ("https://fonts.googleapis.com/css2?"
                 "family=Bricolage+Grotesque:opsz,wght@12..96,600..800"
                 "&family=Instrument+Sans:wght@400..700"
                 "&family=JetBrains+Mono:wght@500;700&display=swap")
+ICONOS = ('<link rel="icon" href="/favicon.svg" type="image/svg+xml">\n'
+          '<link rel="icon" href="/favicon.ico" sizes="32x32">\n'
+          '<link rel="apple-touch-icon" href="/apple-touch-icon.png">')
+ICONOS_RE = re.compile(r'<link rel="(?:icon|apple-touch-icon)"[^>]*>\n?')
 FUENTES_RE = re.compile(r'<link href="https://fonts\.googleapis\.com/css2\?[^"]*" rel="stylesheet">')
 
 
-def aplicar(html, url, comprobado, existe):
+def aplicar(html, url, comprobado, existe, con_og=True):
     """Pone el marco común a una página ya generada. Es idempotente."""
     lang = idioma_de(url)
     html = re.sub(r'<html lang="[^"]*"', '<html lang="%s"' % lang, html, count=1)
-    html = FUENTES_RE.sub('<link href="%s" rel="stylesheet">' % FUENTES_HREF, html)
+    # Las fuentes van autoalojadas (@font-face en styles.css): fuera Google Fonts.
+    html = FUENTES_RE.sub('', html)
+    html = re.sub(r'<link rel="preconnect" href="https://fonts\.g[^"]*"[^>]*>\n?', '', html)
+    html = ICONOS_RE.sub('', html)
+    html = re.sub(r'(<link rel="stylesheet" href="/styles\.css[^"]*">)', lambda m: ICONOS + '
+' + m.group(1), html, count=1)
+    if con_og:
+        html = og.poner(html, url, comprobado)
 
     html = re.sub(r'<header class="site-head">.*?</header>', lambda m: cabecera(url),
                   html, count=1, flags=re.S)

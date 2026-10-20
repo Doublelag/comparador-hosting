@@ -31,6 +31,7 @@ import ofertas_en
 import comparativa_en
 import guia_en
 import videos
+import seo
 
 DOMINIO = "https://montatuserver.com"
 RAIZ = os.path.dirname(os.path.abspath(__file__))
@@ -73,7 +74,7 @@ def rellenar_partner():
 
 ESTATICOS = ["styles.css", "app.js", "hosts.js", "buscador_ui.js", "tabla_ui.js",
              "filtros_ui.js", "promo_ui.js", "indice.js", "plantilla_ui.js",
-             "zip_ui.js", "modpack_ui.js"]
+             "zip_ui.js", "modpack_ui.js", "estado_ui.js"]
 
 
 def versionar():
@@ -190,7 +191,7 @@ def enmarcar(comprobado):
             url = "/" if rel == "." else "/%s/" % rel
             ruta = os.path.join(base, pagina)
             html = io.open(ruta, encoding="utf-8").read()
-            nuevo = marco.aplicar(html, url, comprobado, existe)
+            nuevo = marco.aplicar(html, url, comprobado, existe, con_og=(pagina == "index.html"))
             if nuevo != html:
                 io.open(ruta, "w", encoding="utf-8").write(nuevo)
                 tocadas += 1
@@ -308,7 +309,7 @@ def main():
     # ---- Páginas sueltas: legales y ChorizoSMP (en los dos idiomas) --------
     historiales = [("/precios/", lambda: historial.html("es", dh)),
                    ("/en/price-history/", lambda: historial.html("en", dh))]
-    for ruta, hacer in paginas.TODAS + plantillas.TODAS + modpacks.TODAS + historiales:
+    for ruta, hacer in paginas.TODAS + plantillas.TODAS + modpacks.TODAS + historiales + seo.TODAS:
         carpeta = os.path.join(RAIZ, *[p for p in ruta.split("/") if p])
         os.makedirs(carpeta, exist_ok=True)
         io.open(os.path.join(carpeta, "index.html"), "w", encoding="utf-8").write(hacer())

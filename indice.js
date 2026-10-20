@@ -313,6 +313,12 @@ window.INDICE = [
   "k": "5 $ el giga con disco NVMe y 13 centros de datos, tres de ellos en Europa. Precios comprobados a mano, lo bueno, lo malo y en qué casos compensa. hosting hosthavoc"
  },
  {
+  "t": "Hosting de Minecraft barato: los 6 que menos cobran (precio real 2026)",
+  "u": "/minecraft/hosting-barato/",
+  "c": "página",
+  "k": "Los hostings de Minecraft más baratos ordenados por lo que cuestan de verdad el segundo mes, no el precio de bienvenida. Desde 3,40 € al mes por 4 GB. Comprobad minecraft hosting barato"
+ },
+ {
   "t": "Hostinger for Minecraft: real prices and whether it's worth it (2026)",
   "u": "/en/hosting/hostinger/",
   "c": "página",
@@ -493,6 +499,12 @@ window.INDICE = [
   "k": "Planes cerrados en euros, con tope de jugadores en cada uno. Precios comprobados a mano, lo bueno, lo malo y en qué casos compensa. hosting serverminer"
  },
  {
+  "t": "Servidor de Minecraft gratis: las 4 opciones reales y cuándo compensa pagar",
+  "u": "/minecraft/hosting-gratis/",
+  "c": "página",
+  "k": "Aternos, planes gratis de hostings, pruebas de días y tu propio PC: qué da cada uno y qué pierdes. Y el precio real desde el que compensa pagar (1,70 € al mes). minecraft hosting gratis"
+ },
+ {
   "t": "Shockbyte for Minecraft: real prices and whether it's worth it (2026)",
   "u": "/en/hosting/shockbyte/",
   "c": "página",
@@ -587,5 +599,11 @@ window.INDICE = [
   "u": "/hosting/wisehosting/",
   "c": "hosting",
   "k": "Solo hacen Minecraft. 3 $/GB al mes, o 1,50 $ pagando el año entero. Precios comprobados a mano, lo bueno, lo malo y en qué casos compensa. hosting wisehosting"
+ },
+ {
+  "t": "¿Cuánto cuesta un servidor de Minecraft? Precios reales por tamaño (2026)",
+  "u": "/minecraft/cuanto-cuesta-un-servidor/",
+  "c": "página",
+  "k": "Lo que cuesta un servidor de Minecraft al mes según cuántos seáis: desde 1,70 € por 2 GB hasta 14,90 € por 16 GB. Precio recurrente de 24 hostings comprobado a  minecraft cuanto cuesta un servidor"
  }
 ];

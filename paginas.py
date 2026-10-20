@@ -369,30 +369,7 @@ def cookies(lang):
 # =============================================================================
 # MI SERVER: CHORIZOSMP
 # =============================================================================
-ESTADO_JS = """<script>
-/* ¿Está abierto ahora? Se pregunta a api.mcsrvstat.us desde el navegador.
-   Si no responde, se dice que no se ha podido comprobar: nunca se inventa. */
-(function(){
-  const caja = document.getElementById("estado-server");
-  if (!caja) return;
-  const T = caja.dataset;
-  const api = "https://api.mcsrvstat.us/";
-  // Primero Java; si no contesta, Bedrock por su puerto (el server es el mismo)
-  fetch(api + "3/" + T.ip)
-    .then(r => r.json())
-    .then(d => d.online ? d : fetch(api + "bedrock/3/" + T.ip + ":" + T.pb).then(r => r.json()))
-    .then(d => {
-      if (d.online){
-        caja.className = "estado on";
-        caja.textContent = T.abierto.replace("{n}", (d.players && d.players.online) || 0);
-      } else {
-        caja.className = "estado off";
-        caja.textContent = T.cerrado;
-      }
-    })
-    .catch(() => { caja.className = "estado"; caja.textContent = T.nose; });
-})();
-</script>"""
+ESTADO_JS = '<script src="/estado_ui.js" defer></script>'
 
 
 def mi_server(lang):
