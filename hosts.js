@@ -939,6 +939,135 @@ window.DATOS = {
       "ficha": "/hosting/kinetic/"
     },
     {
+      "id": "chunkly",
+      "nombre": "Chunkly",
+      "moneda": "EUR",
+      "precios": {
+        "minecraft": {
+          "modelo": "tabla",
+          "tiers": [
+            [
+              2,
+              1.7
+            ],
+            [
+              3,
+              2.55
+            ],
+            [
+              4,
+              3.4
+            ],
+            [
+              5,
+              4.25
+            ],
+            [
+              6,
+              5.1
+            ],
+            [
+              7,
+              5.95
+            ],
+            [
+              8,
+              6.8
+            ],
+            [
+              9,
+              7.65
+            ],
+            [
+              10,
+              8.5
+            ],
+            [
+              11,
+              9.35
+            ],
+            [
+              12,
+              10.2
+            ]
+          ],
+          "nota": "Gama Village: 0,85 € el giga con IVA, de 2 a 12 GB, pago mensual en euros y baja cuando quieras. Solo Paper, Purpur y Vanilla; los modpacks van en su gama Kingdom. NVMe y protección DDoS, en Europa. Tienen un plan gratis (Campfire) de 2 GB para probar sin tarjeta",
+          "nota_en": "Village range: €0.85 per GB incl. VAT, 2 to 12 GB, monthly billing in euros, cancel any time. Paper, Purpur and Vanilla only; modpacks go on their Kingdom range. NVMe and DDoS protection, in Europe. Free 2 GB Campfire plan to try it without a card"
+        }
+      },
+      "fuente": "https://chunkly.net/store/minecraft",
+      "limites": {
+        "mods": false
+      }
+    },
+    {
+      "id": "chunkly-kingdom",
+      "nombre": "Chunkly Kingdom",
+      "moneda": "EUR",
+      "precios": {
+        "minecraft": {
+          "modelo": "tabla",
+          "tiers": [
+            [
+              4,
+              7.6
+            ],
+            [
+              5,
+              9.5
+            ],
+            [
+              6,
+              11.4
+            ],
+            [
+              7,
+              13.3
+            ],
+            [
+              8,
+              15.2
+            ],
+            [
+              9,
+              17.1
+            ],
+            [
+              10,
+              19.0
+            ],
+            [
+              11,
+              20.9
+            ],
+            [
+              12,
+              22.8
+            ],
+            [
+              13,
+              24.7
+            ],
+            [
+              14,
+              26.6
+            ],
+            [
+              15,
+              28.5
+            ],
+            [
+              16,
+              30.4
+            ]
+          ],
+          "nota": "Su gama para modpacks (Forge, Fabric, NeoForge, Modrinth y CurseForge): 1,90 € el giga con IVA, de 4 a 16 GB, pago mensual en euros",
+          "nota_en": "Their modpack range (Forge, Fabric, NeoForge, Modrinth and CurseForge): €1.90 per GB incl. VAT, 4 to 16 GB, monthly billing in euros"
+        }
+      },
+      "fuente": "https://chunkly.net/store/minecraft"
+    },
+    {
       "id": "akliz",
       "nombre": "Akliz",
       "moneda": "USD",

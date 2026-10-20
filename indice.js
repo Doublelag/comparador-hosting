@@ -109,10 +109,10 @@ window.INDICE = [
   "k": "Un solo plan de 16 GB, con Ryzen 9 7950X y slots ilimitados. Precios comprobados a mano, lo bueno, lo malo y en qué casos compensa. hosting dathost"
  },
  {
-  "t": "El mejor hosting de Minecraft en 2026: 23 comparados con precios reales",
+  "t": "El mejor hosting de Minecraft en 2026: 25 comparados con precios reales",
   "u": "/minecraft/mejor-hosting/",
   "c": "comparativa",
-  "k": "Comparativa real de 23 hostings de Minecraft con precios comprobados a mano: Godlike.host, PebbleHost, Kinetic, Shockbyte, BisectHosting, Apex y más. Con la let minecraft mejor hosting"
+  "k": "Comparativa real de 25 hostings de Minecraft con precios comprobados a mano: Godlike.host, PebbleHost, Kinetic, Shockbyte, BisectHosting, Apex y más. Con la let minecraft mejor hosting"
  },
  {
   "t": "Free Minecraft server templates, already configured",
@@ -529,10 +529,10 @@ window.INDICE = [
   "k": "Cobra distinto según la ubicación. El nodo de París es el que importa aquí. Precios comprobados a mano, lo bueno, lo malo y en qué casos compensa. hosting theminecrafthosting"
  },
  {
-  "t": "The best Minecraft hosting in 2026: 23 compared with real prices",
+  "t": "The best Minecraft hosting in 2026: 25 compared with real prices",
   "u": "/en/minecraft/best-hosting/",
   "c": "página",
-  "k": "A real comparison of 23 Minecraft hosts with prices checked by hand: Godlike.host, PebbleHost, Kinetic, Shockbyte, BisectHosting, Apex and more. With the fine p en minecraft best hosting"
+  "k": "A real comparison of 25 Minecraft hosts with prices checked by hand: Godlike.host, PebbleHost, Kinetic, Shockbyte, BisectHosting, Apex and more. With the fine p en minecraft best hosting"
  },
  {
   "t": "The best Minecraft modpacks and how much RAM each one needs (2026)",
