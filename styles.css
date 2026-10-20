@@ -1823,3 +1823,39 @@ section{padding:52px 0}
 .tabla-maestra tbody tr:nth-child(even) td{background:rgba(var(--ink-rgb),.018)}
 .tabla-maestra tr.hl td{background:var(--acc-dim)}
 .anuncio-tag{white-space:nowrap;letter-spacing:.02em}
+
+/* ---- Hero cinematográfico (21-oct-2026) ----
+   Un cielo nocturno de bloques (de los fondos de las miniaturas del canal)
+   detrás del hero, con velo de azul noche que se funde con el fondo. 28 KB.
+   Va en el primer .wrap de <main> con un pseudo a ancho de ventana, así no
+   hay que tocar el HTML de las dos portadas. Empieza bajo la cabecera, que
+   ya es translúcida, para que parezca que la página nace de la imagen. */
+main>.wrap:first-child{position:relative;isolation:isolate}
+main>.wrap:first-child::before{
+  content:"";position:absolute;z-index:-1;top:-62px;bottom:-10px;
+  left:50%;width:100vw;transform:translateX(-50%);pointer-events:none;
+  background:
+    linear-gradient(180deg,rgba(var(--bg-rgb),.5) 0%,rgba(var(--bg-rgb),.7) 50%,var(--bg) 100%),
+    url(/hero-cielo.webp) center 30%/cover no-repeat;
+}
+:root[data-theme="claro"] main>.wrap:first-child::before{
+  background:
+    linear-gradient(180deg,rgba(var(--bg-rgb),.82) 0%,rgba(var(--bg-rgb),.92) 55%,var(--bg) 100%),
+    url(/hero-cielo.webp) center 30%/cover no-repeat;
+}
+.hero{padding:64px 0 44px}
+.hero .sub{color:var(--txt-dim)}
+@media(max-width:900px){.hero{padding-top:44px}}
+@media(max-width:600px){.hero{padding:30px 0 14px}}
+/* las tarjetas sobre el cielo, con algo más de cuerpo */
+.hero-demo{background:linear-gradient(160deg,rgba(var(--bg-rgb),.72),rgba(var(--bg-rgb),.55));backdrop-filter:blur(8px)}
+:root[data-theme="claro"] .hero-demo{background:linear-gradient(160deg,rgba(255,255,255,.9),rgba(255,255,255,.75))}
+
+/* ---- Cabecera de sección con enlace a la derecha ---- */
+.sec-head{display:flex;align-items:flex-end;justify-content:space-between;gap:12px 24px;flex-wrap:wrap;margin-bottom:22px}
+.sec-head>div{min-width:0}
+.sec-head h2{margin-bottom:0}
+.sec-head .sec-sub{margin:8px 0 0}
+.sec-more{font-weight:700;font-size:14px;color:var(--acc);text-decoration:none;white-space:nowrap;padding-bottom:6px}
+.sec-more::after{content:" \2192";display:inline-block;transition:transform .2s}
+.sec-more:hover::after{transform:translateX(3px)}
