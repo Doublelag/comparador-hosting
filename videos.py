@@ -20,7 +20,6 @@ CLAVES = re.compile(r"server|servidor|hosting|smp|chorizo|host", re.I)
 # busquedas, pero se reproducen por enlace. Por eso van a mano.
 FIJOS = [
     dict(id="lx9pmNpSu0M", titulo="El mejor hosting para Minecraft 2026", fecha="2026-03-06"),
-    dict(id="Bu8haR-Kdz8", titulo="El mejor hosting para Minecraft: Comparativa 2026", fecha="2025-11-04"),
     dict(id="olfBXRwdrUs", titulo="Por qué dejé Aternos después de 2 años (y qué uso ahora)", fecha="2025-12-24"),
     dict(id="E9wr6wsF7hQ", titulo="He creado un servidor de Minecraft donde eres un MAGO", fecha="2026-10-10"),
     dict(id="CxCG7rQO0FE", titulo="NUEVO SERVIDOR DE MODS GRATIS NO PREMIUM 24/7", fecha="2025-12-18"),
@@ -50,7 +49,7 @@ def leer():
     # Los directos y sus VOD empiezan por emoji; los largos, por letra.
     con = [v for v in vids if CLAVES.search(v["titulo"]) and v["titulo"][:1].isalnum()]
     out, vistos = [], set()
-    for v in FIJOS[:3] + con + FIJOS[3:]:
+    for v in FIJOS[:2] + con + FIJOS[2:]:
         k = _clave(v["titulo"])[:30]
         if v["id"] in vistos or k in vistos:
             continue
