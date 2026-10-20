@@ -251,10 +251,23 @@ def hreflang(url, existe_en):
             % (DOMINIO, es, DOMINIO, en, DOMINIO, es))
 
 
+# ---------------------------------------------------------------------------
+# Tipografía (identidad v2, 21-oct-2026). Cada generador escribe el <link> de
+# Google Fonts a su manera; aquí se sustituyen todos por el mismo, así la
+# fuente de la web se cambia en UNA línea y no en quince ficheros.
+# ---------------------------------------------------------------------------
+FUENTES_HREF = ("https://fonts.googleapis.com/css2?"
+                "family=Bricolage+Grotesque:opsz,wght@12..96,600..800"
+                "&family=Instrument+Sans:wght@400..700"
+                "&family=JetBrains+Mono:wght@500;700&display=swap")
+FUENTES_RE = re.compile(r'<link href="https://fonts\.googleapis\.com/css2\?[^"]*" rel="stylesheet">')
+
+
 def aplicar(html, url, comprobado, existe):
     """Pone el marco común a una página ya generada. Es idempotente."""
     lang = idioma_de(url)
     html = re.sub(r'<html lang="[^"]*"', '<html lang="%s"' % lang, html, count=1)
+    html = FUENTES_RE.sub('<link href="%s" rel="stylesheet">' % FUENTES_HREF, html)
 
     html = re.sub(r'<header class="site-head">.*?</header>', lambda m: cabecera(url),
                   html, count=1, flags=re.S)

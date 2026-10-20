@@ -1686,3 +1686,140 @@ summary:focus-visible,[tabindex]:focus-visible{
            color:var(--acc-2);text-align:center}
   .pub-cta::after{content:" \2192"}
 }
+
+
+/* =========================================================================
+   IDENTIDAD v2 (21-oct-2026)
+   =========================================================================
+   Hasta aquí la web vestía el uniforme de cualquier SaaS oscuro: Inter,
+   Space Grotesk y todo con esquinas de 14 px. Es correcto y es de nadie.
+   Esto le da una cara propia sin tocar la paleta (el azul noche y el
+   turquesa son la marca de Doublelag y se quedan):
+
+   1. Tipografía. Bricolage Grotesque para los titulares (ancha, con
+      carácter, hace de voz), Instrument Sans para leer, y JetBrains Mono
+      para TODO lo que sea un número: gigas, precios, IPs, códigos. Un
+      precio en mono se lee como en una consola de servidor, que es de lo
+      que va la web, y además tabula solo.
+   2. Formas. Menos redondo: 12 px en tarjetas, 8 px en controles. Un
+      bloque, no una burbuja. El botón principal lleva sombra dura de
+      4 px en vez de resplandor: pisa como un botón de verdad.
+   3. Detalles de consola: las etiquetas pequeñas en mono con «//» delante,
+      la tarjeta de ejemplo con los tres puntos de una ventana de terminal y
+      un «$» antes del caso, igual en el resultado.
+
+   Va al final a propósito: a igual especificidad gana lo último, así que
+   sobrescribe sin tener que reescribir las reglas de arriba.
+   ========================================================================= */
+:root{
+  --font:"Instrument Sans",system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+  --font-display:"Bricolage Grotesque","Instrument Sans",system-ui,sans-serif;
+  --font-mono:"JetBrains Mono",ui-monospace,"SFMono-Regular",Menlo,Consolas,monospace;
+  --radius:12px;
+  --radius-s:8px;
+  --btn-sombra:#2A8886;        /* sombra dura del botón principal */
+}
+:root[data-theme="claro"]{--btn-sombra:#135E5C}
+
+body{font-size:15.5px;letter-spacing:0}
+
+/* ---- Titulares ---- */
+h1,h2,h3,.brand,.promo h2,.bienve h2,.cat-h2{font-family:var(--font-display)}
+h1{font-weight:800;letter-spacing:-.03em;line-height:1.02}
+h2{font-weight:800;letter-spacing:-.025em}
+h3{font-weight:700;letter-spacing:-.01em}
+.brand{font-weight:800;letter-spacing:-.02em}
+.articulo h1{font-weight:800}
+
+/* ---- Números en mono ---- */
+.hd-ram,.res-ram,.pcount,.pf-val,.datos-bar b,.barra-precio,.price,.ms,
+.of-codigo code,.ip-val,.ficha-datos b,.hd-lista li b,.promo-comp b,
+.barra:first-child .barra-precio,.tabla-maestra td.price,.filtro-cuenta,
+.duelo-vs,.td-entrada{
+  font-family:var(--font-mono);letter-spacing:-.02em;font-variant-numeric:tabular-nums;
+}
+.hd-ram,.res-ram{font-weight:700;letter-spacing:-.05em}
+.pcount{font-weight:700}
+.pf-val{font-weight:700;font-size:26px}
+.datos-bar b{font-size:22px;letter-spacing:-.03em}
+.hd-ram small,.res-ram span,.pcount small,.pf-val small{font-family:var(--font);letter-spacing:.02em}
+
+/* ---- Etiquetas pequeñas en mono, con «//» delante en las de sección ---- */
+.sec-eyebrow,.step-label,.barras-tit,.pf-tit,.hd-tag,.bienve-afil-tit,.reco-tag,
+th,.pf-lbl,.ip-lbl,.ficha-datos span,.of-letra-tit,.indice-tit,.pie-links span,
+.bs-cat,.of-badge,.anuncio-tag,.duelo-tag,.hd-caso,.met,.chip,.solo-el,.pt-tag,.promo-tag{
+  font-family:var(--font-mono);letter-spacing:.06em;
+}
+.sec-eyebrow{font-size:11.5px;letter-spacing:.1em}
+.sec-eyebrow::before{
+  content:"//";width:auto;height:auto;background:none;margin-right:8px;
+  vertical-align:baseline;opacity:.7;font-weight:700;
+}
+th{font-size:10.5px;letter-spacing:.09em}
+.chip{letter-spacing:.02em;font-size:11.5px}
+
+/* ---- Formas: bloque, no burbuja ---- */
+.calc,.result,.hero-demo,.card,.pasos li,.cat-card,.oferta,.duelo-lado,.server-teaser,
+.art-cta,.ip-card,.bienve-afil,.guia-link,.datos-bar,.indice,details,.promo,.plt-form,
+.ping-card,.promo-tira{border-radius:var(--radius)}
+.seg button,.game,.cta,.cta-ghost,.copiar,.buscador input,.lang-btn,.tema-btn,.menu-btn,
+.pf-item,.of-letra,.verdict,.presu-ok,.presu-ko,.entrada-aviso,.cta-inline,.barra-pista,
+.cat-ico,.legal-resumen,.disclosure,.bs-panel,.bs-item,.of-codigo,.plt-plugins li,
+.plt-form input[type=text],.plt-form select,.cta-mini,.ver-todos,.ficha-datos,
+.veredicto-final,.reco,.indep,.of-cta .cta,.art-cta .cta{border-radius:var(--radius-s)}
+.calc::before,.result::before,.hero-demo::before{border-radius:var(--radius) var(--radius) 0 0}
+.barra-fill{border-radius:6px 0 0 6px}
+.step-num{border-radius:6px;font-family:var(--font-mono);font-size:11.5px}
+.pasos li::before{border-radius:8px;font-family:var(--font-mono);font-size:14px}
+.cat-ico{border-radius:8px}
+.hd-tag,.of-badge,.anuncio-tag,.pt-tag,.promo-tag{border-radius:6px}
+
+/* ---- Botón principal con sombra dura: pisa como un botón ---- */
+.cta{
+  background:linear-gradient(180deg,var(--btn-a),var(--btn-b));
+  box-shadow:0 4px 0 var(--btn-sombra);
+  transform:translateY(0);font-weight:800;
+}
+.cta:hover{
+  transform:translateY(-1px);
+  box-shadow:0 5px 0 var(--btn-sombra),0 14px 28px -12px rgba(var(--acc-rgb),.6);
+}
+.cta:active{transform:translateY(3px);box-shadow:0 1px 0 var(--btn-sombra)}
+.cta-ghost{font-weight:700}
+.copiar{display:inline-flex;align-items:center;gap:8px}
+.copiar svg{width:15px;height:15px;fill:none;stroke:currentColor;stroke-width:2;
+  stroke-linecap:round;stroke-linejoin:round;flex-shrink:0}
+
+/* ---- Controles de la calculadora: lo elegido se ve pulsado ---- */
+.seg button[aria-pressed="true"],.game[aria-pressed="true"]{
+  box-shadow:inset 0 0 0 1px var(--acc),inset 0 2px 0 rgba(var(--acc-rgb),.25);
+}
+.seg button,.game{font-weight:600}
+
+/* ---- Tarjeta de ejemplo del hero: ventana de consola ---- */
+.hd-top{align-items:center}
+.hd-top::after{
+  content:"";margin-left:auto;width:38px;height:10px;flex-shrink:0;opacity:.85;
+  background:
+    radial-gradient(circle at 5px 5px,#ff5f57 4px,transparent 4.6px),
+    radial-gradient(circle at 19px 5px,#febc2e 4px,transparent 4.6px),
+    radial-gradient(circle at 33px 5px,#28c840 4px,transparent 4.6px);
+}
+.hd-caso{font-size:11.5px;color:var(--txt-dim);letter-spacing:0}
+.hd-caso::before{content:"$ ";color:var(--acc);font-weight:700}
+.hd-lista li span:first-child{font-weight:500}
+.res-for{font-family:var(--font-mono);font-size:13.5px;letter-spacing:0;color:var(--txt-faint)}
+
+/* ---- Más aire entre secciones ---- */
+section{padding:52px 0}
+@media(max-width:600px){section{padding:38px 0}}
+.sec-sub{font-size:16px;max-width:66ch}
+.card p,.pasos p,.cat-txt{font-size:14.5px}
+
+/* ---- Pie: la línea de revisión en mono, como un log ---- */
+.pie-base p{font-family:var(--font-mono);font-size:11.5px;letter-spacing:0}
+
+/* ---- Tabla: cebra suave para seguir la fila ---- */
+.tabla-maestra tbody tr:nth-child(even) td{background:rgba(var(--ink-rgb),.018)}
+.tabla-maestra tr.hl td{background:var(--acc-dim)}
+.anuncio-tag{white-space:nowrap;letter-spacing:.02em}
