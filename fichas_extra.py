@@ -14,6 +14,29 @@ Lo importa hostings.py.
 
 FICHAS_EXTRA = {
 
+  "chunkly": dict(
+    desde_ano="2026", ubicaciones="Europa",
+    rasgos=['0,85 € el GB con IVA', 'Plan gratis de 2 GB', 'Cobro mensual en euros', 'Modpacks solo en Kingdom'],
+    url="chunkly", nombre="Chunkly", pais="Europa (GateX Ltd)",
+    resumen=("0,85 € el giga con IVA, cobro mensual en euros y un plan gratis para "
+             "probar el panel. Los modpacks van en su gama Kingdom, a 1,90 € el giga."),
+    bueno=[
+      "<strong>De los más baratos de la tabla</strong>: 0,85 € por GB en la gama Village, de 2 a 12 GB. Un 4 GB son 3,40 € al mes.",
+      "Precio <strong>con IVA y en euros</strong>: lo que ves es lo que pagas, sin sorpresa al pasar por caja ni cambio de dólar.",
+      "Plan <strong>Campfire gratis</strong> (2 GB, vanilla, unos 3 jugadores) para probar el panel sin tarjeta.",
+      "Mes a mes y baja cuando quieras. NVMe, protección DDoS, Java y Bedrock.",
+    ],
+    malo=[
+      "Marca nueva: poca trayectoria y pocas opiniones todavía. La empresa de detrás dice llevar 25 años en hosting, pero Chunkly como tal acaba de empezar.",
+      "La gama barata (Village) solo admite Paper, Purpur y Vanilla. Para Forge, Fabric o un modpack hay que ir a Kingdom, que cuesta más del doble: 1,90 € el giga.",
+      "Tope de 12 GB en Village y 16 en Kingdom. No publican qué procesador llevan.",
+      "Soporte en inglés.",
+    ],
+    veredicto=("Por precio es de los dos o tres más baratos de la tabla y, al cobrar en euros con IVA, "
+               "el precio que ves es el que pagas. Es nuevo y con poca trayectoria: pruébalo con el plan "
+               "gratis antes de meter a tu comunidad. Para modpacks, Kingdom cuesta más del doble y ahí ya hay rivales."),
+  ),
+
   "holyhosting": dict(
     desde_ano="2019", ubicaciones="—",
     rasgos=['Muy usado por creadores', 'El −25 % es solo el primer mes'],
@@ -129,19 +152,14 @@ FICHAS_EXTRA = {
   ),
   "godlike": dict(
     desde_ano="2021", ubicaciones="10",
-    rasgos=['−25 % siempre, no solo el primer mes', 'Launcher que prepara el cliente',
+    rasgos=['Launcher que prepara el cliente',
             'Instalador de mods integrado', 'Prueba gratis de un día sin tarjeta',
             'Eliges gigas, plazas y días'],
     url="godlike", nombre="Godlike.host", pais="Rumanía",
     resumen=("El que menos cosas te obliga a saber: un launcher que le deja el "
              "Minecraft listo a tus amigos, mods en dos clics y un día gratis para "
-             "probarlo sin tarjeta. No es barato por giga, pero es el único cuyo "
-             "descuento no caduca."),
+             "probarlo sin tarjeta. No es barato por giga: pagas comodidad."),
     bueno=[
-      "<strong>El único descuento de esta web que no caduca: −25 % todos los meses</strong> "
-      "con el código DOUBLELAG. Los otros nueve descuentos de la tabla valen solo para "
-      "la primera factura; este sigue ahí el mes doce. Los 16 GB quedan en 38,24 € y "
-      "los 8 GB en 19,49 €, siempre.",
       "<strong>Su launcher te ahorra la peor tarde del año.</strong> Inicias sesión con "
       "tu cuenta de Godlike y desde ahí gestionas el servidor, pero lo gordo es el botón "
       "de preparar el cliente: te instala la versión y los mods que lleva el servidor. "

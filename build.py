@@ -30,6 +30,7 @@ import duelos_en
 import ofertas_en
 import comparativa_en
 import guia_en
+import videos
 
 DOMINIO = "https://montatuserver.com"
 RAIZ = os.path.dirname(os.path.abspath(__file__))
@@ -243,6 +244,7 @@ def generar_indice():
 
 def main():
     print("  portadas  %d hostings" % contar_en_portadas())
+    videos.rellenar(RAIZ)
     rellenar_partner()
     cambiados = historico.guardar(hostings.datos())
     if cambiados:

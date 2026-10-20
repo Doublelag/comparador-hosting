@@ -56,8 +56,7 @@ TEXTOS = {
               "you can't pay your way past: <strong>no mods or plugins</strong>, and "
               "<strong>ten players</strong> at most. Godlike gives you a 2 GB server for "
               "€6.29 a month, less than Realms, with Paper, Forge, Fabric and all the plugins "
-              "you want. And with the code DOUBLELAG it drops to €4.72 <strong>every "
-              "month</strong>, not just the first. If you ever want "
+              "you want. If you ever want "
               "a modpack or there are more than ten of you, with Realms you'll have to move; "
               "with Godlike, you upgrade in two clicks.",
   ),

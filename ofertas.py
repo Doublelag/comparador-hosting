@@ -43,22 +43,6 @@ def eur(n):
 
 OFERTAS = [
   dict(
-    host="Godlike.host", ficha="/hosting/godlike/",
-    titulo="−25 % todos los meses: el único descuento que no caduca",
-    codigo="DOUBLELAG",
-    veredicto="buena",
-    resumen="Los otros nueve descuentos de esta web valen solo para la primera "
-            "factura. Este no: el −25 % sigue ahí el mes doce. Los 16 GB se quedan en "
-            "38,24 € y los 8 GB en 19,49 €, siempre.",
-    letra="Sigue sin ser barato por giga: 2,44 € con el código, cuando el más barato "
-          "de esta tabla está en 1,00 €. Aquí no pagas gigas, pagas que te lo pongan "
-          "fácil. Y el soporte es en inglés.",
-    consejo="Donde más brilla es en el primer servidor: lo pruebas un día gratis sin "
-            "tarjeta, los mods entran desde el panel y su launcher le deja el juego "
-            "listo a cada amigo. Si lo que quieres es gastar lo mínimo, mira Kinetic.",
-  ),
-
-  dict(
     host="HolyHosting", ficha="/hosting/holyhosting/",
     titulo="25 % de descuento con cuenta atrás",
     codigo=None,

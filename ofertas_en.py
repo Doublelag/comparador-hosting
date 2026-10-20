@@ -23,17 +23,6 @@ FUENTES = ('<link rel="preconnect" href="https://fonts.googleapis.com">\n'
 VEREDICTOS = {"buena": "A real deal", "truco": "Has a catch", "evitar": "I'd avoid it"}
 
 TEXTOS = [
-  ("Godlike.host", dict(
-    titulo="−25% every month: the only discount here that never expires",
-    resumen="The other nine discounts on this site are first-invoice only. This one "
-            "is not: the −25% is still there in month twelve. 16 GB comes to €38.24 "
-            "and 8 GB to €19.49, always.",
-    letra="It still is not cheap per GB: €2.44 with the code against €1.00 at the "
-          "cheapest host in the table. You are paying for convenience, not gigabytes.",
-    consejo="It shines brightest on a first server: try it free for a day with no card, "
-            "mods go in from the panel, and their launcher gets the game ready for each "
-            "friend. If you just want to spend the least, look at Kinetic.",
-  )),
   ("HolyHosting", dict(
     titulo="25% off with a countdown",
     resumen="They advertise $0.95 per GB on the homepage, with a clock ticking down.",

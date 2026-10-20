@@ -30,7 +30,7 @@ ARCHIVOS = ["index.html", "404.html", "styles.css", "hosts.js", "app.js",
 # Carpetas con páginas (minecraft/ guarda la comparativa y la guía)
 CARPETAS = ["hosting", "ofertas", "versus", "minecraft",
             "mi-server", "plantillas", "privacidad", "cookies", "aviso-legal",
-            "como-lo-compruebo", "precios", "en"]
+            "como-lo-compruebo", "precios", "en", "logos"]
 
 # Lo que NUNCA se publica (aunque esté dentro de una carpeta de juego)
 PROHIBIDO = {".py", ".md", ".pyc"}

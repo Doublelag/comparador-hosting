@@ -10,6 +10,28 @@ changes, change its English twin too.
 
 FICHAS_EN = {
 
+  "chunkly": dict(
+    pais="Europe (GateX Ltd)",
+    rasgos=['€0.85 per GB incl. VAT', 'Free 2 GB plan', 'Monthly billing in euros', 'Modpacks only on Kingdom'],
+    resumen=("€0.85 per GB incl. VAT, monthly billing in euros and a free plan to try the panel. "
+             "Modpacks go on their Kingdom range, at €1.90 per GB."),
+    bueno=[
+      "<strong>Among the cheapest in the table</strong>: €0.85 per GB on the Village range, 2 to 12 GB. 4 GB is €3.40 a month.",
+      "Price <strong>with VAT and in euros</strong>: what you see is what you pay, no surprise at checkout and no dollar conversion.",
+      "Free <strong>Campfire plan</strong> (2 GB, vanilla, about 3 players) to try the panel with no card.",
+      "Month to month, cancel any time. NVMe, DDoS protection, Java and Bedrock.",
+    ],
+    malo=[
+      "New brand: little track record and few reviews so far. The company behind it says 25 years in hosting, but Chunkly itself has only just started.",
+      "The cheap range (Village) only runs Paper, Purpur and Vanilla. For Forge, Fabric or a modpack you need Kingdom, which costs more than double: €1.90 per GB.",
+      "Capped at 12 GB on Village and 16 on Kingdom. They don't say which CPU they use.",
+      "Support in English only.",
+    ],
+    veredicto=("On price it's one of the two or three cheapest in the table and, billing in euros with VAT, "
+               "the price you see is the price you pay. It's new with little track record: try the free plan "
+               "before moving your community over. For modpacks, Kingdom costs more than double and there you have real rivals."),
+  ),
+
   "dathost": dict(
     pais="Sweden",
     rasgos=['Ryzen 9 7950X', 'Unlimited slots', '14-day refund'],
@@ -276,17 +298,13 @@ FICHAS_EN = {
 
   "godlike": dict(
     pais="Romania",
-    rasgos=['−25% every month, not just the first', 'Launcher that sets up the client',
+    rasgos=['Launcher that sets up the client',
             'Built-in mod installer', 'One-day free trial, no card',
             'You pick GB, slots and days'],
     resumen=("The one that asks least of you: a launcher that sets your friends' "
              "Minecraft up for them, mods in two clicks and a free day to try it with "
-             "no card. Not cheap per GB, but the only discount here that never expires."),
+             "no card. Not cheap per GB: you pay for convenience."),
     bueno=[
-      "<strong>The only discount on this site that never expires: −25% every month</strong> "
-      "with the code DOUBLELAG. The other nine discounts in the table are first-invoice "
-      "only; this one is still there in month twelve. 16 GB comes to €38.24 and 8 GB to "
-      "€19.49, always.",
       "<strong>Their launcher saves you the worst afternoon of the year.</strong> You sign "
       "in with your Godlike account and manage the server from there, but the real win is "
       "the set-up-client button: it installs the version and the mods the server runs. That "

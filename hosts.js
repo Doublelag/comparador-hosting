@@ -566,7 +566,7 @@ window.DATOS = {
       "precios": {
         "minecraft": {
           "modelo": "tabla",
-          "nota": "El único descuento de la comparativa que no caduca: −25 % todos los meses con el código DOUBLELAG. Ryzen hasta 9950X3D con NVMe y hasta 3 copias al día gratis. Eliges gigas, plazas y días. Prueba gratis de un día y buscador de mods integrado en el panel. El descuento se mantiene mientras sigas",
+          "nota": "Ryzen hasta 9950X3D con NVMe y hasta 3 copias al día gratis. Eliges gigas, plazas y días. Prueba gratis de un día y buscador de mods integrado en el panel. Ojo: su precio de escaparate suele ser una oferta del primer mes; lo de aquí es el recurrente",
           "tiers": [
             [
               2,
@@ -597,14 +597,7 @@ window.DATOS = {
               63.99
             ]
           ],
-          "entrada": {
-            "pct": 25,
-            "meses": 9999,
-            "permanente": true,
-            "que": "siempre, no solo el primer mes",
-            "que_en": "every month, not just the first"
-          },
-          "nota_en": "The only discount in the comparison that never expires: −25% off every month with the code DOUBLELAG. Ryzen up to 9950X3D with NVMe and up to 3 free backups a day. You pick the GB, slots and days. One-day free trial and a mod finder built into the panel. After the first purchase, the normal rate applies"
+          "nota_en": "Ryzen up to the 9950X3D with NVMe and up to 3 free backups a day. You pick the GB, slots and days. One-day free trial and a mod finder built into the panel. Heads up: their headline price is usually a first-month offer; this is the recurring rate"
         }
       },
       "fuente": "https://godlike.host/minecraft-server-hosting/",
@@ -940,6 +933,7 @@ window.DATOS = {
     },
     {
       "id": "chunkly",
+      "ficha": "/hosting/chunkly/",
       "nombre": "Chunkly",
       "moneda": "EUR",
       "precios": {
@@ -1002,6 +996,7 @@ window.DATOS = {
     },
     {
       "id": "chunkly-kingdom",
+      "ficha": "/hosting/chunkly/",
       "nombre": "Chunkly Kingdom",
       "moneda": "EUR",
       "precios": {
@@ -1309,27 +1304,17 @@ window.DATOS = {
   "_nota_fuente": "'fuente' es la pagina de la que sale el precio de ese hosting. La usa revisar_precios.py para avisarte cuando cambie algo. Si anades un hosting, anade tambien su fuente o quedara fuera de la revision.",
   "_nota_partner": "EL UNICO SITIO QUE SE TOCA AL CERRAR UN ACUERDO DE AFILIADO. Con activo=false la web es un comparador sin ningun enlace de afiliado ni hosting destacado, y todos los avisos dicen que no hay acuerdo con nadie. Para activar a un partner: (1) hostId = el id de ese hosting en hosts[] — su precio sale de ahi, NO se repite aqui, asi nunca hay dos precios distintos; (2) enlace = su URL de afiliado; si lleva {juego} se sustituye por slugs[juego] o por el id del juego; (3) codigo y descuento, si los hay; (4) activo=true y build.py.",
   "partner": {
-    "activo": true,
+    "activo": false,
     "hostId": "godlike",
-    "enlace": "https://affiliate.godlike.host/doublelag",
+    "enlace": "",
     "slugs": {},
-    "codigo": "DOUBLELAG",
-    "descuento": "−25 % todos los meses con el código",
+    "codigo": null,
+    "descuento": "",
     "canal": "WEB",
     "promo": null,
-    "razones": [
-      "<strong>−25 % todos los meses con el código DOUBLELAG: el único descuento de esta web que no caduca.</strong>",
-      "Eliges los días: si el modpack os dura tres meses, pagas tres meses.",
-      "Ryzen de última generación, hasta el 9950X3D, y hasta 3 copias al día gratis.",
-      "Pruebas el panel un día gratis antes de pagar."
-    ],
-    "razones_en": [
-      "<strong>−25% off every month with the code DOUBLELAG: the only discount here that never expires.</strong>",
-      "You pick the days: if the modpack lasts you three months, you pay for three months.",
-      "Latest-gen Ryzen, up to the 9950X3D, and up to 3 free backups a day.",
-      "Try the panel free for a day before you pay."
-    ],
-    "descuento_en": "−25% off every month with the code"
+    "razones": [],
+    "razones_en": [],
+    "descuento_en": ""
   },
   "_nota_entrada": "'entrada' es el descuento que SOLO vale para empezar (primer mes o primera compra). El precio de 'tiers'/'porGB' es siempre el recurrente, el que pagas el mes 2. Con los dos se calcula el coste del primer ano, que es donde se ven las trampas del sector. pct = % de descuento, meses = cuantos meses dura, que = como lo llaman ellos.",
   "_nota_ficha": "'ficha' es la pagina de analisis de ese hosting dentro de esta web. La calculadora enlaza ahi desde el grafico y desde la tabla: quien ve un precio raro quiere leer la letra pequena sin perder el resultado. Las gamas hermanas (Premium/Budget) comparten ficha.",

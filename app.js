@@ -711,7 +711,11 @@ function renderBarras(gb, g){
 /* El nombre lleva a su ficha. Es lo que espera cualquiera que use un comparador:
    ves un precio que te descoloca y quieres leer por qué sin perder el resultado. */
 function nombreConFicha(f){
-  return f.ficha ? `<a class="h-ficha" href="${EN ? "/en" + f.ficha : f.ficha}">${f.nombre}</a>` : f.nombre;
+  if (!f.ficha) return f.nombre;
+  // el logo vive en /logos/<slug>.png, el mismo slug que la ficha
+  const slug = f.ficha.split("/").filter(Boolean).pop();
+  const logo = `<img class="h-logo" src="/logos/${slug}.png" alt="" width="16" height="16" loading="lazy">`;
+  return `<a class="h-ficha" href="${EN ? "/en" + f.ficha : f.ficha}">${logo}${f.nombre}</a>`;
 }
 
 /* La tabla es el detalle del gráfico: los mismos hosts, en el mismo orden y

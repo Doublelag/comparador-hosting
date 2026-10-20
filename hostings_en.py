@@ -178,8 +178,9 @@ def html(host_id, d):
       <a href="/en/">Home</a> › <a href="/en/hosting/">Hosts</a> › %(nombre)s
     </nav>
 
-    <h1>%(nombre)s</h1>
+    <h1><img class="ficha-logo" src="/logos/%(url)s.png" alt="" width="46" height="46">%(nombre)s</h1>
     <p class="sub art-sub">%(resumen)s</p>
+    <p class="veredicto-top" data-tit="Verdict in one line">%(veredicto)s</p>
     <div class="ficha-datos">
       <div><span>Based in</span><b>%(pais)s</b></div>
       <div><span>Since</span><b>%(desde_ano)s</b></div>
@@ -199,15 +200,16 @@ def html(host_id, d):
     </p>
 %(tabla)s
 
-    <h2 id="bueno">The good</h2>
-    <ul class="lista-si">
+    <div class="pros-contras">
+      <div><h2 id="bueno">The good</h2>
+      <ul class="lista-si">
 %(bueno)s
-    </ul>
-
-    <h2 id="malo">The catches</h2>
-    <ul class="lista-no">
+      </ul></div>
+      <div><h2 id="malo">The catches</h2>
+      <ul class="lista-no">
 %(malo)s
-    </ul>
+      </ul></div>
+    </div>
 
     <h2 id="veredicto">Verdict</h2>
     <p class="veredicto-final">%(veredicto)s</p>
@@ -242,7 +244,7 @@ def html(host_id, d):
 </body>
 </html>
 """ % dict(
-        nombre=f["nombre"], resumen=t["resumen"], pais=t["pais"], veredicto=t["veredicto"],
+        nombre=f["nombre"], url=f["url"], resumen=t["resumen"], pais=t["pais"], veredicto=t["veredicto"],
         dom=DOMINIO, ruta=ruta, fuentes=FUENTES, precio_final=precio_final,
         desde_ano=f.get("desde_ano", "—"), ubicaciones=f.get("ubicaciones", "—"),
         modelo=modelo_texto(h["precios"]["minecraft"], h, cambio),
@@ -274,7 +276,7 @@ def indice(d):
         filas.append((hid, f, h, porgb, pares))
     filas.sort(key=lambda x: (x[3] is None, x[3] or 0))
 
-    _con_gb = [x for x in filas if x[4] is not None]
+    _con_gb = [x for x in filas if x[3] is not None]
     _barato = _con_gb[0][0] if _con_gb else None
     _ent = max(filas, key=lambda x: (x[2]["precios"]["minecraft"].get("entrada") or {}).get("pct", 0))
     _ent = _ent[0] if (_ent[2]["precios"]["minecraft"].get("entrada") or {}).get("pct") else None
@@ -295,6 +297,22 @@ def indice(d):
     if _grande not in DISTINTIVOS:
         DISTINTIVOS[_grande] = "Most RAM available"
 
+    _por = {hid: (f, h, porgb) for hid, f, h, porgb, pares in filas}
+    def _g(hid, tag, dato):
+        f = _por[hid][0]
+        return ('<a class="ganador" href="/en/hosting/%s/"><span class="ganador-tag">%s</span>'
+                '<span class="ganador-nom"><img class="h-logo" src="/logos/%s.png" alt="" width="22" height="22">%s</span>'
+                '<span class="ganador-dato">%s</span></a>' % (f["url"], tag, f["url"], f["nombre"], dato))
+    ganadores = []
+    if _barato:
+        ganadores.append(_g(_barato, "Cheapest per GB", "<b>%s</b> per GB" % eur(_por[_barato][2])))
+    if _ent and _ent != _barato:
+        ganadores.append(_g(_ent, "Cheapest to start",
+                            "<b>%d%% off</b> the first invoice" % _por[_ent][1]["precios"]["minecraft"]["entrada"]["pct"]))
+    if _grande not in (_barato, _ent):
+        ganadores.append(_g(_grande, "Most RAM available", "up to <b>%d GB</b> on one plan" % _techo(_por[_grande][1])))
+    ganadores_html = '<div class="ganadores">%s</div>' % "".join(ganadores)
+
     tabla = []
     for hid, f, h, porgb, pares in filas:
         pr = h["precios"]["minecraft"]
@@ -308,12 +326,12 @@ def indice(d):
                    else '<td class="nd">—</td>')
         tabla.append(
             '      <tr%s data-modelo="%s" data-porgb="%s" data-entrada="%s">\n'
-            '        <td><a href="/en/hosting/%s/">%s</a>%s<small>%s</small></td>\n'
+            '        <td><a href="/en/hosting/%s/"><img class="h-logo" src="/logos/%s.png" alt="" width="18" height="18" loading="lazy">%s</a>%s<small>%s</small></td>\n'
             '        <td>%s</td>\n        %s\n'
             '        <td><a class="cta-mini" href="/en/hosting/%s/">Review</a></td>\n'
             '      </tr>'
             % (destacado, pr["modelo"], ("%.2f" % porgb) if porgb else "",
-               "si" if pr.get("entrada") else "no", f["url"], f["nombre"],
+               "si" if pr.get("entrada") else "no", f["url"], f["url"], f["nombre"],
                ('<span class="badge-cat">%s</span>' % DISTINTIVOS[hid]) if hid in DISTINTIVOS else "",
                FICHAS_EN[hid]["pais"], modelo_texto(pr, h, cambio), celdas, f["url"]))
 
@@ -357,6 +375,7 @@ def indice(d):
     </p>
 
 %(indep)s
+%(ganadores)s
     <div class="filtros" id="filtros" role="group" aria-label="Filter the table"></div>
     <div class="table-wrap">
       <table class="tabla-maestra ordenable" data-filtrable>
@@ -432,5 +451,5 @@ def indice(d):
 """ % dict(
            cuantos=len({(f.get("url") or hid) for hid, f in hostings.FICHAS.items()}),
            afil=("I have an affiliate deal with one of them, and I say so in every page's footer: it still sits in the table where its price puts it."
-                 if partner.activo() else "I have no deal with any of them."),dom=DOMINIO, fuentes=FUENTES, indep=indep, banner=partner.banner_en(), tabla="\n".join(tabla),
+                 if partner.activo() else "I have no deal with any of them."),dom=DOMINIO, fuentes=FUENTES, indep=indep, ganadores=ganadores_html, banner=partner.banner_en(), tabla="\n".join(tabla),
            comprobado=d.get("comprobado_en", d["comprobado"]))

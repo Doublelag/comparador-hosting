@@ -73,7 +73,19 @@ window.INDICE = [
   "k": "A Spanish-speaking semi-anarchy server with an economy, Chorizium and Java + Bedrock crossplay. IP, how to join and what it&#x27;s like. en my server"
  },
  {
-  "t": "Comparador de hosting de Minecraft: precios reales de 23 comparados (2026)",
+  "t": "Chunkly for Minecraft: real prices and whether it's worth it (2026)",
+  "u": "/en/hosting/chunkly/",
+  "c": "página",
+  "k": "€0.85 per GB incl. VAT, monthly billing in euros and a free plan to try the panel. Modpacks go on their Kingdom range, at €1.90 per GB. Prices checked by hand,  en hosting chunkly"
+ },
+ {
+  "t": "Chunkly para Minecraft: precios reales y si compensa (2026)",
+  "u": "/hosting/chunkly/",
+  "c": "hosting",
+  "k": "0,85 € el giga con IVA, cobro mensual en euros y un plan gratis para probar el panel. Los modpacks van en su gama Kingdom, a 1,90 € el giga. Precios comprobados hosting chunkly"
+ },
+ {
+  "t": "Comparador de hosting de Minecraft: precios reales de 24 comparados (2026)",
   "u": "/hosting/",
   "c": "hosting",
   "k": "Comparador de hosting de Minecraft con precios comprobados a mano: cuánto cuesta el giga en cada uno, la letra pequeña, los peros y los trucos del sector. Sin p hosting"
@@ -109,10 +121,10 @@ window.INDICE = [
   "k": "Un solo plan de 16 GB, con Ryzen 9 7950X y slots ilimitados. Precios comprobados a mano, lo bueno, lo malo y en qué casos compensa. hosting dathost"
  },
  {
-  "t": "El mejor hosting de Minecraft en 2026: 25 comparados con precios reales",
+  "t": "El mejor hosting de Minecraft en 2026: 24 comparados con precios reales",
   "u": "/minecraft/mejor-hosting/",
   "c": "comparativa",
-  "k": "Comparativa real de 25 hostings de Minecraft con precios comprobados a mano: Godlike.host, PebbleHost, Kinetic, Shockbyte, BisectHosting, Apex y más. Con la let minecraft mejor hosting"
+  "k": "Comparativa real de 24 hostings de Minecraft con precios comprobados a mano: Godlike.host, PebbleHost, Kinetic, Shockbyte, BisectHosting, Apex y más. Con la let minecraft mejor hosting"
  },
  {
   "t": "Free Minecraft server templates, already configured",
@@ -367,7 +379,7 @@ window.INDICE = [
   "k": "Independent Minecraft hosting comparison: prices checked by hand, what a gigabyte costs on each host and the fine print. Plus a calculator that tells you the GB en"
  },
  {
-  "t": "Minecraft hosting comparison: real prices from 23 hosts (2026)",
+  "t": "Minecraft hosting comparison: real prices from 24 hosts (2026)",
   "u": "/en/hosting/",
   "c": "página",
   "k": "Reviews of the main Minecraft hosts: real prices checked by hand, the good, the catches and when each one is worth it. en hosting"
@@ -529,10 +541,10 @@ window.INDICE = [
   "k": "Cobra distinto según la ubicación. El nodo de París es el que importa aquí. Precios comprobados a mano, lo bueno, lo malo y en qué casos compensa. hosting theminecrafthosting"
  },
  {
-  "t": "The best Minecraft hosting in 2026: 25 compared with real prices",
+  "t": "The best Minecraft hosting in 2026: 24 compared with real prices",
   "u": "/en/minecraft/best-hosting/",
   "c": "página",
-  "k": "A real comparison of 25 Minecraft hosts with prices checked by hand: Godlike.host, PebbleHost, Kinetic, Shockbyte, BisectHosting, Apex and more. With the fine p en minecraft best hosting"
+  "k": "A real comparison of 24 Minecraft hosts with prices checked by hand: Godlike.host, PebbleHost, Kinetic, Shockbyte, BisectHosting, Apex and more. With the fine p en minecraft best hosting"
  },
  {
   "t": "The best Minecraft modpacks and how much RAM each one needs (2026)",

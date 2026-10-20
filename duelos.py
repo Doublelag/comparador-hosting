@@ -66,8 +66,7 @@ DUELOS = [
               "que no se quitan pagando: <strong>ni mods ni plugins</strong>, y "
               "<strong>diez jugadores</strong> como mucho. Godlike te da un servidor de "
               "2 GB por 6,29 € al mes, menos que Realms, con Paper, Forge, Fabric y "
-              "todos los plugins que quieras. Y con el código DOUBLELAG se queda en "
-              "4,72 € <strong>todos los meses</strong>, no solo el primero. Si algún "
+              "todos los plugins que quieras. Si algún "
               "día queréis meter un modpack o sois más de diez, con "
               "Realms tocará mudarse; con Godlike, subir de plan en dos clics.",
   ),

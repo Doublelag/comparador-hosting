@@ -151,13 +151,11 @@ def smp(lang):
     <div class="plt-host">
       <div>
         <h3>¿Aún no tienes hosting?</h3>
-        <p>Si es tu primer servidor, <strong>Godlike.host</strong> es el que menos cosas te obliga a saber, y su
-          <strong>−25 %% no caduca</strong> con el código <strong>DOUBLELAG</strong>. Y antes de pagar nada, te dejan
-          <strong>un servidor gratis durante un día</strong> para probarlo.</p>
+        <p>En la tabla sale primero el que menos cobra por giga, con la letra pequeña de cada uno.
+          Varios te dejan <strong>probar gratis</strong> antes de pagar nada.</p>
       </div>
       <div class="plt-host-botones">
-        <a class="cta" href="/hosting/godlike/">Ver Godlike.host</a>
-        <a class="cta-ghost" href="/hosting/">Comparar todos</a>
+        <a class="cta" href="/hosting/">Comparar todos</a>
       </div>
     </div>
 
@@ -262,13 +260,11 @@ def smp(lang):
     <div class="plt-host">
       <div>
         <h3>No host yet?</h3>
-        <p>If this is your first server, <strong>Godlike.host</strong> asks the least of you, and its
-          <strong>−25%% never expires</strong> with the code <strong>DOUBLELAG</strong>. And before paying anything, they
-          give you <strong>a free server for a day</strong> to try it out.</p>
+        <p>The table puts the cheapest per gigabyte first, with each one's fine print.
+          Several let you <strong>try for free</strong> before paying anything.</p>
       </div>
       <div class="plt-host-botones">
-        <a class="cta" href="/en/hosting/godlike/">See Godlike.host</a>
-        <a class="cta-ghost" href="/en/hosting/">Compare them all</a>
+        <a class="cta" href="/en/hosting/">Compare them all</a>
       </div>
     </div>
 

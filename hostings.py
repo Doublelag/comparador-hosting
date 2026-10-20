@@ -364,8 +364,9 @@ def html(host_id, f, d):
       <a href="/">Inicio</a> › <a href="/hosting/">Hostings</a> › %(nombre)s
     </nav>
 
-    <h1>%(nombre)s</h1>
+    <h1><img class="ficha-logo" src="/logos/%(url)s.png" alt="" width="46" height="46">%(nombre)s</h1>
     <p class="sub art-sub">%(resumen)s</p>
+    <p class="veredicto-top" data-tit="Veredicto en una frase">%(veredicto)s</p>
     <div class="ficha-datos">
       <div><span>Sede</span><b>%(pais)s</b></div>
       <div><span>En el mercado desde</span><b>%(desde_ano)s</b></div>
@@ -385,15 +386,16 @@ def html(host_id, f, d):
     </p>
 %(tabla)s
 
-    <h2 id="bueno">Lo bueno</h2>
-    <ul class="lista-si">
+    <div class="pros-contras">
+      <div><h2 id="bueno">Lo bueno</h2>
+      <ul class="lista-si">
 %(bueno)s
-    </ul>
-
-    <h2 id="malo">Los peros</h2>
-    <ul class="lista-no">
+      </ul></div>
+      <div><h2 id="malo">Los peros</h2>
+      <ul class="lista-no">
 %(malo)s
-    </ul>
+      </ul></div>
+    </div>
 
     <h2 id="veredicto">Veredicto</h2>
     <p class="veredicto-final">%(veredicto)s</p>
@@ -435,7 +437,7 @@ def html(host_id, f, d):
 </body>
 </html>
 """ % dict(
-        nombre=f["nombre"], resumen=f["resumen"], pais=f["pais"],
+        nombre=f["nombre"], url=f["url"], resumen=f["resumen"], pais=f["pais"],
         veredicto=f["veredicto"], dom=DOMINIO, ruta=ruta,
         precio_final=precio_final,
         desde_ano=f.get("desde_ano", "—"),
@@ -541,6 +543,24 @@ def indice(d):
     if _grande not in DISTINTIVOS:
         DISTINTIVOS[_grande] = "El que más RAM da"
 
+    # Tres ganadores encima de la tabla: los mismos distintivos, con el dato
+    # medible que los hace ganar. Nada de opinion.
+    _por = {hid: (f, h, porgb) for hid, f, h, precios, porgb, pares in filas}
+    def _g(hid, tag, dato):
+        f = _por[hid][0]
+        return ('<a class="ganador" href="/hosting/%s/"><span class="ganador-tag">%s</span>'
+                '<span class="ganador-nom"><img class="h-logo" src="/logos/%s.png" alt="" width="22" height="22">%s</span>'
+                '<span class="ganador-dato">%s</span></a>' % (f["url"], tag, f["url"], f["nombre"], dato))
+    ganadores = []
+    if _barato:
+        ganadores.append(_g(_barato, "El giga más barato", "<b>%s</b> por GB" % eur(_por[_barato][2])))
+    if _entrada and _entrada != _barato:
+        ganadores.append(_g(_entrada, "Lo más barato para empezar",
+                            "<b>−%d %%</b> en la primera factura" % _por[_entrada][1]["precios"]["minecraft"]["entrada"]["pct"]))
+    if _grande not in (_barato, _entrada):
+        ganadores.append(_g(_grande, "El que más RAM da", "hasta <b>%d GB</b> en un plan" % _techo(_por[_grande][1])))
+    ganadores_html = '<div class="ganadores">%s</div>' % "".join(ganadores)
+
     tabla = []
     for hid, f, h, precios, porgb, pares in filas:
         destacado = ' class="hl"' if partner.es_partner(hid) else ""
@@ -556,19 +576,19 @@ def indice(d):
         pr = h["precios"]["minecraft"]
         tabla.append(
             '      <tr%s data-modelo="%s" data-porgb="%s" data-entrada="%s">\n'
-            '        <td><a href="/hosting/%s/">%s</a>%s<small>%s</small></td>\n'
+            '        <td><a href="/hosting/%s/"><img class="h-logo" src="/logos/%s.png" alt="" width="18" height="18" loading="lazy">%s</a>%s<small>%s</small></td>\n'
             '        <td>%s</td>\n'
             '        %s\n'
             '        <td><a class="cta-mini" href="/hosting/%s/">Ver ficha</a></td>\n'
             '      </tr>'
             % (destacado, pr["modelo"], ("%.2f" % porgb) if porgb else "",
                "si" if (pr.get("entrada") and not pr["entrada"].get("permanente")) else "no",
-               f["url"], f["nombre"],
+               f["url"], f["url"], f["nombre"],
                ('<span class="badge-cat">%s</span>' % DISTINTIVOS[hid]) if hid in DISTINTIVOS else "",
                f["pais"],
                _modelo_texto(pr, h, cambio), celdas, f["url"]))
 
-    tarjetas = ['''    <div class="filtros" id="filtros" role="group"
+    tarjetas = [ganadores_html, '''    <div class="filtros" id="filtros" role="group"
          aria-label="Filtrar la tabla"></div>
     <div class="table-wrap">
       <table class="tabla-maestra ordenable" data-filtrable>
