@@ -107,6 +107,8 @@ window.DATOS = {
   "hosts": [
     {
       "id": "dathost",
+      "ideal": "Comunidad de 20-60 con el mejor procesador y copias diarias",
+      "ideal_en": "A 20-60 player community on top CPU with daily backups",
       "nombre": "DatHost",
       "moneda": "EUR",
       "fuente": "https://dathost.com/minecraft-server-hosting",
@@ -123,6 +125,8 @@ window.DATOS = {
     },
     {
       "id": "pebble-budget",
+      "ideal": "Vanilla o plugins con el presupuesto justo; sin copias",
+      "ideal_en": "Vanilla or plugins on a tight budget; no backups",
       "nombre": "PebbleHost Budget",
       "moneda": "USD",
       "precios": {
@@ -140,6 +144,8 @@ window.DATOS = {
     },
     {
       "id": "pebble-premium",
+      "ideal": "Modpack serio con copias cada hora y Ryzen 9",
+      "ideal_en": "A serious modpack with hourly backups and Ryzen 9",
       "nombre": "PebbleHost Premium",
       "moneda": "USD",
       "precios": {
@@ -155,6 +161,8 @@ window.DATOS = {
     },
     {
       "id": "bisect",
+      "ideal": "Quien quiere varias instancias y copias incluidas",
+      "ideal_en": "Running several instances with backups included",
       "nombre": "BisectHosting",
       "moneda": "EUR",
       "precios": {
@@ -170,6 +178,8 @@ window.DATOS = {
     },
     {
       "id": "shockbyte",
+      "ideal": "Un server de uno o dos meses por el descuento de entrada",
+      "ideal_en": "A one or two month server thanks to the entry discount",
       "nombre": "Shockbyte",
       "moneda": "USD",
       "precios": {
@@ -234,6 +244,8 @@ window.DATOS = {
     },
     {
       "id": "apex",
+      "ideal": "Quien no quiere tocar nada y paga el panel más guiado",
+      "ideal_en": "Hands-off owners paying for the most guided panel",
       "nombre": "Apex Hosting",
       "moneda": "USD",
       "precios": {
@@ -272,6 +284,8 @@ window.DATOS = {
     },
     {
       "id": "hostinger",
+      "ideal": "Usuario técnico con acceso root que pagará 2 años",
+      "ideal_en": "Technical users wanting root who'll prepay 2 years",
       "nombre": "Hostinger",
       "moneda": "USD",
       "precios": {
@@ -307,6 +321,8 @@ window.DATOS = {
     },
     {
       "id": "sparked",
+      "ideal": "Amigos con poco presupuesto; copias de pago",
+      "ideal_en": "Friends on a budget; backups cost extra",
       "nombre": "Sparked Host",
       "moneda": "USD",
       "precios": {
@@ -322,6 +338,8 @@ window.DATOS = {
     },
     {
       "id": "sparked-extreme",
+      "ideal": "Modpack pesado en Ryzen 9 9900X",
+      "ideal_en": "A heavy modpack on a Ryzen 9 9900X",
       "nombre": "Sparked Host Extreme",
       "moneda": "USD",
       "precios": {
@@ -337,6 +355,8 @@ window.DATOS = {
     },
     {
       "id": "holyhosting",
+      "ideal": "Comunidad mediana en Europa sin pagar por plazas",
+      "ideal_en": "A mid-size European community with no slot charges",
       "nombre": "HolyHosting",
       "moneda": "USD",
       "precios": {
@@ -358,6 +378,8 @@ window.DATOS = {
     },
     {
       "id": "vultam-standard",
+      "ideal": "Server barato en Europa del Este",
+      "ideal_en": "A cheap server in Eastern Europe",
       "nombre": "Vultam Standard",
       "moneda": "USD",
       "precios": {
@@ -374,6 +396,8 @@ window.DATOS = {
     },
     {
       "id": "vultam-advanced",
+      "ideal": "Plugins con algo más de CPU",
+      "ideal_en": "Plugins with a bit more CPU",
       "nombre": "Vultam Advanced",
       "moneda": "USD",
       "precios": {
@@ -390,6 +414,8 @@ window.DATOS = {
     },
     {
       "id": "vultam-performance",
+      "ideal": "Modpack con CPU dedicada",
+      "ideal_en": "A modpack with dedicated CPU",
       "nombre": "Vultam Performance",
       "moneda": "USD",
       "precios": {
@@ -406,6 +432,8 @@ window.DATOS = {
     },
     {
       "id": "wisehosting",
+      "ideal": "Quien quiere elegir entre 10 ubicaciones europeas",
+      "ideal_en": "Picking from 10 European locations",
       "nombre": "WiseHosting",
       "moneda": "USD",
       "precios": {
@@ -421,6 +449,8 @@ window.DATOS = {
     },
     {
       "id": "nexohost",
+      "ideal": "Server pequeño con soporte en español",
+      "ideal_en": "A small server with Spanish-speaking support",
       "nombre": "NexoHost",
       "moneda": "EUR",
       "precios": {
@@ -473,6 +503,8 @@ window.DATOS = {
     },
     {
       "id": "theminecrafthosting",
+      "ideal": "Server en París muy barato, sin florituras",
+      "ideal_en": "A very cheap no-frills server in Paris",
       "nombre": "The Minecraft Hosting",
       "moneda": "USD",
       "precios": {
@@ -537,6 +569,8 @@ window.DATOS = {
     },
     {
       "id": "realms",
+      "ideal": "Hasta 10 amigos en vanilla sin tocar nada",
+      "ideal_en": "Up to 10 friends on vanilla with zero setup",
       "nombre": "Minecraft Realms",
       "moneda": "USD",
       "precios": {
@@ -561,6 +595,8 @@ window.DATOS = {
     },
     {
       "id": "godlike",
+      "ideal": "Tu primer server: launcher que instala los mods a tus amigos",
+      "ideal_en": "Your first server: a launcher that installs mods for friends",
       "nombre": "Godlike.host",
       "moneda": "EUR",
       "precios": {
@@ -605,6 +641,8 @@ window.DATOS = {
     },
     {
       "id": "nodecraft",
+      "ideal": "Quien quiere Madrid como ubicación y un panel muy pulido",
+      "ideal_en": "Madrid as a location and a very polished panel",
       "nombre": "Nodecraft",
       "moneda": "USD",
       "precios": {
@@ -643,6 +681,8 @@ window.DATOS = {
     },
     {
       "id": "gportal",
+      "ideal": "Cambiar de juego con el mismo servidor",
+      "ideal_en": "Switching games on the same server",
       "nombre": "GPORTAL",
       "moneda": "EUR",
       "precios": {
@@ -677,6 +717,8 @@ window.DATOS = {
     },
     {
       "id": "scalacube",
+      "ideal": "Empezar pagando poco gracias al −50 % del primer mes",
+      "ideal_en": "Starting cheap thanks to −50% on the first month",
       "nombre": "ScalaCube",
       "moneda": "USD",
       "precios": {
@@ -743,6 +785,8 @@ window.DATOS = {
     },
     {
       "id": "ggservers",
+      "ideal": "Plazas contadas y precio bajo en Europa",
+      "ideal_en": "Counted slots and a low price in Europe",
       "nombre": "GGServers",
       "moneda": "USD",
       "precios": {
@@ -807,6 +851,8 @@ window.DATOS = {
     },
     {
       "id": "ggservers-premium",
+      "ideal": "Lo mismo con NVMe y CPU prioritaria",
+      "ideal_en": "The same with NVMe and priority CPU",
       "nombre": "GGServers Premium",
       "moneda": "USD",
       "precios": {
@@ -869,6 +915,8 @@ window.DATOS = {
     },
     {
       "id": "kinetic",
+      "ideal": "Comunidad grande: hasta 124 GB con copias y Ryzen 9950X",
+      "ideal_en": "Big communities: up to 124 GB with backups and a Ryzen 9950X",
       "nombre": "Kinetic Hosting",
       "moneda": "USD",
       "precios": {
@@ -933,6 +981,8 @@ window.DATOS = {
     },
     {
       "id": "ouiheberg",
+      "ideal": "4, 8 o 16 GB al precio más bajo de la tabla, cerca de España",
+      "ideal_en": "4, 8 or 16 GB at the lowest price in the table, close to Spain",
       "ficha": "/hosting/ouiheberg/",
       "nombre": "OuiHeberg",
       "moneda": "EUR",
@@ -952,6 +1002,8 @@ window.DATOS = {
     },
     {
       "id": "chunkly",
+      "ideal": "Vanilla o Paper barato en euros, con plan gratis",
+      "ideal_en": "Cheap vanilla or Paper in euros, with a free plan",
       "ficha": "/hosting/chunkly/",
       "nombre": "Chunkly",
       "moneda": "EUR",
@@ -1015,6 +1067,8 @@ window.DATOS = {
     },
     {
       "id": "chunkly-kingdom",
+      "ideal": "Modpacks en euros con el mismo panel",
+      "ideal_en": "Modpacks in euros on the same panel",
       "ficha": "/hosting/chunkly/",
       "nombre": "Chunkly Kingdom",
       "moneda": "EUR",
@@ -1083,6 +1137,8 @@ window.DATOS = {
     },
     {
       "id": "akliz",
+      "ideal": "Quien paga por dos copias al día y soporte veterano",
+      "ideal_en": "Paying for twice-daily backups and veteran support",
       "nombre": "Akliz",
       "moneda": "USD",
       "precios": {
@@ -1127,6 +1183,8 @@ window.DATOS = {
     },
     {
       "id": "hosthavoc",
+      "ideal": "Comunidad en Londres o Ámsterdam con copias diarias",
+      "ideal_en": "A community in London or Amsterdam with daily backups",
       "nombre": "Host Havoc",
       "moneda": "USD",
       "precios": {
@@ -1183,6 +1241,8 @@ window.DATOS = {
     },
     {
       "id": "serverminer",
+      "ideal": "Server por plazas en Alemania",
+      "ideal_en": "A per-slot server in Germany",
       "nombre": "ServerMiner",
       "moneda": "EUR",
       "precios": {
@@ -1227,6 +1287,8 @@ window.DATOS = {
     },
     {
       "id": "bloom",
+      "ideal": "Modpack con disco grande (60-100 GB)",
+      "ideal_en": "A modpack with big disk (60-100 GB)",
       "nombre": "Bloom.host",
       "moneda": "USD",
       "precios": {
@@ -1275,6 +1337,8 @@ window.DATOS = {
     },
     {
       "id": "bloom-plus",
+      "ideal": "Modpack bestia con CPU dedicada 9950X",
+      "ideal_en": "A monster modpack on a dedicated 9950X",
       "nombre": "Bloom.host Performance+",
       "moneda": "USD",
       "precios": {

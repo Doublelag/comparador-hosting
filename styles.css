@@ -1937,3 +1937,23 @@ main>.wrap:first-child::before{
 .ficha-tecnico b{font-size:15px;font-weight:600}
 .perfiles{margin-top:14px}
 h2#perfiles{margin-top:40px}
+
+/* ---- Elegiste / caben + top 3 (21-oct, idea del configurador de Chunkly) ---- */
+.res-duo{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:14px}
+.res-duo div{background:var(--card);border:1px solid var(--line);border-radius:var(--radius-s);padding:10px 14px}
+.res-duo span{display:block;font-family:var(--font-mono);font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:var(--txt-faint)}
+.res-duo b{display:block;font-family:var(--font-display);font-size:30px;line-height:1.1;color:var(--acc-2);margin-top:2px}
+.res-duo small{font-size:12px;color:var(--txt-dim)}
+.top3{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-bottom:18px}
+.t3{display:flex;flex-direction:column;gap:6px;background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:14px;color:inherit;text-decoration:none;transition:border-color .15s,transform .15s}
+a.t3:hover{border-color:var(--acc);transform:translateY(-2px)}
+.t3:first-child{border-color:rgba(var(--acc-rgb),.55);background:linear-gradient(180deg,rgba(var(--acc-rgb),.10),var(--card))}
+.t3-pos{font-family:var(--font-mono);font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:var(--acc)}
+.t3-nom{display:flex;align-items:center;gap:8px;font-family:var(--font-display);font-weight:700;font-size:17px;color:var(--txt)}
+.t3-precio{font-family:var(--font-mono);font-size:13px;color:var(--txt-dim)}
+.t3-precio b{font-size:20px;color:var(--txt)}
+.t3-precio small{display:block;font-size:11px;color:var(--txt-faint)}
+.t3-ideal{font-size:13px;line-height:1.4;color:var(--txt-dim)}
+.t3-ideal em{font-style:normal;color:var(--acc)}
+.t3-pega{font-size:12px;line-height:1.4;color:var(--warn)}
+@media(max-width:720px){.top3{grid-template-columns:1fr}.res-duo b{font-size:26px}}

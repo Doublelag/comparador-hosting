@@ -392,6 +392,12 @@ function renderResult(){
     }
   }
 
+  const cabe = cabenJugadores(g, gb);
+  const eleg = $("#resEleg"), cab = $("#resCabe");
+  if (eleg) eleg.textContent = jugTxt(state.players);
+  if (cab) cab.textContent = cabe >= g.maxPlayers ? g.maxPlayers + "+" : String(cabe);
+
+  renderTop3(gb, g);
   renderBarras(gb, g);
   renderReco(gb, g);
   renderTable(gb, g);
@@ -429,6 +435,46 @@ function renderResult(){
       ? L(`Montar mi servidor en ${h.nombre}`, `Set up my server on ${h.nombre}`)
       : L(`Ver qué me ofrece ${h.nombre}`, `See what ${h.nombre} offers`);
   }
+}
+
+/* ---- Elegiste N / caben M ----------------------------------------------
+   Lo que mejor explica el resultado: con los GB que salen, cuánta gente cabe
+   de verdad con esa misma configuración. Es la idea del configurador de
+   Chunkly, aquí calculada con nuestra tabla de RAM. */
+function cabenJugadores(g, gb){
+  let max = 0;
+  for (let n = 1; n <= g.maxPlayers; n++){
+    if (calcRam(g, n, state.modId, state.extraId) <= gb) max = n; else break;
+  }
+  return max || state.players;
+}
+
+/* ---- Top 3 para tu caso --------------------------------------------------
+   Las tres opciones más baratas para esos GB, con logo, precio y para quién
+   es cada una. Sale del mismo preciosDe que las barras: mismo orden, mismos
+   números. El texto "ideal para" vive en hosts.js (ideal / ideal_en). */
+function renderTop3(gb, g){
+  const caja = $("#top3");
+  if (!caja) return;
+  const validos = preciosDe(gb, g).filter(f => f.eurMes != null && /\bGB\b/.test(f.da || "")).slice(0, 3);
+  if (validos.length < 2){ caja.hidden = true; return; }
+  const meses = mesesElegidos();
+  caja.hidden = false;
+  caja.innerHTML = validos.map((f, i) => {
+    const h = HOSTS.find(x => x.id === f.id) || {};
+    const slug = f.ficha ? f.ficha.split("/").filter(Boolean).pop() : null;
+    const logo = slug ? `<img class="h-logo" src="/logos/${slug}.png" alt="" width="22" height="22" loading="lazy">` : "";
+    const ideal = EN ? (h.ideal_en || h.ideal) : h.ideal;
+    const href = f.ficha ? (EN ? "/en" + f.ficha : f.ficha) : null;
+    const total = meses > 1 ? `<small>${L(`${eur(f.coste)} en ${meses} meses`, `${eur(f.coste)} over ${meses} months`)}</small>` : "";
+    return `<${href ? `a href="${href}"` : "div"} class="t3">
+      <span class="t3-pos">${i === 0 ? L("Más barato", "Cheapest") : "#" + (i + 1)}</span>
+      <span class="t3-nom">${logo}${f.nombre}</span>
+      <span class="t3-precio"><b>${eur(f.eurMes)}</b> ${L("al mes", "a month")}${f.da !== gb + " GB" ? ` · ${f.da}` : ""}${total}</span>
+      ${ideal ? `<span class="t3-ideal"><em>${L("Ideal para", "Ideal for")}:</em> ${ideal}</span>` : ""}
+      ${f.aviso ? `<span class="t3-pega">${L("Ojo", "Catch")}: ${f.aviso}</span>` : ""}
+    </${href ? "a" : "div"}>`;
+  }).join("");
 }
 
 /* ---- Comparativa visual -------------------------------------------------
