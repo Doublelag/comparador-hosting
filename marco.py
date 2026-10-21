@@ -264,7 +264,8 @@ FUENTES_HREF = ("https://fonts.googleapis.com/css2?"
 ICONOS = ('<link rel="icon" href="/favicon.svg" type="image/svg+xml">\n'
           '<link rel="icon" href="/favicon.ico" sizes="32x32">\n'
           '<link rel="apple-touch-icon" href="/apple-touch-icon.png">')
-ICONOS_RE = re.compile(r'<link rel="(?:icon|apple-touch-icon)"[^>]*>\n?')
+# El icono viejo iba en data-URI con un <svg> dentro: [^>]* se paraba en el primer >
+ICONOS_RE = re.compile(r'<link rel="(?:icon|apple-touch-icon)"(?:\s+[\w-]+="[^"]*")*\s*/?>\n?')
 FUENTES_RE = re.compile(r'<link href="https://fonts\.googleapis\.com/css2\?[^"]*" rel="stylesheet">')
 
 
