@@ -14,6 +14,30 @@ Lo importa hostings.py.
 
 FICHAS_EXTRA = {
 
+  "ouiheberg": dict(
+    desde_ano="2018", ubicaciones="5",
+    rasgos=['1,99 € por 4 GB con IVA', 'Sin permanencia', 'Servidor gratis de 4 jugadores', 'Marsella: el más cerca de España'],
+    url="ouiheberg", nombre="OuiHeberg", pais="Francia",
+    resumen=("Hosting francés con tres planes cerrados: 4 GB por 1,99 €, 8 por 4,99 € y 16 por 10 €, con IVA y sin permanencia. "
+             "Por giga, el más barato de toda la tabla. Marsella es el centro de datos más cercano a España de cualquiera de los comparados."),
+    bueno=[
+      "<strong>El giga más barato de la comparativa</strong>: 0,50 € por GB en el plan de 4 (1,99 €) y 0,62 € en el de 16 (10 €). Es la mitad que Chunkly y PebbleHost, que eran los baratos hasta ahora.",
+      "<strong>Precio recurrente, con IVA y en euros</strong>: no es oferta del primer mes y no hay cambio de dólar. Mes a mes, sin permanencia.",
+      "<strong>Marsella</strong> como centro de datos: de todos los comparados, el que más cerca queda de España. Fráncfort como segunda opción europea.",
+      "Copias de seguridad incluidas (2 en Start, 5 en Pro), 2-4 vCPU a 3,7 GHz, NVMe, jugadores sin límite y modpacks en un clic desde CurseForge y Modrinth.",
+      "Tienen un <strong>servidor gratis</strong> de hasta 4 jugadores (Paper/Spigot, sin mods) para probar el panel sin tarjeta.",
+    ],
+    malo=[
+      "Solo tres tamaños: 4, 8 y 16 GB. Ni 2 GB para cuatro amigos ni 12 para un modpack mediano; por encima de 16 hay que pasar a sus OuiBox, que son otra cosa.",
+      "El disco del plan de 4 GB son <strong>20 GB</strong>: un modpack grande con sus copias lo llena. En el de 8 son 50 GB.",
+      "No publican el modelo exacto de procesador («infraestructura Ryzen», 3,7 GHz). Para vanilla y plugins da igual; para un modpack pesado, quieres saberlo.",
+      "Soporte por ticket en francés e inglés. Web en español, pero el equipo es francés.",
+      "Su propia página «mejor hosting de Minecraft» les pone a ellos primeros. No es un comparador: es su web.",
+    ],
+    veredicto=("Hoy es el más barato por giga de toda la tabla y, encima, en euros, con IVA y sin truco del primer mes. Si os vale uno de sus tres tamaños "
+               "(4, 8 o 16 GB) y no sois un modpack de 30 GB de disco, es la primera opción que miraría. Si necesitáis 2 GB o más de 16, no es vuestro sitio."),
+  ),
+
   "chunkly": dict(
     desde_ano="2026", ubicaciones="Europa",
     rasgos=['0,85 € el GB con IVA', 'Plan gratis de 2 GB', 'Cobro mensual en euros', 'Modpacks solo en Kingdom'],

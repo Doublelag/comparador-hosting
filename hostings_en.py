@@ -13,6 +13,7 @@ import json
 
 from comparativas import precio_para, coste_primer_ano
 import hostings
+import tecnico
 import historico
 import migas
 import partner
@@ -187,8 +188,9 @@ def html(host_id, d):
       <div><span>Locations</span><b>%(ubicaciones)s</b></div>
       <div><span>Pricing</span><b>%(modelo)s</b></div>
     </div>
+    %(tecnico)s
     <div class="ficha-rasgos">%(rasgos)s</div>
-    <p class="art-meta">Prices checked on %(comprobado)s</p>
+    %(autor)s
     %(opiniones)s
 
     %(aviso)s
@@ -250,6 +252,7 @@ def html(host_id, d):
         modelo=modelo_texto(h["precios"]["minecraft"], h, cambio),
         opiniones=hostings.opiniones(h, "en"), rasgos="".join('<span class="rasgo">%s</span>' % r for r in t.get("rasgos", [])),
         comprobado=d.get("comprobado_en", d["comprobado"]), aviso=aviso,
+        tecnico=tecnico.html(host_id, "en"), autor=hostings.autor_html(d.get("comprobado_en", d["comprobado"]), "en"),
         tabla=tabla_precios(host_id, d),
         bueno=lista(t["bueno"], "si"), malo=lista(t["malo"], "no"),
         faq_schema=faq_schema,
@@ -436,7 +439,8 @@ def indice(d):
       review lists the downsides. %(afil)s
     </p>
 
-    <p class="art-meta">Prices checked on %(comprobado)s.</p>
+    %(autor)s
+%(perfiles)s
   </div>
 </main>
 
@@ -452,4 +456,5 @@ def indice(d):
            cuantos=len({(f.get("url") or hid) for hid, f in hostings.FICHAS.items()}),
            afil=("I have an affiliate deal with one of them, and I say so in every page's footer: it still sits in the table where its price puts it."
                  if partner.activo() else "I have no deal with any of them."),dom=DOMINIO, fuentes=FUENTES, indep=indep, ganadores=ganadores_html, banner=partner.banner_en(), tabla="\n".join(tabla),
-           comprobado=d.get("comprobado_en", d["comprobado"]))
+           comprobado=d.get("comprobado_en", d["comprobado"]),
+           autor=hostings.autor_html(d.get("comprobado_en", d["comprobado"]), "en"), perfiles=hostings.perfiles_html(d, "en"))

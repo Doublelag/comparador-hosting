@@ -69,3 +69,6 @@
 
 /api/server
   Cache-Control: public, max-age=60
+
+/autor.webp
+  Cache-Control: public, max-age=2592000

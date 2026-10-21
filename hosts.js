@@ -932,6 +932,25 @@ window.DATOS = {
       "ficha": "/hosting/kinetic/"
     },
     {
+      "id": "ouiheberg",
+      "ficha": "/hosting/ouiheberg/",
+      "nombre": "OuiHeberg",
+      "moneda": "EUR",
+      "precios": {
+        "minecraft": {
+          "modelo": "tabla",
+          "tiers": [
+            [4, 1.99],
+            [8, 4.99],
+            [16, 10.0]
+          ],
+          "nota": "Tres planes cerrados: Start 4 GB (2 vCPU, 20 GB NVMe), Plus 8 GB (2 vCPU, 50 GB) y Pro 16 GB (4 vCPU, 100 GB). Precio con IVA, mes a mes y sin permanencia; no es oferta de bienvenida. Jugadores sin límite. Centros en Marsella, Fráncfort, Nueva York, Canadá y Sídney. Java y Bedrock. Hosting francés desde 2018",
+          "nota_en": "Three fixed plans: Start 4 GB (2 vCPU, 20 GB NVMe), Plus 8 GB (2 vCPU, 50 GB) and Pro 16 GB (4 vCPU, 100 GB). Price incl. VAT, month to month, no contract; not a first-month promo. Unlimited players. Datacenters in Marseille, Frankfurt, New York, Canada and Sydney. Java and Bedrock. French host since 2018"
+        }
+      },
+      "fuente": "https://www.ouiheberg.com/es/hosting-minecraft"
+    },
+    {
       "id": "chunkly",
       "ficha": "/hosting/chunkly/",
       "nombre": "Chunkly",

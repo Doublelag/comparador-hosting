@@ -1927,3 +1927,13 @@ main>.wrap:first-child::before{
     }
   }
 }
+
+/* ---- Autor y datos técnicos (21-oct) ---- */
+.autor{display:flex;align-items:center;gap:10px;margin:10px 0 16px;font-size:14px;color:var(--txt-dim)}
+.autor img{width:36px;height:36px;border-radius:50%;object-fit:cover;background:var(--card);border:2px solid var(--acc)}
+.autor b{color:var(--txt)}
+.autor a{color:var(--acc)}
+.ficha-tecnico{margin-top:8px}
+.ficha-tecnico b{font-size:15px;font-weight:600}
+.perfiles{margin-top:14px}
+h2#perfiles{margin-top:40px}

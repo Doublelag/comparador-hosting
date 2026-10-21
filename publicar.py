@@ -23,7 +23,7 @@ DIST = os.path.join(RAIZ, "dist")
 # Lo que SÍ se publica
 ARCHIVOS = ["index.html", "404.html", "styles.css", "hosts.js", "app.js",
             "indice.js", "buscador_ui.js", "tabla_ui.js", "promo_ui.js", "filtros_ui.js", "plantilla_ui.js", "zip_ui.js", "modpack_ui.js",
-            "favicon.ico", "favicon.svg", "icono-512.png", "apple-touch-icon.png", "chorizosmp.webp", "estado_ui.js",
+            "favicon.ico", "favicon.svg", "icono-512.png", "apple-touch-icon.png", "chorizosmp.webp", "estado_ui.js", "autor.webp",
             "godlike-banner.webp", "hero-cielo.webp",
             "robots.txt", "sitemap.xml", "og-image.jpg", "_redirects", "_headers"]
 

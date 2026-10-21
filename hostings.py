@@ -19,6 +19,7 @@ import io, json, os
 from comparativas import precio_para, coste_primer_ano
 
 import fichas_extra
+import tecnico
 import historico
 import migas
 import partner
@@ -373,8 +374,9 @@ def html(host_id, f, d):
       <div><span>Ubicaciones</span><b>%(ubicaciones)s</b></div>
       <div><span>Cómo cobra</span><b>%(modelo)s</b></div>
     </div>
+    %(tecnico)s
     <div class="ficha-rasgos">%(rasgos)s</div>
-    <p class="art-meta">Precios comprobados el %(comprobado)s</p>
+    %(autor)s
     %(opiniones)s
 
     %(aviso)s
@@ -445,6 +447,7 @@ def html(host_id, f, d):
         modelo=_modelo_texto(h["precios"]["minecraft"], h, cambio),
         opiniones=opiniones(h), rasgos="".join('<span class="rasgo">%s</span>' % r for r in f.get("rasgos", [])),
         comprobado=d["comprobado"], aviso=aviso, divulgacion=partner.divulgacion(),
+        tecnico=tecnico.html(host_id, "es"), autor=autor_html(d["comprobado"], "es"),
         tabla=tabla_precios(host_id, d),
         bueno=lista(f["bueno"], "si"), malo=lista(f["malo"], "no"),
         faq_schema=faq_schema,
@@ -477,6 +480,69 @@ def opiniones(h, lang="es"):
             'target="_blank">%s reviews on Trustpilot</a>. '
             'Look at the number of reviews, not just the score: a 4.9 from 200 reviews '
             'says less than a 4.5 from 20,000.</p>' % (dom, h["nombre"]))
+
+
+
+def perfiles_html(d, lang="es"):
+    """Cuatro perfiles de uso con el ganador de la tabla para cada uno.
+
+    Es la sección que más convierte en cualquier comparativa ("¿y para mí
+    cuál?"), y aquí sale de los datos, no de una opinión: el más barato que
+    sirve para ese caso. Los modpacks excluyen a quien no deja mods.
+    """
+    cambio = d["cambioUsdEur"]
+    cand = []
+    for hid, f in FICHAS.items():
+        h = next(x for x in d["hosts"] if x["id"] == hid)
+        lim = h.get("limites") or {}
+        p = {gb: precio_para(h, "minecraft", gb, cambio)[0] for gb in (2, 4, 8, 16)}
+        cand.append((hid, f, h, p, lim))
+
+    def mejor(gb, filtro=lambda c: True):
+        ok = [c for c in cand if c[3][gb] is not None and c[2]["precios"]["minecraft"]["modelo"] != "plazas"
+              and c[0] != "realms" and filtro(c)]
+        return min(ok, key=lambda c: c[3][gb]) if ok else None
+
+    pref = "/en/hosting/" if lang == "en" else "/hosting/"
+    T = {
+        "es": [("2-5 amigos, vanilla", "2 GB", 2, lambda c: True),
+               ("10-30 jugadores, plugins", "8 GB", 8, lambda c: True),
+               ("Modpack grande", "16 GB", 16, lambda c: c[4].get("mods") is not False),
+               ("Mucha gente sin mods", "16 GB", 16, lambda c: c[4].get("maxJugadores") is None)],
+        "en": [("2-5 friends, vanilla", "2 GB", 2, lambda c: True),
+               ("10-30 players, plugins", "8 GB", 8, lambda c: True),
+               ("Big modpack", "16 GB", 16, lambda c: c[4].get("mods") is not False),
+               ("Lots of people, no mods", "16 GB", 16, lambda c: c[4].get("maxJugadores") is None)],
+    }[lang]
+    out, vistos = [], set()
+    for tag, ram, gb, filtro in T:
+        c = mejor(gb, filtro)
+        if not c:
+            continue
+        hid, f, h, p, lim = c
+        clave = (hid, gb)
+        if clave in vistos:
+            continue
+        vistos.add(clave)
+        out.append('<a class="ganador" href="%s%s/"><span class="ganador-tag">%s · %s</span>'
+                   '<span class="ganador-nom"><img class="h-logo" src="/logos/%s.png" alt="" width="22" height="22">%s</span>'
+                   '<span class="ganador-dato"><b>%s</b> %s</span></a>'
+                   % (pref, f["url"], tag, ram, f["url"], f["nombre"], eur(p[gb]),
+                      "al mes" if lang == "es" else "a month"))
+    tit = "¿Y para mi caso?" if lang == "es" else "Which one for my case?"
+    sub = ("El más barato de la tabla que sirve para cada uso. Si quieres el tuyo exacto, la calculadora te lo dice con tus números."
+           if lang == "es" else
+           "The cheapest in the table that fits each use. For your exact case, the calculator does it with your numbers.")
+    return '<h2 id="perfiles">%s</h2><p class="sub art-sub">%s</p><div class="ganadores perfiles">%s</div>' % (tit, sub, "".join(out))
+
+
+def autor_html(comprobado, lang="es"):
+    """Quién ha comprobado los precios y cuándo. Google quiere saber quién firma."""
+    if lang == "en":
+        return ('<p class="autor"><img src="/autor.webp" alt="" width="36" height="36" loading="lazy">'
+                '<span>Prices checked by hand by <b>Doublelag</b> on %s · <a href="/en/how-i-check/">how I check them</a></span></p>' % comprobado)
+    return ('<p class="autor"><img src="/autor.webp" alt="" width="36" height="36" loading="lazy">'
+            '<span>Precios comprobados a mano por <b>Doublelag</b> el %s · <a href="/como-lo-compruebo/">cómo lo compruebo</a></span></p>' % comprobado)
 
 
 def indice(d):
@@ -696,7 +762,8 @@ def indice(d):
       sus peros. %(afil)s
     </p>
 
-    <p class="art-meta">Precios comprobados el %(comprobado)s.</p>
+    %(autor)s
+%(perfiles)s
   </div>
 </main>
 
@@ -713,6 +780,7 @@ def indice(d):
 </body>
 </html>
 """ % dict(cuantos=len({(f.get("url") or hid) for hid, f in FICHAS.items()}),
+           autor=autor_html(d["comprobado"], "es"), perfiles=perfiles_html(d, "es"),
            afil=partner.caja_afiliado_corta() if hasattr(partner, "caja_afiliado_corta") else "",
            dom=DOMINIO, tarjetas="\n".join(tarjetas), comprobado=d["comprobado"],
            # La caja solo sale si hay partner: entonces sí hay algo que avisar.

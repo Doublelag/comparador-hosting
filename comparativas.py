@@ -174,10 +174,30 @@ COMPARATIVAS = [
     ],
     faq=[
       ("¿Cuál es el hosting de Minecraft más barato?",
-       "Kinetic Hosting y PebbleHost Budget, que rondan los 0,86 € el giga todos los "
-       "meses; el Budget de PebbleHost no trae copias de seguridad. Godlike, aun con su "
-       "−25 % permanente, se queda en 2,44 € el giga: ahí no pagas gigas, pagas que te "
-       "lo pongan fácil."),
+       "Por giga, OuiHeberg (0,50 € en su plan de 4 GB, con IVA) y después Chunkly, "
+       "PebbleHost Budget y Kinetic, que rondan los 0,85 €. El Budget de PebbleHost no "
+       "trae copias de seguridad y Chunkly no admite mods en su gama barata: lo barato "
+       "siempre tiene una letra pequeña, y está en cada ficha."),
+      ("¿Sirve un servidor gratis como Aternos o Minehut?",
+       "Para probar con tres amigos, sí. Para jugar en serio, no: se apagan cuando no "
+       "hay nadie, tienen cola para arrancar y poca RAM. En cuanto queréis que el "
+       "server siga vivo sin vosotros, el pagado más barato son menos de 2 € al mes."),
+      ("¿Cuánta RAM necesito?",
+       "2 GB para 2-5 amigos en vanilla, 4 GB para unos 10 con plugins, 8 GB para "
+       "20-30 o mods ligeros, y 12-16 GB para un modpack grande. La calculadora de la "
+       "portada te lo afina con vuestros números."),
+      ("¿Qué ping es aceptable?",
+       "Por debajo de 50 ms no lo notas; entre 50 y 100 se juega bien; a partir de 150 "
+       "el PvP se vuelve injusto. Desde España, un centro de datos en Francia o "
+       "Alemania da 20-40 ms; uno en Estados Unidos, 100-150."),
+      ("¿Premium o no premium?",
+       "Los hostings te dejan elegir (online-mode) y en todos entra gente no premium si "
+       "lo desactivas. Pero sin premium cualquiera puede entrar con el nombre de otro: "
+       "si abres el server a desconocidos, pon un plugin de login o déjalo en premium."),
+      ("¿Puedo cambiar de hosting sin perder el mundo?",
+       "Sí. Descargas la carpeta del mundo (y plugins o mods) por SFTP o desde el panel, "
+       "la subes al nuevo y listo. Media hora de trabajo; haz copia antes de borrar nada "
+       "en el viejo."),
       ("¿Merece la pena pagar el año por adelantado?",
        "Solo si ya has probado el servidor y sabes que os vais a quedar. Coge un mes "
        "primero, mete a tu gente y mira cómo va. Y desconfía de quien solo te da el "
