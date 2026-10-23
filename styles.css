@@ -1957,3 +1957,69 @@ a.t3:hover{border-color:var(--acc);transform:translateY(-2px)}
 .t3-ideal em{font-style:normal;color:var(--acc)}
 .t3-pega{font-size:12px;line-height:1.4;color:var(--warn)}
 @media(max-width:720px){.top3{grid-template-columns:1fr}.res-duo b{font-size:26px}}
+
+/* =========================================================================
+   APARICIÓN AL BAJAR (23-oct-2026)
+   =========================================================================
+   Las clases las pone animar_ui.js; aquí solo el aspecto. La clase "anim" la
+   pone <head> antes de pintar, y solo sin movimiento reducido: sin ella no
+   se oculta nada. Una sola curva para todo, la de excellentiaclub.com.
+   ========================================================================= */
+:root{--curva:cubic-bezier(.16,1,.3,1)}
+
+/* Las de animation-timeline (asomar ligado al scroll) se apagan: con esto
+   las cosas entran una vez y se quedan, en vez de ir a remolque del dedo. */
+.anim .card,.anim .oferta,.anim .ping-card,.anim .videobox,.anim .promo-tira,
+.anim .indep,.anim .table-wrap,.anim .barra,.anim .ganador,.anim .video,
+.anim .pros-contras>div{animation:none}
+
+/* Hasta que corre el script, el primer pantallazo espera. Si el script no
+   llega nunca, a los 1,6 s se enseña igual. */
+.anim:not(.anim-listo) main h1,
+.anim:not(.anim-listo) .hero-txt>*,
+.anim:not(.anim-listo) .hero-demo{opacity:0;animation:rv-socorro 0s 1.6s forwards}
+@keyframes rv-socorro{to{opacity:1}}
+
+.anim .rv{
+  opacity:0;transform:translateY(26px);
+  transition:opacity .7s var(--curva),transform .7s var(--curva),
+             filter .7s var(--curva),clip-path .7s var(--curva);
+  transition-delay:var(--rv-d,0s);
+}
+.anim:not(.anim-listo) .rv{transition:none}
+.anim .rv.rv-izq{transform:translateX(-36px)}
+.anim .rv.rv-der{transform:translateX(36px)}
+.anim .rv.rv-foco{transform:translateY(14px);filter:blur(10px)}
+/* 1px sin recortar: IntersectionObserver no ve lo que está recortado entero */
+.anim .rv.rv-barrido{transform:none;clip-path:inset(0 calc(100% - 1px) 0 0)}
+.anim .rv.visto{opacity:1;transform:none;filter:none;clip-path:inset(0 0 0 0)}
+
+/* Titular palabra a palabra */
+.pal{display:inline-block}
+.anim .pal{
+  opacity:0;filter:blur(10px);transform:translateY(.35em) scale(1.04);
+  animation:pal-entra .6s var(--curva) var(--pd,0s) forwards;
+}
+@keyframes pal-entra{to{opacity:1;filter:none;transform:none}}
+
+/* Cifras que cuentan: que no bailen de ancho mientras suben */
+.datos-bar b{font-variant-numeric:tabular-nums}
+
+/* Cabecera: al bajar se asienta con una sombra; arriba queda limpia */
+.site-head{transition:box-shadow .3s var(--curva),background-color .3s}
+.site-head.bajado{box-shadow:0 10px 30px -18px rgba(0,0,0,.7)}
+:root[data-theme="claro"] .site-head.bajado{box-shadow:0 10px 30px -20px rgba(0,0,0,.25)}
+
+/* El cielo del hero se queda un poco atrás al bajar (paralaje suave) */
+.anim main>.wrap:first-child::before{transform:translate(-50%,var(--cielo,0px))}
+
+/* Flecha de los botones y enlaces «Ver …→» que empuja al pasar */
+@media (hover:hover){
+  .sec-more{display:inline-block;transition:transform .3s var(--curva),color .2s}
+  .sec-more:hover{transform:translateX(4px)}
+}
+
+@media (prefers-reduced-motion: reduce){
+  .rv,.pal{opacity:1!important;transform:none!important;filter:none!important;
+           clip-path:none!important;animation:none!important}
+}

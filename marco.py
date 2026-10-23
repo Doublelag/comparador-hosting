@@ -236,6 +236,15 @@ def pie(url, comprobado):
 # da sensación de web mal hecha.
 TEMA_ANTES_DE_PINTAR = ('<script>try{if(localStorage.getItem("tema")==="claro")'
                         'document.documentElement.dataset.theme="claro"}catch(e){}</script>')
+# Lo mismo con las animaciones al bajar: la clase "anim" tiene que estar antes
+# de pintar, o el titular se vería un instante quieto y luego desaparecería
+# para entrar. Sin movimiento reducido y con IntersectionObserver, si no nada.
+ANIM_ANTES_DE_PINTAR = ('<script>if("IntersectionObserver"in window&&!matchMedia('
+                        '"(prefers-reduced-motion: reduce)").matches)'
+                        'document.documentElement.classList.add("anim")</script>')
+# animar_ui.js va el último y sin defer: corre antes del primer pintado en la
+# práctica, y si tarda, styles.css enseña el hero solo a los 1,6 s.
+ANIM_RE = re.compile(r'<script src="/animar_ui\.js(\?v=[0-9a-f]+)?"></script>\n?')
 
 
 def hreflang(url, existe_en):
@@ -291,9 +300,11 @@ def aplicar(html, url, comprobado, existe, con_og=True):
         html = html.replace('</main>', '</main>\n\n' + pie(url, comprobado), 1)
 
     # tema y hreflang, justo después del viewport (se quitan antes: idempotente)
-    html = html.replace(TEMA_ANTES_DE_PINTAR + "\n", "")
+    html = html.replace(TEMA_ANTES_DE_PINTAR + "\n", "").replace(ANIM_ANTES_DE_PINTAR + "\n", "")
     html = re.sub(r'<link rel="alternate" hreflang="[^"]*" href="[^"]*">\n?', "", html)
-    extra = TEMA_ANTES_DE_PINTAR + "\n" + hreflang(url, existe)
+    extra = TEMA_ANTES_DE_PINTAR + "\n" + ANIM_ANTES_DE_PINTAR + "\n" + hreflang(url, existe)
     html = re.sub(r'(<meta name="viewport"[^>]*>\n)', lambda m: m.group(1) + extra.rstrip("\n") + "\n",
                   html, count=1)
+    html = ANIM_RE.sub("", html)
+    html = html.replace("</body>", '<script src="/animar_ui.js"></script>\n</body>', 1)
     return html

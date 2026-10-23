@@ -74,7 +74,7 @@ def rellenar_partner():
 
 ESTATICOS = ["styles.css", "app.js", "hosts.js", "buscador_ui.js", "tabla_ui.js",
              "filtros_ui.js", "promo_ui.js", "indice.js", "plantilla_ui.js",
-             "zip_ui.js", "modpack_ui.js", "estado_ui.js"]
+             "zip_ui.js", "modpack_ui.js", "estado_ui.js", "animar_ui.js"]
 
 
 def versionar():
