@@ -125,11 +125,15 @@ ICONO_LUNA = ('<svg class="i-luna" viewBox="0 0 24 24" aria-hidden="true">'
               '<path d="M20 14.2A8 8 0 0 1 9.8 4 8.2 8.2 0 1 0 20 14.2z"/></svg>')
 
 
-def cabecera(url):
+def cabecera(url, existe=None):
     lang = idioma_de(url)
     t = T[lang]
     actual = seccion_de(url)
     otra = a_ingles(url) if lang == "es" else a_espanol(url)
+    # Páginas que solo existen en un idioma (las de seo.py, por ejemplo): el
+    # botón de idioma lleva a la portada del otro en vez de a un 404.
+    if existe is not None and not existe(otra):
+        otra = "/en/" if lang == "es" else "/"
 
     def enlace(ruta_es, texto):
         cur = ' aria-current="page"' if actual == ruta_es else ""
@@ -291,7 +295,7 @@ def aplicar(html, url, comprobado, existe, con_og=True):
     if con_og:
         html = og.poner(html, url, comprobado)
 
-    html = re.sub(r'<header class="site-head">.*?</header>', lambda m: cabecera(url),
+    html = re.sub(r'<header class="site-head">.*?</header>', lambda m: cabecera(url, existe),
                   html, count=1, flags=re.S)
     if re.search(r'<footer[ >].*?</footer>', html, re.S):
         html = re.sub(r'<footer[ >].*?</footer>', lambda m: pie(url, comprobado),
