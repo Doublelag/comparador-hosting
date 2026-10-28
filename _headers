@@ -72,3 +72,18 @@
 
 /autor.webp
   Cache-Control: public, max-age=2592000
+
+/zip_ui.js
+  Cache-Control: public, max-age=31536000, immutable
+
+/modpack_ui.js
+  Cache-Control: public, max-age=31536000, immutable
+
+/animar_ui.js
+  Cache-Control: public, max-age=31536000, immutable
+
+/godlike-banner.webp
+  Cache-Control: public, max-age=2592000
+
+/hero-cielo.webp
+  Cache-Control: public, max-age=2592000
