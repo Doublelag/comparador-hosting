@@ -14,6 +14,28 @@ Lo importa hostings.py.
 
 FICHAS_EXTRA = {
 
+  "enderhosting": dict(
+    desde_ano="No publican", ubicaciones="1",
+    rasgos=['1,79 $ el GB con IVA', 'Servidor en Miami', 'Prueba gratis de 48 h', 'Soporte en español'],
+    url="enderhosting", nombre="EnderHosting", pais="México",
+    resumen=("Hosting mexicano pensado para Latinoamérica: servidor en Miami, Ryzen 9 7900X con DDR5 y NVMe, "
+             "1,79 $ el GB con IVA y prueba gratis de 48 horas. Desde España va lejos; desde México, cerca."),
+    bueno=[
+      "<strong>Pensado para jugar desde Latinoamérica</strong>: el servidor está en Miami, que es de lo mejor conectado con México, Centroamérica y el Caribe. São Paulo, anunciado como «próximamente».",
+      "<strong>Hardware publicado con nombre</strong>: Ryzen 9 7900X con vCores dedicados (1 por cada 2 GB), DDR5 y NVMe. No es lo habitual: muchos solo dicen «Ryzen».",
+      "Precio con IVA, mes a mes y con descuento si pagas 3, 6 o 12 meses (5, 7 y 10 %). Pago con PayPal, Stripe o Mercado Pago.",
+      "<strong>Prueba gratis de 48 horas</strong> con 2 GB, Java o Bedrock, sin tarjeta. Jugadores sin límite y reembolso en las primeras 72 horas.",
+    ],
+    malo=[
+      "<strong>Desde España va lejos</strong>: Miami está al otro lado del Atlántico y el ping ronda los 100-150 ms. Para un server de españoles, mejor uno con centro en Europa.",
+      "Hosting nuevo: en su web no figura nombre de empresa ni dirección, solo que se rigen por la ley mexicana. Poca trayectoria todavía.",
+      "El precio no cuadra del todo: su tabla de planes sale a 1,79 $ el GB, pero sus textos anuncian 1,99 $. Les hemos preguntado; mientras, ponemos el de la tabla.",
+      "Precio en dólares: si pagas en euros, depende del cambio.",
+    ],
+    veredicto=("Si tu gente juega desde México o Latinoamérica, es de los pocos que publica el procesador exacto y tiene el servidor donde te conviene, "
+               "y la prueba de 48 horas te deja comprobarlo gratis. Si jugáis desde España, no es vuestro sitio: el ping de Miami se nota."),
+  ),
+
   "ouiheberg": dict(
     desde_ano="2018", ubicaciones="5",
     rasgos=['1,99 € por 4 GB con IVA', 'Sin permanencia', 'Servidor gratis de 4 jugadores', 'Marsella: el más cerca de España'],

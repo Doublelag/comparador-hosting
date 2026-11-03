@@ -10,6 +10,27 @@ changes, change its English twin too.
 
 FICHAS_EN = {
 
+  "enderhosting": dict(
+    pais="Mexico",
+    rasgos=['$1.79 per GB incl. VAT', 'Server in Miami', '48-hour free trial', 'Spanish-language support'],
+    resumen=("Mexican host built for Latin America: server in Miami, Ryzen 9 7900X with DDR5 and NVMe, "
+             "$1.79 per GB with VAT and a 48-hour free trial. Far from Spain; close from Mexico."),
+    bueno=[
+      "<strong>Built for playing from Latin America</strong>: the server is in Miami, one of the best-connected spots for Mexico, Central America and the Caribbean. São Paulo is announced as “coming soon”.",
+      "<strong>Named hardware</strong>: Ryzen 9 7900X with dedicated vCores (1 per 2 GB), DDR5 and NVMe. Not common: many only say “Ryzen”.",
+      "Price incl. VAT, month to month, with discounts for 3, 6 or 12 months (5, 7 and 10%). Pay with PayPal, Stripe or Mercado Pago.",
+      "<strong>48-hour free trial</strong> with 2 GB, Java or Bedrock, no card. Unlimited players and a refund within the first 72 hours.",
+    ],
+    malo=[
+      "<strong>Far from Spain</strong>: Miami is across the Atlantic and ping is around 100-150 ms. For a Spanish server, pick one with a European datacenter.",
+      "New host: their site shows no company name or address, only that Mexican law applies. Little track record yet.",
+      "The price doesn't fully add up: their plan table works out at $1.79 per GB, but their copy says $1.99. We've asked; meanwhile we use the table.",
+      "Priced in dollars: if you pay in euros, it depends on the exchange rate.",
+    ],
+    veredicto=("If your players are in Mexico or Latin America, it's one of the few that names its exact CPU and puts the server where you need it, "
+               "and the 48-hour trial lets you check for free. If you play from Spain, look elsewhere: the Miami ping shows."),
+  ),
+
   "ouiheberg": dict(
     pais="France",
     rasgos=['€1.99 for 4 GB incl. VAT', 'No contract', 'Free 4-player server', 'Marseille: closest to Spain'],

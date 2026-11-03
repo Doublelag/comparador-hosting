@@ -1001,6 +1001,66 @@ window.DATOS = {
       "fuente": "https://www.ouiheberg.com/es/hosting-minecraft"
     },
     {
+      "id": "enderhosting",
+      "comprobado": "3 de noviembre de 2026",
+      "comprobado_en": "3 November 2026",
+      "ideal": "Jugar desde México o Latinoamérica, con servidor en Miami",
+      "ideal_en": "Playing from Mexico or Latin America, with a server in Miami",
+      "ficha": "/hosting/enderhosting/",
+      "nombre": "EnderHosting",
+      "moneda": "USD",
+      "precios": {
+        "minecraft": {
+          "modelo": "tabla",
+          "tiers": [
+            [
+              2,
+              3.58
+            ],
+            [
+              4,
+              7.16
+            ],
+            [
+              6,
+              10.75
+            ],
+            [
+              8,
+              14.33
+            ],
+            [
+              10,
+              17.91
+            ],
+            [
+              12,
+              21.49
+            ],
+            [
+              16,
+              28.66
+            ],
+            [
+              20,
+              35.82
+            ],
+            [
+              24,
+              42.98
+            ],
+            [
+              32,
+              57.31
+            ]
+          ],
+          "nota": "Precio de su tabla de planes, con IVA (16 %), mes a mes: 1,79 $ el GB. En sus textos anuncian 1,99 $/GB; les hemos preguntado cuál es el bueno. Ryzen 9 7900X, DDR5 y NVMe. Servidor en Miami (São Paulo, próximamente). Jugadores sin límite. Prueba gratis de 48 h",
+          "nota_en": "Price from their plan table, VAT (16%) included, month to month: $1.79 per GB. Their copy says $1.99/GB; we've asked which one is right. Ryzen 9 7900X, DDR5 and NVMe. Server in Miami (São Paulo coming soon). Unlimited players. 48-hour free trial"
+        }
+      },
+      "fuente": "https://enderhosting.pro/minecraft/"
+    },
+    {
       "id": "chunkly",
       "ideal": "Vanilla o Paper barato en euros, con plan gratis",
       "ideal_en": "Cheap vanilla or Paper in euros, with a free plan",
