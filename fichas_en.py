@@ -40,14 +40,15 @@ FICHAS_EN = {
       "<strong>Cheapest per GB in the comparison</strong>: €0.50 per GB on the 4 GB plan (€1.99) and €0.62 on the 16 GB one (€10). Half of Chunkly and PebbleHost, the cheap ones until now.",
       "<strong>Recurring price, VAT included, in euros</strong>: not a first-month promo and no dollar conversion. Month to month, no contract.",
       "<strong>Marseille</strong> as a datacenter: of all the hosts compared, the closest to Spain. Frankfurt as a second European option.",
-      "Backups included (2 on Start, 5 on Pro), 2-4 vCPU at 3.7 GHz, NVMe, unlimited players and one-click modpacks from CurseForge and Modrinth.",
+      "Backups included (2 on Start, 5 on Pro), 2-4 vCPU at 3.7 GHz, DDR4 ECC memory, NVMe, unlimited players and one-click modpacks from 6 catalogs (CurseForge, Modrinth, FTB, ATLauncher, Technic and Void's Wrath).",
       "They offer a <strong>free server</strong> for up to 4 players (Paper/Spigot, no mods) to try the panel with no card.",
+      "Their own panel (OuiPanel) with a <strong>mobile app</strong> and an AI assistant that connects to Claude or ChatGPT over MCP. 24/7 human support.",
     ],
     malo=[
       "Only three sizes: 4, 8 and 16 GB. No 2 GB for four friends and no 12 GB for a mid modpack; above 16 you move to their OuiBox, which is a different product.",
       "The 4 GB plan ships with <strong>20 GB</strong> of disk: a big modpack plus its backups fills it. The 8 GB plan has 50 GB.",
-      "They don't publish the exact CPU model (“Ryzen infrastructure”, 3.7 GHz). Fine for vanilla and plugins; for a heavy modpack you want to know.",
-      "Ticket support in French and English. Spanish website, French team.",
+      "They don't publish the CPU model: just “vCPU at 3.70 GHz”. Fine for vanilla and plugins; for a heavy modpack you want to know.",
+      "Spanish website, but a French team: support works best in French or English.",
       "Their own “best Minecraft hosting” page ranks themselves first. It's not a comparison: it's their site.",
     ],
     veredicto=("Today it's the cheapest per GB in the whole table and, on top, in euros, VAT included, with no first-month trick. If one of its three sizes "

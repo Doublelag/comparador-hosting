@@ -37,7 +37,7 @@ TECNICO = {
     "hosthavoc":           dict(cpu="Hilos dedicados, sin modelo", disco="NVMe, sin GB publicados", copias="Diarias, incluidas"),
     "serverminer":         dict(cpu="No publican", disco="No publican", copias="No publican"),
     "bloom":               dict(cpu="Hasta Ryzen 9 5950X (2 núcleos compartidos); 9950X en Performance+", disco="60 a 600 GB NVMe", copias="Externas, incluidas"),
-    "ouiheberg":           dict(cpu="2 a 4 vCPU a 3,7 GHz (Ryzen)", disco="20 a 100 GB NVMe", copias="2 a 5 huecos incluidos"),
+    "ouiheberg":           dict(cpu="2 a 4 vCPU a 3,7 GHz, DDR4 ECC", disco="20 a 100 GB NVMe", copias="2 a 5 huecos incluidos"),
     "enderhosting":        dict(cpu="Ryzen 9 7900X, 1 vCore dedicado cada 2 GB", disco="20 a 300 GB NVMe", copias="1 a 3 incluidas"),
 }
 
@@ -66,7 +66,7 @@ TECNICO_EN = {
     "hosthavoc":           dict(cpu="Dedicated threads, no model", disco="NVMe, no GB published", copias="Daily, included"),
     "serverminer":         dict(cpu="Not published", disco="Not published", copias="Not published"),
     "bloom":               dict(cpu="Up to Ryzen 9 5950X (2 shared cores); 9950X on Performance+", disco="60 to 600 GB NVMe", copias="Off-site, included"),
-    "ouiheberg":           dict(cpu="2 to 4 vCPU at 3.7 GHz (Ryzen)", disco="20 to 100 GB NVMe", copias="2 to 5 slots included"),
+    "ouiheberg":           dict(cpu="2 to 4 vCPU at 3.7 GHz, DDR4 ECC", disco="20 to 100 GB NVMe", copias="2 to 5 slots included"),
     "enderhosting":        dict(cpu="Ryzen 9 7900X, 1 dedicated vCore per 2 GB", disco="20 to 300 GB NVMe", copias="1 to 3 included"),
 }
 

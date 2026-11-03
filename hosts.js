@@ -981,6 +981,8 @@ window.DATOS = {
     },
     {
       "id": "ouiheberg",
+      "comprobado": "3 de noviembre de 2026",
+      "comprobado_en": "3 November 2026",
       "ideal": "4, 8 o 16 GB al precio más bajo de la tabla, cerca de España",
       "ideal_en": "4, 8 or 16 GB at the lowest price in the table, close to Spain",
       "ficha": "/hosting/ouiheberg/",
@@ -994,8 +996,8 @@ window.DATOS = {
             [8, 4.99],
             [16, 10.0]
           ],
-          "nota": "Tres planes cerrados: Start 4 GB (2 vCPU, 20 GB NVMe), Plus 8 GB (2 vCPU, 50 GB) y Pro 16 GB (4 vCPU, 100 GB). Precio con IVA, mes a mes y sin permanencia; no es oferta de bienvenida. Jugadores sin límite. Centros en Marsella, Fráncfort, Nueva York, Canadá y Sídney. Java y Bedrock. Hosting francés desde 2018",
-          "nota_en": "Three fixed plans: Start 4 GB (2 vCPU, 20 GB NVMe), Plus 8 GB (2 vCPU, 50 GB) and Pro 16 GB (4 vCPU, 100 GB). Price incl. VAT, month to month, no contract; not a first-month promo. Unlimited players. Datacenters in Marseille, Frankfurt, New York, Canada and Sydney. Java and Bedrock. French host since 2018"
+          "nota": "Tres planes cerrados: Start 4 GB (2 vCPU, 20 GB NVMe), Plus 8 GB (2 vCPU, 50 GB) y Pro 16 GB (4 vCPU, 100 GB). Precio con IVA, mes a mes y sin permanencia; no es oferta de bienvenida. Jugadores sin límite. Centros en Marsella, Fráncfort, Nueva York, Canadá y Sídney, mismo precio en todos. Java y Bedrock. Anti-DDoS hasta 3 Tbps. Hosting francés desde 2018",
+          "nota_en": "Three fixed plans: Start 4 GB (2 vCPU, 20 GB NVMe), Plus 8 GB (2 vCPU, 50 GB) and Pro 16 GB (4 vCPU, 100 GB). Price incl. VAT, month to month, no contract; not a first-month promo. Unlimited players. Datacenters in Marseille, Frankfurt, New York, Canada and Sydney, same price everywhere. Java and Bedrock. DDoS protection up to 3 Tbps. French host since 2018"
         }
       },
       "fuente": "https://www.ouiheberg.com/es/hosting-minecraft"

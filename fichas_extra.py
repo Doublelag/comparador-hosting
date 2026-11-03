@@ -46,14 +46,15 @@ FICHAS_EXTRA = {
       "<strong>El giga más barato de la comparativa</strong>: 0,50 € por GB en el plan de 4 (1,99 €) y 0,62 € en el de 16 (10 €). Es la mitad que Chunkly y PebbleHost, que eran los baratos hasta ahora.",
       "<strong>Precio recurrente, con IVA y en euros</strong>: no es oferta del primer mes y no hay cambio de dólar. Mes a mes, sin permanencia.",
       "<strong>Marsella</strong> como centro de datos: de todos los comparados, el que más cerca queda de España. Fráncfort como segunda opción europea.",
-      "Copias de seguridad incluidas (2 en Start, 5 en Pro), 2-4 vCPU a 3,7 GHz, NVMe, jugadores sin límite y modpacks en un clic desde CurseForge y Modrinth.",
+      "Copias de seguridad incluidas (2 en Start, 5 en Pro), 2-4 vCPU a 3,7 GHz, memoria DDR4 ECC, NVMe, jugadores sin límite y modpacks en un clic desde 6 catálogos (CurseForge, Modrinth, FTB, ATLauncher, Technic y Void's Wrath).",
       "Tienen un <strong>servidor gratis</strong> de hasta 4 jugadores (Paper/Spigot, sin mods) para probar el panel sin tarjeta.",
+      "Panel propio (OuiPanel) con <strong>app para el móvil</strong> y un asistente IA que se conecta a Claude o ChatGPT por MCP. Soporte humano 24/7.",
     ],
     malo=[
       "Solo tres tamaños: 4, 8 y 16 GB. Ni 2 GB para cuatro amigos ni 12 para un modpack mediano; por encima de 16 hay que pasar a sus OuiBox, que son otra cosa.",
       "El disco del plan de 4 GB son <strong>20 GB</strong>: un modpack grande con sus copias lo llena. En el de 8 son 50 GB.",
-      "No publican el modelo exacto de procesador («infraestructura Ryzen», 3,7 GHz). Para vanilla y plugins da igual; para un modpack pesado, quieres saberlo.",
-      "Soporte por ticket en francés e inglés. Web en español, pero el equipo es francés.",
+      "No publican el modelo de procesador: solo «vCPU a 3,70 GHz». Para vanilla y plugins da igual; para un modpack pesado, quieres saberlo.",
+      "Web en español, pero el equipo es francés: el soporte, mejor en francés o inglés.",
       "Su propia página «mejor hosting de Minecraft» les pone a ellos primeros. No es un comparador: es su web.",
     ],
     veredicto=("Hoy es el más barato por giga de toda la tabla y, encima, en euros, con IVA y sin truco del primer mes. Si os vale uno de sus tres tamaños "
